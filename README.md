@@ -1,5 +1,19 @@
 # GDSCMMU
 
+## Pre-requisite
+
+You will need PHP, Apache, MySQL, phpMyAdmin to run this program <br/>
+Get XAMPP stack package to reduce all the hassles <br/>
+[https://www.apachefriends.org/index.html](https://www.apachefriends.org/index.html)
+
+## How to Run the Program
+
+In terminal
+
+```
+php -S localhost:8080
+```
+
 ## Things to Do (Front-End)
 
 Files to Focus on: in views/ and public/ directories
