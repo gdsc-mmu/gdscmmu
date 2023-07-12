@@ -1,0 +1,13 @@
+{
+  "name": "gdscmmu/gdscmmu",
+  "description": "Website for GDSC MMU",
+  "type": "project",
+  "require": {
+    "amphp/react-adapter": "^2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Gdscmmu\\Gdscmmu\\": "src/"
+    }
+  }
+}
