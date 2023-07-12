@@ -31,6 +31,7 @@ Files to Focus on: in views/ and public/ directories
 5. Add new articles to database and load articles from database
 6. Add new comments to database and load comments from database
 7. Password Salting and Hashing
-8. User Login Save Sessions
-9. Cookie to auto store and load username
-10. Publish to Hostinger
+8. Sanitize and Validate input/url queries for better security
+9. User Login Save Sessions
+10. Cookie to auto store and load username
+11. Publish to Hostinger
