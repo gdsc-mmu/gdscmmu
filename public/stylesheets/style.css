@@ -1,20 +1,181 @@
-:root {
-  --navbar-height: 60px;
-}
+/* RESET CSS - START */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
 html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
 body {
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  /* overflow-x: hidden;      */
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* RESET CSS - END */
+
+:root {
+  --navbar-height: 60px;
 }
 
 body {
   background: #2d1e2f;
   font-family: "Nunito", sans-serif;
   color: white;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.main {
+  background-image: url("/views/assets/main-background.svg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white !important;
+  height: 100vh;
+  font-family: "Google Sans", sans-serif !important;
+}
+
+.main .anim-typewriter {
+  color: white;
+  font-size: 6rem !important;
+  font-weight: 800;
+  text-shadow: 4px 4px #000000;
+}
+
+.main h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  padding-top: 20px;
+}
+
+.find-out-more {
+  background-color: #0e174a !important;
+  color: white !important;
+}
+
+.find-out-more:hover {
+  background-color: white !important;
+  color: black !important;
+  transition: 2s;
 }
 
 .blurb h2 {
@@ -82,30 +243,4 @@ body {
   .blurb h2 {
     font-size: 2rem;
   }
-}
-
-.main {
-  background-image: url("/views/assets/main-background.svg");
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  color: white !important;
-  height: 100vh;
-  font-family: "Google Sans", sans-serif !important;
-  color: #0e174a !important;
-}
-
-.main h3 {
-  font-size: 1.2rem;
-}
-
-.find-out-more {
-  background-color: #0e174a !important;
-  color: white !important;
-}
-
-.find-out-more:hover {
-  background-color: white !important;
-  color: black !important;
-  transition: 2s;
 }
