@@ -244,3 +244,23 @@ body {
     font-size: 2rem;
   }
 }
+
+@media (max-width: 765px) {
+  .main .anim-typewriter {
+    font-size: 5rem !important;
+  }
+
+  .main h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .main .anim-typewriter {
+    font-size: 4rem !important;
+  }
+
+  .main h3 {
+    font-size: 1rem;
+  }
+}
