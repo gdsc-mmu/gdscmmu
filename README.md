@@ -3,15 +3,30 @@
 ## Pre-requisite
 
 You will need PHP, Apache, MySQL, phpMyAdmin to run this program <br/>
-Get XAMPP stack package to reduce all the hassles <br/>
+Get XAMPP stack package to eliminate all the hassles <br/>
 [https://www.apachefriends.org/index.html](https://www.apachefriends.org/index.html)
 
 ## How to Run the Program
 
-In terminal
+In terminal (Without Using XAMPP)
 
 ```
+composer install
+npm install
 php -S localhost:8080
+```
+
+Now you can view the page in [http://localhost:8080](http://localhost:8080)
+
+Or, you can open up the XAMPP GUI app you just installed, and start Apache, MySQL, ProFTPD services
+Now it will serve the default htdocs directory/folder on localhost
+
+htdocs location:
+
+```
+Windows : C:\xampp\htdocs
+Mac : Open XAMPP GUI, Go to Volumes, Mount /opt/lampp, Click Explore
+Linux : /opt/lampp/htdocs
 ```
 
 ## Things to Do (Front-End)
