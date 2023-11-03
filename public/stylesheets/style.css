@@ -144,7 +144,7 @@ body {
 }
 
 .main {
-  background-image: url("/views/assets/main-background.svg");
+  background-image: url("/assets/main-background.svg");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;

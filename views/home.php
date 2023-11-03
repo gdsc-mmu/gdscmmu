@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <img class="img-fluid" src="/views/assets/haqeem.jpg" alt="">
+            <img class="img-fluid" src="assets/haqeem.jpg" alt="">
         </div>
     </div>
 </section>
@@ -37,7 +37,7 @@
 <section class="container-fluid px-0">
     <div class="row align-items-center content">
         <div class="col-md-6 order-2 order-md-1">
-            <img src="/views/assets/haqeem.jpg" alt="" class="img-fluid">
+            <img src="assets/haqeem.jpg" alt="" class="img-fluid">
         </div>
         <div class="col-md-6 text-center order-1 order-md-2">
             <div class="row justify-content-center">
@@ -72,12 +72,12 @@
             </div>
         </div>
         <div class="col-md-6">
-            <img src="/views/assets/haqeem.jpg" alt="" class="img-fluid">
+            <img src="assets/haqeem.jpg" alt="" class="img-fluid">
         </div>
     </div>
     <div class="row align-items-center content">
         <div class="col-md-6 order-2 order-md-1">
-            <img src="/views/assets/haqeem.jpg" alt="" class="img-fluid">
+            <img src="assets/haqeem.jpg" alt="" class="img-fluid">
         </div>
         <div class="col-md-6 text-center order-1 order-md-2">
             <div class="row justify-content-center">
@@ -100,5 +100,5 @@
     </div>
 </section>
 
-<script src="/public/javascripts/homePage.js"></script>
+<script src="../public/javascripts/homePage.js"></script>
 <?php include "layouts/footer.php" ?>

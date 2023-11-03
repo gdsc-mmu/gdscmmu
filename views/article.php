@@ -1,5 +1,6 @@
 <?php include "layouts/header.php" ?>
 <?php include "partials/navbar.php" ?>
+
 <section class="container-fluid px-0">
     <div class="row align-items-center">
         <div class="col-lg-6 offset-lg-3">
