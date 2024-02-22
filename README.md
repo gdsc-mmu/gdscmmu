@@ -2,40 +2,38 @@
 
 ## Pre-requisite
 
-You will need PHP, Apache, MySQL, phpMyAdmin to run this program <br/>
+You will need PHP, Apache, MySQL, phpMyAdmin, composer to run this program <br/>
 Get XAMPP stack package to eliminate all the hassles <br/>
 [https://www.apachefriends.org/index.html](https://www.apachefriends.org/index.html)
+[How to install laravel]
+
+## Build instructions
+
+[Get composer](https://getcomposer.org/download/)
+
+```
+git clone https://github.com/ronylee11/gdscmmu
+cd gdscmmu
+git submodule init
+git submodule update
+composer install
+```
 
 ## How to Run the Program
 
-In terminal (Without Using XAMPP)
+In terminal
 
 ```
-composer install
-npm install
-php -S localhost:8080
+php artisan serve
 ```
 
-Now you can view the page in [http://localhost:8080](http://localhost:8080)
-
-Or, you can open up the XAMPP GUI app you just installed, and start Apache, MySQL, ProFTPD services
-Now it will serve the default htdocs directory/folder on localhost
-
-htdocs location:
-
-```
-Windows : C:\xampp\htdocs
-Mac : Open XAMPP GUI, Go to Volumes, Mount /opt/lampp, Click Explore
-Linux : /opt/lampp/htdocs
-```
+Now you can view the page in [http://localhost:8000](http://localhost:8000)
 
 ## Things to Do (Front-End)
 
 Files to Focus on: in views/ and public/ directories
 
-1. Bring design of homepage, home.php to life
-2. Add pictures, roles and descriptions in team.php
-3. Add details of email and phone numbers in contacts.php
+1. Bring designs to life via routing
 
 ## Things to Do (Back-End)
 

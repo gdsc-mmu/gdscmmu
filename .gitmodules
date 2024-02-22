@@ -1,0 +1,3 @@
+[submodule "gdscmmu.github.io"]
+	path = _gdscmmu_theme/gdscmmu.github.io
+	url = https://github.com/Google-Developer-Student-Clubs-MMU/gdscmmu.github.io.git
