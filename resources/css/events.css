@@ -1,0 +1,44 @@
+body {
+    background-image: url('../assets/img/events-background.svg') !important;
+}    
+
+h1 {
+    font-size: 6rem;
+    color: #0e174a;
+    text-shadow: 3px 3px #acaebe86 !important;
+}
+
+h3 {  
+    color: #0e174a;
+    /* text-shadow: 2px 2px #37394686 !important; */
+}
+
+
+.event {
+    font-weight: 200;
+    padding: 4rem; 
+    -webkit-box-shadow: 0px 6px 5px 3px rgba(0,0,0,0.42);
+    -moz-box-shadow: 0px 6px 5px 3px rgba(0,0,0,0.42);
+    box-shadow: 0px 6px 5px 3px rgba(0,0,0,0.42);
+}
+
+
+.event-odd {
+    background-color: white;
+}
+
+.event-even {
+    background-color: rgb(245, 245, 238);
+}
+
+.workshop-graphic {
+    max-width: 80% !important;
+    -webkit-box-shadow: 10px 10px 26px -5px rgba(0,0,0,0.16);
+    -moz-box-shadow: 10px 10px 26px -5px rgba(0,0,0,0.16);
+    box-shadow: 10px 10px 26px -5px rgba(0,0,0,0.16);
+}
+
+.img-fluid
+{
+    width: 100%\9;
+}
