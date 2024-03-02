@@ -239,7 +239,7 @@
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <div class="profile-text">
-            <h2>Hi, I'm Shaun</h2>
+            <h2>Hi, I'm Rony</h2>
             <p>Technical Lead</p>
           </div>
         </div>
