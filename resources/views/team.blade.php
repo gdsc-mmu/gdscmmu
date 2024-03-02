@@ -22,7 +22,7 @@
         <span class="profile-span"></span>
         <span class="profile-span"></span>
         <div class="profile-text">
-          <h2>Hi, I'm Sidharrth</h2>
+          <h2>Hi, I'm Firzan</h2>
           <p>Team Lead</p>
         </div>
       </div>

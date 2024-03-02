@@ -78,10 +78,10 @@
                 </ul>
             </li>
             <li>
-                <a class="navbar-link" href="team.html">Meet the Team</a>
+                <a class="navbar-link" href="team">Meet the Team</a>
             </li>
             <li>
-                <a class="navbar-link" href="events.html">Events</a>
+                <a class="navbar-link" href="events">Events</a>
             </li>
             <li>
                 <a class="navbar-link" href="#footer">Contact Us</a>
