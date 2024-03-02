@@ -17,9 +17,18 @@ cd gdscmmu
 git submodule init
 git submodule update
 composer install
+cp .env.example .env
 ```
 
 ## How to Run the Program
+
+Edit .env file that you've just copied <br/>
+Replace the following environment variables according to ur locally installed MySQL (or XAMPP)
+
+```
+DB_USERNAME=
+DB_PASSWORD=
+```
 
 In terminal
 
