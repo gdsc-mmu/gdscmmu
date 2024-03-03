@@ -34,7 +34,7 @@
     <p>We write, a lot</p>
     <!-- <div id="pic">
       <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-        <div class="profile profile-5">
+        <div class="profile">
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <span class="profile-span"></span>
@@ -45,10 +45,10 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     <div class="row justify-content-center">
       <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile profile-8">
+        <div class="profile">
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <span class="profile-span"></span>
@@ -169,7 +169,7 @@
     <p>We're the cool kids that design what you see here</p>
     <div id="pic">
       <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-        <div class="profile profile-9">
+        <div class="profile">
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <span class="profile-span"></span>
@@ -233,7 +233,7 @@
     <p>We hack, we tech</p>
     <div id="pic">
       <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-        <div class="profile profile-2">
+        <div class="profile">
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <span class="profile-span"></span>
@@ -247,7 +247,7 @@
     </div>
     <div class="row mb-3 justify-content-center">
       <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile profile-19">
+        <div class="profile">
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <span class="profile-span"></span>
@@ -259,7 +259,7 @@
         </div>
       </div>
       <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile profile-17">
+        <div class="profile">
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <span class="profile-span"></span>
@@ -278,7 +278,7 @@
     <p>We get to decide what workshops we'll have</p>
     <div id="pic">
       <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-        <div class="profile profile-15">
+        <div class="profile">
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <span class="profile-span"></span>

@@ -83,35 +83,7 @@ body{
     border-radius: 50% !important;
 }
 
-#pic .profile-2{
-    border-radius: 50% !important;
-}
-
-#pic .profile-3{
-    border-radius: 50% !important;
-}
-
-#pic .profile-4{
-    border-radius: 50% !important;
-}
-
-#pic .profile-5{
-    border-radius: 50% !important;
-}
-
-#pic .profile-6{
-    border-radius: 50% !important;
-}
-
-#pic .profile-7{
-    border-radius: 50% !important;
-}
-
-#pic .profile-9{
-    border-radius: 50% !important;
-}
-
-#pic .profile-15{
+#pic {
     border-radius: 50% !important;
 }
 
@@ -131,64 +103,12 @@ body{
     border: none;
 }
 
-.profile-8 .profile-span {
-    background-image: url("../assets/img/Liyana.jpg");
 }
 
-.profile-9 .profile-span {
-    background-image: url("../assets/img/Haqeem.png");
 }
 
-.profile-10 .profile-span {
-    background-image: url("../assets/img/ShaneKhorZhiShan.jpg");
 }
 
-.profile-11 .profile-span {
-    background-image: url("../assets/img/LimYuJie.jpg");
-}
-
-.profile-12 .profile-span {
-    background-image: url("../assets/img/Ayat.jpg");
-}
-
-.profile-13 .profile-span {
-    background-image: url("../assets/img/BeckhamTeoh.jpg");
-}
-
-.profile-14 .profile-span {
-    background-image: url("../assets/img/ChanTingChan.jpg");
-}
-
-.profile-15 .profile-span {
-    background-image: url("../assets/img/DanielShamsudin.png");
-}
-
-.profile-16 .profile-span {
-    background-image: url("../assets/img/TanChunKeat.jpg");
-}
-
-.profile-17 .profile-span {
-    background-image: url("../assets/img/YuenKhai-technical.jpeg");
-}
-
-.profile-19 .profile-span {
-    background-image: url("../assets/img/Jason-technical.jpeg");
-}
-
-.profile-20 .profile-span {
-    background-image: url("../assets/img/LimTingHo.jpg");
-}
-
-.profile-21 .profile-span {
-    background-image: url("../assets/img/Iffah.JPG");
-}
-
-.profile-22 .profile-span {
-    background-image: url("../assets/img/HewZhongKen.jpg");
-}
-
-.profile-23 .profile-span {
-    background-image: url("../assets/img/Haqeem.png");
 }
 
 
