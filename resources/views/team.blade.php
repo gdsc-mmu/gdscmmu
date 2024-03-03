@@ -14,7 +14,7 @@
   </div>
 
   <div id="teams" class="teams team-1 container-fluid">
-    <h2 class="mb-2">Team Lead</h2>
+    <h2 class="mb-2">GDSC MMU 2024</h2>
     <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
       <div class="profile profile-1">
         <span class="profile-span"></span>
@@ -27,12 +27,64 @@
         </div>
       </div>
     </div>
+    <div class="row justify-content-center">
+      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+        <div class="profile" id="aqra">
+          <span class="profile-span"></span>
+          <span class="profile-span"></span>
+          <span class="profile-span"></span>
+          <span class="profile-span"></span>
+          <div class="profile-text">
+            <h2>Hi, I'm Aqra</h2>
+            <p>Team Co-Lead</p>
+          </div>
+        </div>
+      </div>
+      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+        <div class="profile" id="inqsyira">
+          <span class="profile-span"></span>
+          <span class="profile-span"></span>
+          <span class="profile-span"></span>
+          <span class="profile-span"></span>
+          <div class="profile-text">
+            <h2>Hi, I'm Inqsyira</h2>
+            <p>Team Co-Lead</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+        <div class="profile" id="hanisa">
+          <span class="profile-span"></span>
+          <span class="profile-span"></span>
+          <span class="profile-span"></span>
+          <span class="profile-span"></span>
+          <div class="profile-text">
+            <h2>Hi, I'm Hanisa</h2>
+            <p>Treasurer</p>
+          </div>
+        </div>
+      </div>
+      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+        <div class="profile" id="amir-haziq">
+          <span class="profile-span"></span>
+          <span class="profile-span"></span>
+          <span class="profile-span"></span>
+          <span class="profile-span"></span>
+          <div class="profile-text">
+            <h2>Hi, I'm Amir Haziq</h2>
+            <p>Secretary</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="teams" class="teams team-2 container-fluid">
-    <h2 class="mb-2">General Affairs</h2>
-    <p>We write, a lot</p>
-    <!-- <div id="pic">
+    <h2 class="mb-2">Team Co-Lead</h2>
+    <p>We proofread, a lot</p>
+    <div id="pic">
       <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
         <div class="profile">
           <span class="profile-span"></span>

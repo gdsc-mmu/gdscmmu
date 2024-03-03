@@ -103,12 +103,20 @@ body{
     border: none;
 }
 
+#aqra .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/aqra.jpg");
 }
 
+#inqsyira .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/inqsyira.jpg");
 }
 
+#hanisa .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/hanisa.jpg");
 }
 
+#amir-haziq .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/amir-haziq.jpg");
 }
 
 
