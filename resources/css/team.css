@@ -103,6 +103,13 @@ body{
     border: none;
 }
 
+/*Profile images*/
+
+/*bigfive*/
+#firzan .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/firzan.jpg");
+}
+
 #aqra .profile-span {
     background-image: url("../assets/img/gdsc/bigfive/aqra.jpg");
 }
@@ -119,6 +126,18 @@ body{
     background-image: url("../assets/img/gdsc/bigfive/amir-haziq.jpg");
 }
 
+/*event team*/
+
+/*multimedia team*/
+
+/*publicity team*/
+
+/*tech team*/
+#rony .profile-span {
+    background-image: url("../assets/img/gdsc/tech/rony.jpg");
+}
+
+/*sponsorship & partnership team*/
 
 .profile {
     margin: 20px auto !important;

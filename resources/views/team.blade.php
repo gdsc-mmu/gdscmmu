@@ -16,7 +16,7 @@
   <div id="teams" class="teams team-1 container-fluid">
     <h2 class="mb-2">GDSC MMU 2024</h2>
     <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-      <div class="profile profile-1">
+      <div class="profile" id="firzan">
         <span class="profile-span"></span>
         <span class="profile-span"></span>
         <span class="profile-span"></span>
@@ -285,7 +285,7 @@
     <p>We hack, we tech</p>
     <div id="pic">
       <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-        <div class="profile">
+        <div class="profile" id="rony">
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <span class="profile-span"></span>
