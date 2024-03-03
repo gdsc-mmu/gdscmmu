@@ -120,9 +120,8 @@ body{
     max-width: 300px;
 }
 
-.profile-8 .profile-span {
+.profile-span {
     height: 100%;
-    background-image: url("../assets/img/Liyana.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
@@ -130,174 +129,66 @@ body{
     border-radius: 5px;
     animation: none;
     border: none;
+}
+
+.profile-8 .profile-span {
+    background-image: url("../assets/img/Liyana.jpg");
 }
 
 .profile-9 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/Haqeem.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 .profile-10 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/ShaneKhorZhiShan.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 .profile-11 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/LimYuJie.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 .profile-12 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/Ayat.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 .profile-13 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/BeckhamTeoh.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 .profile-14 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/ChanTingChan.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 .profile-15 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/DanielShamsudin.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 .profile-16 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/TanChunKeat.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 .profile-17 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/YuenKhai-technical.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 .profile-19 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/Jason-technical.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 .profile-20 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/LimTingHo.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 .profile-21 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/Iffah.JPG");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 .profile-22 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/HewZhongKen.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 .profile-23 .profile-span {
-    height: 100%;
     background-image: url("../assets/img/Haqeem.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    transition: all 1s;
-    border-radius: 5px;
-    animation: none;
-    border: none;
 }
 
 
