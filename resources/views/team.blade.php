@@ -331,7 +331,7 @@
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <div class="profile-text">
-            <h2>Hi, I'm Jason</h2>
+            <h2>Hi, I'm Fikri</h2>
             <p>Core Member</p>
           </div>
         </div>
