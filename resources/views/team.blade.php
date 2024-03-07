@@ -325,7 +325,7 @@
     </div>
     <div class="row mb-3 justify-content-center">
       <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile">
+        <div class="profile" id="fikri">
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <span class="profile-span"></span>
