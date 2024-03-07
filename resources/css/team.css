@@ -136,6 +136,11 @@ body{
 #rony .profile-span {
     background-image: url("../assets/img/gdsc/tech/rony.jpg");
 }
+
+#wong .profile-span {
+    background-image: url("../assets/img/gdsc/tech/wong.jpg");
+}
+
 #nik .profile-span {
     background-image: url("../assets/img/gdsc/tech/nik.jpg");
 }
@@ -144,7 +149,7 @@ body{
     background-image: url("../assets/img/gdsc/tech/fikri.jpg");
 }
 
-#amirah .profile-spam {
+#amirah .profile-span {
     background-image: url("../assets/img/gdsc/tech/amirah.jpg");
 }
 

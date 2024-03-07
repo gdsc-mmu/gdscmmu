@@ -377,13 +377,13 @@
     </div>
     <div class="row mb-3 justify-content-center">
       <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile">
+        <div class="profile" id="wong">
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <div class="profile-text">
-            <h2>Hi, I'm Jason</h2>
+            <h2>Hi, I'm Wong</h2>
             <p>Core Member</p>
           </div>
         </div>
