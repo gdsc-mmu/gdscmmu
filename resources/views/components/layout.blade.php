@@ -52,97 +52,9 @@
 </head>
 
 <body>
-    <nav id="sidebar">
-        <div id="dismiss">
-            <i class="fa fa-arrow-left"></i>
-        </div>
-
-        <div class="sidebar-header">
-            <h3>GDSC@MMU</h3>
-        </div>
-
-        <ul class="list-unstyled components">
-            <li>
-                <a class="navbar-link" href="#">Home</a>
-            </li>
-
-            <li>
-                <a class="normal-nav-link" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">About</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a class="navbar-link" href="#moreondsc">Who We Are</a>
-                    </li>
-                    <li>
-                        <a class="navbar-link" href="#whattoexpect">What To Expect</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="navbar-link" href="team">Meet the Team</a>
-            </li>
-            <li>
-                <a class="navbar-link" href="events">Events</a>
-            </li>
-            <li>
-                <a class="navbar-link" href="#footer">Contact Us</a>
-            </li>
-
-        </ul>
-        <div class="social-handles">
-            <a href="https://github.com/GDSCMMU" target="_"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
-            <a href="https://www.facebook.com/dscmmu" target="_"><i class="fa fa-facebook fa-2x"
-                    aria-hidden="true"></i></a>
-            <a href="https://www.linkedin.com/in/dsc-mmu-123a261ba/" target="_"><i class="fa fa-linkedin fa-2x"
-                    aria-hidden="true"></i></a>
-            <a href="https://www.youtube.com/channel/UCSonnieKvZDRUrKmzzUdv1w?" target="_"><i
-                    class="fa fa-youtube-play fa-2x" aria-hidden="true"></i></a>
-            <a href="mailto:lead.dscmmu@gmail.com"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
-            <a href="https://twitter.com/DscMmu" target="_"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
-        </div>
-
-    </nav>
-
-    <button type="button" id="sidebarCollapse" class="btn">
-        <i class="navbar-toggle fa fa-bars fa-2x"></i>
-    </button>
-
-    <div class="overlay"></div>
-    <header>
-        <div class="container">
-
-            <nav data-aos="fade-down" class="nav d-flex justify-content-between align-items-center">
-
-                <ul class="main-links list-unstyled d-flex">
-                    <li><a href="/" class="nav-link">Home</a></li>
-                    <li><a href="#moreondsc" class="nav-link">About</a></li>
-                    <li><a href="/team" class="nav-link">Team</a></li>
-                    <li><a href="/events" class="nav-link">Events</a></li>
-                    <li><a href="#footer" class="nav-link">Contact Us</a></li>
-                </ul>
-
-                <div class="spacer">
-                </div>
-
-                <div class="social-handles">
-                    <a href="https://github.com/GDSCMMU" target="_"><i class="fa fa-github fa-2x"
-                            aria-hidden="true"></i></a>
-                    <a href="https://www.facebook.com/dscmmu" target="_"><i class="fa fa-facebook fa-2x"
-                            aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/dsc-mmu-123a261ba/" target="_"><i class="fa fa-linkedin fa-2x"
-                            aria-hidden="true"></i></a>
-                    <a href="https://www.youtube.com/channel/UCSonnieKvZDRUrKmzzUdv1w?" target="_"><i
-                            class="fa fa-youtube-play fa-2x" aria-hidden="true"></i></a>
-                    <a href="mailto:lead.dscmmu@gmail.com"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/DscMmu" target="_"><i class="fa fa-twitter fa-2x"
-                            aria-hidden="true"></i></a>
-                </div>
-                </ul>
-
-        </div>
-    </header>
-
-
+    <x-sidebar />
     {{$slot}}
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -150,47 +62,8 @@
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#sidebar").mCustomScrollbar({
-                theme: "minimal"
-            });
-
-            $('#dismiss, .overlay, .navbar-link').on('click', function () {
-                $('#sidebar').removeClass('active');
-                $('.overlay').removeClass('active');
-            });
-
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').addClass('active');
-                $('.overlay').addClass('active');
-                $('.collapse.in').toggleClass('in');
-                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            });
-        });
-    </script>
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwnUWrY8gzGqbVZ4on6-hsPAbms8khQltLrV85cqOmO6kQklv0/exec'
-        const form = document.forms['submit-to-google-sheet']
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, {
-                method: 'POST',
-                body: new FormData(form)
-            })
-                .then(response => {
-                    let successbox = document.querySelector('.success-message');
-                    successbox.innerHTML = '<div class="alert alert-primary">We will get back to you ASAP!</div>';
-                    form.name = form.email = form.message = ' ';
-                    console.log('Success!', response)
-                })
-                .catch(error => console.error('Error!', error.message))
-        })
-    </script>
-    <script>
-        AOS.init();
-    </script>
+    <script src="{{asset('js/sidebar.js')}}"></script>
+    <script> AOS.init(); </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
