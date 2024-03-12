@@ -299,14 +299,14 @@
     </div>
     <div class="row mb-3 justify-content-center">
       <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile">
+        <div class="profile" id="husam">
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <span class="profile-span"></span>
           <div class="profile-text">
-            <h2>Hi, I'm Jason</h2>
-            <p>Core Member</p>
+            <h2>Hi, I'm Husam</h2>
+            <p>Co-Technical Lead</p>
           </div>
         </div>
       </div>

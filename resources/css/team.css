@@ -137,6 +137,10 @@ body{
     background-image: url("../assets/img/gdsc/tech/rony.jpg");
 }
 
+#husam .profile-span {
+    background-image: url("../assets/img/gdsc/tech/husam.jpg");
+}
+
 #wong .profile-span {
     background-image: url("../assets/img/gdsc/tech/wong.jpg");
 }
