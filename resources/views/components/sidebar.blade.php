@@ -9,18 +9,18 @@
 
     <ul class="list-unstyled components">
         <li>
-            <a class="navbar-link" href="#">Home</a>
+            <a class="navbar-link" href="/">Home</a>
         </li>
 
-        <li>
-            <a class="normal-nav-link" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">About</a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li>
-                    <a class="navbar-link" href="#moreondsc">Who We Are</a>
-                </li>
-                <li>
-                    <a class="navbar-link" href="#whattoexpect">What To Expect</a>
-                </li>
+
+        <li class="nav-item dropdown">
+            <a class="navbar-link dropdown-toggle" href="/#foote" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                About
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/#moreondsc">Who We Are</a></li>
+                <li><a class="dropdown-item" href="/#whattoexpect">What To Expect</a></li>
             </ul>
         </li>
         <li>
@@ -30,7 +30,7 @@
             <a class="navbar-link" href="events">Events</a>
         </li>
         <li>
-            <a class="navbar-link" href="#footer">Contact Us</a>
+            <a class="navbar-link" href="/#footer">Contact Us</a>
         </li>
 
     </ul>

@@ -3,7 +3,7 @@ $(document).ready(function () {
         theme: "minimal",
     });
 
-    $("#dismiss, .overlay, .navbar-link").on("click", function () {
+    $("#dismiss, .overlay").on("click", function () {
         $("#sidebar").removeClass("active");
         $(".overlay").removeClass("active");
     });
