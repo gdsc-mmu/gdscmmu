@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,5 @@ Route::get('/', [IndexController::class, 'index']);
 Route::get('/team', [IndexController::class, 'team']);
 
 Route::get('/events', [IndexController::class, 'events']);
+
+Route::get('/login', [UserController::class, 'login']);
