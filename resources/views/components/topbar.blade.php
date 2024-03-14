@@ -9,6 +9,7 @@
                 <li><a href="/team" class="nav-link text-white">Team</a></li>
                 <li><a href="/events" class="nav-link text-white">Events</a></li>
                 <li><a href="/#footer" class="nav-link text-white">Contact Us</a></li>
+                <li><a href="/login" class="nav-link text-white">Login</a></li>
             </ul>
 
             <div class="spacer">

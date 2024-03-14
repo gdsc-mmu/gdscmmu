@@ -32,6 +32,9 @@
         <li>
             <a class="navbar-link hide-sidebar" href="/#footer">Contact Us</a>
         </li>
+        <li>
+            <a class="navbar-link hide-sidebar" href="login">Login</a>
+        </li>
 
     </ul>
     <div class="social-handles">
