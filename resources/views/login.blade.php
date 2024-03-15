@@ -1,10 +1,10 @@
 <x-layout>
     <div class="d-flex align-items-center justify-content-center min-vh-100 flex-column">
-        <form action="">
+        <form action="/login" method="POST">
             <label for="username" class="form-label">Username:</label>
-            <input type="text" class="form-control" required>
-            <label for="username" class="form-label">Password:</label>
-            <input type="password" class="form-control" required>
+            <input type="text" class="form-control" name="username" required>
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control" name="password" required>
             <input type="submit" class="btn border rounded mt-2" value="Login">
         </form>
 
