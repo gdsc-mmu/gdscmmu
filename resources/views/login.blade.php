@@ -1,6 +1,6 @@
 <x-layout>
     <div class="d-flex align-items-center justify-content-center min-vh-100 flex-column">
-        <form action="/login" method="POST">
+        <form action="/login" method="POST" class="needs-validation" novalidate>
             <label for="username" class="form-label">Username:</label>
             <input type="text" class="form-control" name="username" required>
             <label for="password" class="form-label">Password:</label>
