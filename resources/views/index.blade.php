@@ -109,8 +109,7 @@
                 <div class="card">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
+                            <button type="button" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" role="button" aria-expanded="false" aria-controls="collapseOne">
                                 Who Should Join DSC MMU?
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
                             </button>
@@ -128,7 +127,7 @@
                 <div class="card">
                     <div class="card-header" id="headingTwo">
                         <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                            <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
                                 aria-expanded="false" aria-controls="collapseTwo">
                                 Why DSC MMU?
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -160,7 +159,7 @@
                 <div class="card">
                     <div class="card-header" id="headingThree">
                         <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                            <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree"
                                 aria-expanded="false" aria-controls="collapseThree">
                                 Who Would Benefit From Joining DSC MMU?
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -178,7 +177,7 @@
                 <div class="card">
                     <div class="card-header" id="headingThree">
                         <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven"
+                            <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseSeven"
                                 aria-expanded="false" aria-controls="collapseThree">
                                 What does the core team do? And how do I apply to join the core team?
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -198,7 +197,7 @@
                 <div class="card">
                     <div class="card-header" id="headingThree">
                         <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"
+                            <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour"
                                 aria-expanded="false" aria-controls="collapseFour">
                                 Can I join even though I’m not from a Computer Science background?
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -216,7 +215,7 @@
                 <div class="card">
                     <div class="card-header" id="headingThree">
                         <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive"
+                            <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFive"
                                 aria-expanded="false" aria-controls="collapseFive">
                                 I’m not an MMU student, can I still join?
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -234,7 +233,7 @@
                 <div class="card">
                     <div class="card-header" id="headingThree">
                         <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix"
+                            <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseSix"
                                 aria-expanded="false" aria-controls="collapseSix">
                                 Is DSC MMU available for MMU students from all campuses?
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
