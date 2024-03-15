@@ -49,6 +49,7 @@
 
         gtag('config', 'G-CCS3W88SJN');
     </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
@@ -73,6 +74,7 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
     <script src="{{asset('js/formValidation.js')}}"></script>
+    <x-flash />
 </body>
 
 </html>
