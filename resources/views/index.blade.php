@@ -299,7 +299,7 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <p>Engineered by the <a href="https://github.com/GDSCMMU" target="_">Technical Team</a> | All Rights
+                <p>Engineered by the <a href="https://github.com/gdsc-mmu" target="_">Technical Team</a> | All Rights
                     Reserved by GDSC@MMU</p>
             </div>
         </div>
