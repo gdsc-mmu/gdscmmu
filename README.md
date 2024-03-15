@@ -18,7 +18,8 @@ git submodule init
 git submodule update
 composer install
 cp .env.example .env
-php artisan migrate:refresh --seed
+php artisan migrate:refresh --seed 
+php artisan storage:link
 ```
 
 ## How to Run the Program
