@@ -36,4 +36,13 @@ class UserController extends Controller
         // redirect back to homepage, using alpinejs
         return redirect('/')->with('message', 'User created and logged in!');
     }
+
+    public function logout() {
+        auth()->logout();
+
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+
+        return redirect('/')->with('message', 'You have been logged out!');
+    }
 }

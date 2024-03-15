@@ -32,10 +32,15 @@
         <li>
             <a class="navbar-link hide-sidebar" href="/#footer">Contact Us</a>
         </li>
+        @unless(auth()->check())
         <li>
             <a class="navbar-link hide-sidebar" href="login">Login</a>
         </li>
-
+        @else
+        <li>
+            <a class="navbar-link hide-sidebar" href="/logout">Logout</a>
+        </li>
+        @endunless
     </ul>
     <div class="social-handles">
         <a href="https://github.com/GDSCMMU" target="_"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
