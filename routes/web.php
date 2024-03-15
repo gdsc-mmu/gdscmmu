@@ -22,3 +22,9 @@ Route::get('/team', [IndexController::class, 'team']);
 Route::get('/events', [IndexController::class, 'events']);
 
 Route::get('/login', [UserController::class, 'login']);
+
+Route::post('/login', [UserController::class, 'loginUser']);
+
+Route::get('/signup', [UserController::class, 'signup']);
+
+Route::post('/signup', [UserController::class, 'signupUser']);
