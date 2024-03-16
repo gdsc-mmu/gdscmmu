@@ -9,7 +9,11 @@
                 <li><a href="/team" class="nav-link text-white">Team</a></li>
                 <li><a href="/events" class="nav-link text-white">Events</a></li>
                 <li><a href="/#footer" class="nav-link text-white">Contact Us</a></li>
+                @unless(auth()->check())
                 <li><a href="/login" class="nav-link text-white">Login</a></li>
+            @else
+                <li><a href="/logout" class="nav-link text-white">Logout</a></li>
+                @endunless
             </ul>
 
             <div class="spacer">
