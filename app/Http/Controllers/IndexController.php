@@ -18,6 +18,6 @@ class IndexController extends Controller
 
     // Events page
     function events() {
-        return view('events');
+        return view('events.index');
     }
 }
