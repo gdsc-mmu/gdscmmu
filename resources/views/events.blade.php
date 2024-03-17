@@ -15,7 +15,7 @@
     <div id="events">
 
         <!-- add new events here -->
-        <x-event>
+        <x-event class="event-odd">
             <div class="col-md-6 d-flex justify-content-center align-items-center">
                 <img src="{{asset('assets/img/jsweek.png')}}" class="img-fluid rounded workshop-graphic"
                     alt="Webdev poster">
@@ -30,47 +30,40 @@
             </div>
         </x-event>
 
-        <div class="event event-even container-fluid">
-            <div data-aos="fade-down" data-aos-duration="1500" class="container">
-                <div class="row text-center text-md-left about-box">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <!-- <img src="https://via.placeholder.com/350x150.png" alt="placeholder image"> -->
-                        <img src="{{asset('assets/img/puansitievent.png')}}" class="img-fluid rounded workshop-graphic"
-                            alt="Webdev poster">
-                    </div>
-                    <div class="col-md-6 mb-4 d-flex flex-column justify-content-center">
-                        <h3 class="mb-4">Learn the Secrets Of The IT Industry!</h3>
-                        <p>
-                            Tips to kickstart your career in tech by the speaker, Ms. Siti Hafsah Mohd Desa, The Head of
-                            IT at Malaysia Airlines.
-                        </p>
-                        <p>
-                            Join us to learn about how Madam Siti became the Head of IT in MAS without an IT degree and
-                            stock up your toolbox for a career
-                            in the ever-changing world of technology.
-                            The following are the event details:
-                        <ul>
-                            <li>Date: 21st January 2021</li>
-                            <li>Time: 8:00p.m. - 9:30p.m.</li>
-                            <li>Platform: Google Meet</li>
-                        </ul>
-                        </p>
-
-                        <a href="https://dsc.community.dev/e/mcjg2d/" target="_">
-                            <button class="btn find-out-more mt-4 mr-4">
-                                Sign Up
-                            </button>
-                        </a>
-
-                    </div>
-
-                </div>
+        <x-event class="event-even">
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <!-- <img src="https://via.placeholder.com/350x150.png" alt="placeholder image"> -->
+                <img src="{{asset('assets/img/puansitievent.png')}}" class="img-fluid rounded workshop-graphic"
+                    alt="Webdev poster">
             </div>
-        </div>
+            <div class="col-md-6 mb-4 d-flex flex-column justify-content-center">
+                <h3 class="mb-4">Learn the Secrets Of The IT Industry!</h3>
+                <p>
+                    Tips to kickstart your career in tech by the speaker, Ms. Siti Hafsah Mohd Desa, The Head of
+                    IT at Malaysia Airlines.
+                </p>
+                <p>
+                    Join us to learn about how Madam Siti became the Head of IT in MAS without an IT degree and
+                    stock up your toolbox for a career
+                    in the ever-changing world of technology.
+                    The following are the event details:
+                <ul>
+                    <li>Date: 21st January 2021</li>
+                    <li>Time: 8:00p.m. - 9:30p.m.</li>
+                    <li>Platform: Google Meet</li>
+                </ul>
+                </p>
 
-        <div class="event event-odd container-fluid">
-            <div data-aos="fade-down" data-aos-duration="1500" class="container">
-                <div class="row text-center text-md-left about-box">
+                <a href="https://dsc.community.dev/e/mcjg2d/" target="_">
+                    <button class="btn find-out-more mt-4 mr-4">
+                        Sign Up
+                    </button>
+                </a>
+
+            </div>
+        </x-event>
+
+        <x-event class="event-odd">
                     <div class="col-md-6 mb-4 d-flex flex-column justify-content-center">
                         <h3 class="mb-4">Fluttered With Flutter</h3>
                         <p>
@@ -105,15 +98,11 @@
                         <img src="{{asset('assets/img/flutter-workshop-graphic.png')}}"
                             class="img-fluid rounded workshop-graphic" alt="Webdev poster">
                     </div>
-                </div>
-            </div>
-        </div>
+        </x-event>
 
 
 
-        <div class="event event-even container-fluid">
-            <div data-aos="fade-down" data-aos-duration="1500" class="container">
-                <div class="row text-center text-md-left about-box">
+        <x-event class="event-even">
                     <div class="col-md-6 d-flex justify-content-center align-items-center">
                         <!-- <img src="https://via.placeholder.com/350x150.png" alt="placeholder image"> -->
                         <img src="{{asset('assets/img/webdev_ig-01.png')}}" class="img-fluid rounded workshop-graphic"
@@ -149,9 +138,7 @@
                             </button></a>
                     </div>
 
-                </div>
-            </div>
-        </div>
+        </x-event>
 
 
 
