@@ -64,79 +64,77 @@
         </x-event>
 
         <x-event class="event-odd">
-                    <div class="col-md-6 mb-4 d-flex flex-column justify-content-center">
-                        <h3 class="mb-4">Fluttered With Flutter</h3>
-                        <p>
-                            Wanna learn how to build native cross platform apps?
-                            Sign up for our Flutter workshop series!
+            <div class="col-md-6 mb-4 d-flex flex-column justify-content-center">
+                <h3 class="mb-4">Fluttered With Flutter</h3>
+                <p>
+                    Wanna learn how to build native cross platform apps?
+                    Sign up for our Flutter workshop series!
 
-                            "Fluttered with Flutter" is an introductory Flutter workshop series organized by DSC@MMU,
-                            with 3 sessions.
+                    "Fluttered with Flutter" is an introductory Flutter workshop series organized by DSC@MMU,
+                    with 3 sessions.
 
-                            We've invited two Google Developer Experts on Flutter:
-                        <ul>
-                            <li>Muhammad Haris Bin Samingan, a Flutter developer and YouTuber in Singapore (P/S: He
-                                teaches Flutter on his <a
-                                    href="https://www.youtube.com/channel/UChMjpXwPFzK6x82qz-R_TEQ"
-                                    target="_">YouTube</a> channel, go check it out)</li>
-                            <li>Joshua de Guzman, a software engineer at Better Bank - Brooklyn, New York</li>
-                        </ul>
-                        This workshop series is beginner friendly, as we'll go from the fundamentals of programming with
-                        Dart, to having a basic understanding of Flutter.
-                        </p>
+                    We've invited two Google Developer Experts on Flutter:
+                <ul>
+                    <li>Muhammad Haris Bin Samingan, a Flutter developer and YouTuber in Singapore (P/S: He
+                        teaches Flutter on his <a href="https://www.youtube.com/channel/UChMjpXwPFzK6x82qz-R_TEQ"
+                            target="_">YouTube</a> channel, go check it out)</li>
+                    <li>Joshua de Guzman, a software engineer at Better Bank - Brooklyn, New York</li>
+                </ul>
+                This workshop series is beginner friendly, as we'll go from the fundamentals of programming with
+                Dart, to having a basic understanding of Flutter.
+                </p>
 
-                        <a href="https://dsc.community.dev/events/details/developer-student-clubs-multimedia-university-presents-fluttered-with-flutter-session-2/"
-                            target="_">
-                            <button class="btn find-out-more mt-4 mr-4">
-                                Sign Up
-                            </button>
-                        </a>
+                <a href="https://dsc.community.dev/events/details/developer-student-clubs-multimedia-university-presents-fluttered-with-flutter-session-2/"
+                    target="_">
+                    <button class="btn find-out-more mt-4 mr-4">
+                        Sign Up
+                    </button>
+                </a>
 
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <!-- <img src="https://via.placeholder.com/350x150.png" alt="placeholder image"> -->
-                        <img src="{{asset('assets/img/flutter-workshop-graphic.png')}}"
-                            class="img-fluid rounded workshop-graphic" alt="Webdev poster">
-                    </div>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <!-- <img src="https://via.placeholder.com/350x150.png" alt="placeholder image"> -->
+                <img src="{{asset('assets/img/flutter-workshop-graphic.png')}}"
+                    class="img-fluid rounded workshop-graphic" alt="Webdev poster">
+            </div>
         </x-event>
 
 
 
         <x-event class="event-even">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <!-- <img src="https://via.placeholder.com/350x150.png" alt="placeholder image"> -->
-                        <img src="{{asset('assets/img/webdev_ig-01.png')}}" class="img-fluid rounded workshop-graphic"
-                            alt="Webdev poster">
-                    </div>
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <!-- <img src="https://via.placeholder.com/350x150.png" alt="placeholder image"> -->
+                <img src="{{asset('assets/img/webdev_ig-01.png')}}" class="img-fluid rounded workshop-graphic"
+                    alt="Webdev poster">
+            </div>
 
-                    <div class="col-md-6 mb-4 d-flex flex-column justify-content-center">
-                        <h3 class="mb-4">Full Stack Web Development</h3>
-                        <p>
-                            Wanna learn full stack website development, from frontend to backend? Sign up for this
-                            workshop series!
-                            <br>
-                            <br>
-                            Here are the pre-requisites for this workshop series:
-                        <ul class="prereqs">
-                            <li>basic understanding of HTML, CSS</li>
-                            <li>JavaScript (variables, loops, functions, classes, JSON notation)</li>
-                            <li>fundamental modern JavaScript (ES6)</li>
-                            <li>basic understanding of the client-server model</li>
-                        </ul>
-                        Don't worry if you don't have a good grasp of the pre-requisites,
-                        after watching the following two videos, you'll be ready for the workshop series.
-                        <ul class="prereqs">
-                            <li><a href="https://www.youtube.com/watch?v=XQs5KcUj-Do" target="_">Video 1 : Git, HTML,
-                                    CSS</a></li>
-                            <li><a href="https://www.youtube.com/watch?v=xMs4ER1rcLg" target="_">Video 2 : JavaScript
-                                    Basics</a></li>
-                        </ul>
-                        </p>
-                        <a href="https://forms.gle/WCFcsWnvaPG9sZWA9" target="_"><button
-                                class="btn find-out-more mt-4 mr-4">
-                                Sign Up
-                            </button></a>
-                    </div>
+            <div class="col-md-6 mb-4 d-flex flex-column justify-content-center">
+                <h3 class="mb-4">Full Stack Web Development</h3>
+                <p>
+                    Wanna learn full stack website development, from frontend to backend? Sign up for this
+                    workshop series!
+                    <br>
+                    <br>
+                    Here are the pre-requisites for this workshop series:
+                <ul class="prereqs">
+                    <li>basic understanding of HTML, CSS</li>
+                    <li>JavaScript (variables, loops, functions, classes, JSON notation)</li>
+                    <li>fundamental modern JavaScript (ES6)</li>
+                    <li>basic understanding of the client-server model</li>
+                </ul>
+                Don't worry if you don't have a good grasp of the pre-requisites,
+                after watching the following two videos, you'll be ready for the workshop series.
+                <ul class="prereqs">
+                    <li><a href="https://www.youtube.com/watch?v=XQs5KcUj-Do" target="_">Video 1 : Git, HTML,
+                            CSS</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=xMs4ER1rcLg" target="_">Video 2 : JavaScript
+                            Basics</a></li>
+                </ul>
+                </p>
+                <a href="https://forms.gle/WCFcsWnvaPG9sZWA9" target="_"><button class="btn find-out-more mt-4 mr-4">
+                        Sign Up
+                    </button></a>
+            </div>
 
         </x-event>
 
