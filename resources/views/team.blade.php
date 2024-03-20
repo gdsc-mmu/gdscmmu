@@ -1,220 +1,97 @@
 <x-layout>
-  <link href="{{asset('css/team.css')}}" rel="stylesheet">
+    <link href="{{asset('css/team.css')}}" rel="stylesheet">
 
-  <div id="teamPage" class="main container-fluid d-flex align-items-center text-center">
-    <div data-aos="fade-down" data-aos-duration="1500" class="container">
-      <h1>Meet the Team!</h1>
-      <h2>Spearheading key departments</h2>
-      <h3>The people building a better tomorrow</h3>
-      <br><br><br>
-      <a href="#" target="_"><button class="btn find-out-more">
-          Apply Here
-        </button></a>
+    <div id="teamPage" class="main container-fluid d-flex align-items-center text-center">
+        <div data-aos="fade-down" data-aos-duration="1500" class="container">
+            <h1>Meet the Team!</h1>
+            <h2>Spearheading key departments</h2>
+            <h3>The people building a better tomorrow</h3>
+            <br><br><br>
+            <a href="#" target="_"><button class="btn find-out-more">
+                    Apply Here
+                </button></a>
+        </div>
     </div>
-  </div>
 
-  <div id="teams" class="teams team-1 container-fluid">
-    <h2 class="mb-2">GDSC MMU 2024</h2>
-    <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-      <div class="profile" id="firzan">
-        <span class="profile-span"></span>
-        <span class="profile-span"></span>
-        <span class="profile-span"></span>
-        <span class="profile-span"></span>
-        <div class="profile-text">
-          <h2>Hi, I'm Firzan</h2>
-          <p>Team Lead</p>
+    <div id="teams" class="teams team-1 container-fluid">
+        <h2 class="mb-2">GDSC MMU 2024</h2>
+        <h3 class="position-absolute start-50 translate-middle-x">Team Lead</h2>
+        <p class="mt-5"></p>
+        <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
+            <div class="profile" id="firzan">
+                <span class="profile-span"></span>
+                <span class="profile-span"></span>
+                <span class="profile-span"></span>
+                <span class="profile-span"></span>
+                <div class="profile-text">
+                    <h2>Hi, I'm Firzan</h2>
+                    <p>Team Lead</p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="row justify-content-center">
-      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile" id="aqra">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Aqra</h2>
-            <p>Team Co-Lead</p>
-          </div>
-        </div>
-      </div>
-      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile" id="inqsyira">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Inqsyira</h2>
-            <p>Team Co-Lead</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile" id="hanisa">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Hanisa</h2>
-            <p>Treasurer</p>
-          </div>
-        </div>
-      </div>
-      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile" id="amir-haziq">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Amir Haziq</h2>
-            <p>Secretary</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div id="teams" class="teams team-2 container-fluid">
-    <h2 class="mb-2">Team Co-Lead</h2>
-    <p>We proofread, a lot</p>
-    <div id="pic">
-      <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-        <div class="profile">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Najmi</h2>
-            <p>General Affairs Lead</p>
-          </div>
+    <div id="teams" class="teams team-2 container-fluid">
+        <h2 class="mb-2">Team Co-Lead</h2>
+        <p>We proofread, a lot</p>
+        <div class="row justify-content-center">
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="aqra">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Aqra</h2>
+                        <p>Team Co-Lead</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="inqsyira">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Inqsyira</h2>
+                        <p>Team Co-Lead</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="row justify-content-center">
-      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Liyanna</h2>
-            <p>Core Member</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- <div id="teams" class="teams team-3 container-fluid">
-    <h2 class="mb-2">Social Media Management</h2>
-    <p>AKA the influencers</p>
-    <div id="pic">
-      <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-        <div class="profile profile-3">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Pritesh</h2>
-            <p>Social Media and Community Outreach Lead</p>
-          </div>
+    <div id="teams" class="teams teams-2 container-fluid">
+        <h2 class="mb-2">Treasurer & Secretary</h2>
+        <p>We handle the money and the paperwork</p>
+        <div class="row justify-content-center">
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="hanisa">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Hanisa</h2>
+                        <p>Treasurer</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="amir-haziq">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Amir Haziq</h2>
+                        <p>Secretary</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="row justify-content-center">
-      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile profile-9">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Erica</h2>
-            <p>Core Member</p>
-          </div>
-        </div>
-      </div>
-      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile profile-10">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Shane</h2>
-            <p>Core Member</p>
-          </div>
-        </div>
-      </div>
-      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile profile-21">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Iffah</h2>
-            <p>Core Member</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- <div id="teams" class="teams team-4 container-fluid">
-    <h2 class="mb-2">Event Planning</h2>
-    <p>Wonder why our events are so smooth? We're the ones behind it</p>
-    <div id="pic">
-      <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-        <div class="profile profile-6">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Tuan</h2>
-            <p>Events and Planning Lead</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile profile-11">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Yu Jie</h2>
-            <p>Core Member</p>
-          </div>
-        </div>
-      </div>
-      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile profile-22">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Zhong Ken</h2>
-            <p>Core Member</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
 
   <div id="teams" class="teams team-5 container-fluid">
     <h2 class="mb-2">Media and Creativity, Social Media</h2>
