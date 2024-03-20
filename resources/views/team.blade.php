@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div id="teams" class="teams teams-2 container-fluid">
+    <div id="teams" class="teams team-2 container-fluid">
         <h2 class="mb-2">Treasurer & Secretary</h2>
         <p>We handle the money and the paperwork</p>
         <div class="row justify-content-center">
