@@ -3,18 +3,41 @@
     <link rel="stylesheet" href="{{asset('css/calendar.css')}}">
 
     <div id="events-header" class="main container-fluid d-flex align-items-center text-center">
-        <div data-aos="fade-down" data-aos-duration="1500" class="container">
-            <h1>Events</h1>
-            <h3>All the Stuff We Do</h3>
-            <a href="#events"><button class="btn find-out-more mt-4">
-                    View Events
-                </button></a>
+    <div data-aos="fade-down" data-aos-duration="1500" class="container">
+        <h1>Events</h1>
+        <h3>All the Stuff We Do</h3>
+        <div class="buttons-container">
+            <a href="#events" class="btn find-out-more mt-4">View Events</a>
+        </div>
+        <div class="buttons-container">
+            <a href="/events/create" class="btn find-out-more mt-4">Create New Event</a>
         </div>
     </div>
+</div>
+
 
     <div id="events">
+    @foreach ($event as $event) 
+
+<x-event class="event-odd">
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+    <img src="{{ asset('images/' . $event->image) }}" class="img-fluid rounded workshop-graphic"
+            alt="Webdev poster">
+    </div>
+    <div class="col-md-6 mt-4 mb-4 d-flex flex-column justify-content-center">
+        <h3 class="mb-4">{{ $event->title }}</h3>
+        <p>{{ $event->description }}</p>
+        <a href="/jsweek.html">
+            <button class="btn btn-warning">
+                Read More!
+            </button>
+        </a>
+    </div>
+</x-event>
+@endforeach
 
         <!-- add new events here -->
+        <!-- 
         <x-event class="event-odd">
             <div class="col-md-6 d-flex justify-content-center align-items-center">
                 <img src="{{asset('assets/img/jsweek.png')}}" class="img-fluid rounded workshop-graphic"
@@ -32,7 +55,7 @@
 
         <x-event class="event-even">
             <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <!-- <img src="https://via.placeholder.com/350x150.png" alt="placeholder image"> -->
+               <img src="https://via.placeholder.com/350x150.png" alt="placeholder image"> 
                 <img src="{{asset('assets/img/puansitievent.png')}}" class="img-fluid rounded workshop-graphic"
                     alt="Webdev poster">
             </div>
@@ -93,7 +116,7 @@
 
             </div>
             <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <!-- <img src="https://via.placeholder.com/350x150.png" alt="placeholder image"> -->
+                <img src="https://via.placeholder.com/350x150.png" alt="placeholder image"> 
                 <img src="{{asset('assets/img/flutter-workshop-graphic.png')}}"
                     class="img-fluid rounded workshop-graphic" alt="Webdev poster">
             </div>
@@ -103,7 +126,7 @@
 
         <x-event class="event-even">
             <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <!-- <img src="https://via.placeholder.com/350x150.png" alt="placeholder image"> -->
+                 <img src="https://via.placeholder.com/350x150.png" alt="placeholder image"> 
                 <img src="{{asset('assets/img/webdev_ig-01.png')}}" class="img-fluid rounded workshop-graphic"
                     alt="Webdev poster">
             </div>
@@ -136,7 +159,7 @@
                     </button></a>
             </div>
 
-        </x-event>
+        </x-event> -->
 
 
 

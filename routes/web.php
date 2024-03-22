@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,11 @@ Route::get('/', [IndexController::class, 'index']);
 
 Route::get('/team', [IndexController::class, 'team']);
 
-Route::get('/events', [IndexController::class, 'events']);
+Route::get('/events', [EventController::class, 'events'])->name('events.index');
+
+Route::get('/events/create', [EventController::class, 'create']);
+
+Route::post('/events/create/store', [EventController::class, 'store'])->name('events.store');
 
 Route::get('/login', [UserController::class, 'login']);
 
