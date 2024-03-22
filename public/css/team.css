@@ -1,0 +1,193 @@
+body{
+    background-image: url("../assets/img/team-background.svg") !important;
+    backdrop-filter: brightness(0.8);
+}
+
+#teamPage{
+    color: #343434
+}
+
+#teamPage h1 {
+    font-size: 4rem;
+    color: #0e174a;
+    text-shadow: 3px 3px #acaebe86;
+}
+
+#teamPage h2 {
+    color: #000000;
+}
+
+#teamPage h3{
+    color: #0e174a;
+    font-style: italic;
+}
+
+#teamPage p {
+    color: #000000;
+}
+
+.teams {
+    font-weight: 200;
+    padding: 4rem; 
+    -webkit-box-shadow: 0px 6px 5px 3px rgba(0,0,0,0.42);
+    -moz-box-shadow: 0px 6px 5px 3px rgba(0,0,0,0.42);
+    box-shadow: 0px 6px 5px 3px rgba(0,0,0,0.42);
+}
+
+.team-1 {
+    background-color: #FEF9E7;
+}
+
+.team-2 {
+    background-color: #FEF8E7;
+}
+
+.team-3 {
+    background-color: #FEF7E7;
+}
+
+.team-4 {
+    background-color: #FEF6E7;
+}
+
+.team-5 {
+    background-color: #FEF5E7;
+}
+
+.team-6 {
+    background-color: #FEF4E7;
+}
+
+.team-7 {
+    background-color: #FEF3E7;
+}
+
+.team-8 {
+    background-color: #FEF2E7;
+}
+
+.team-9 {
+    background-color: #FEF1E7;
+}
+
+.teams h2{
+    text-align: center;
+    font-weight: bold;
+}
+
+.teams p{
+    text-align: center;
+}
+
+.profile-1{
+    border-radius: 50% !important;
+}
+
+#pic {
+    border-radius: 50% !important;
+}
+
+.profile {
+    height: 300px;
+    max-width: 300px;
+}
+
+.profile-span {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    transition: all 1s;
+    border-radius: 5px;
+    animation: none;
+    border: none;
+}
+
+/*Profile images*/
+
+/*bigfive*/
+#firzan .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/firzan.jpg");
+}
+
+#aqra .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/aqra.jpg");
+}
+
+#inqsyira .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/inqsyira.jpg");
+}
+
+#hanisa .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/hanisa.jpg");
+}
+
+#amir-haziq .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/amir-haziq.jpg");
+}
+
+/*event team*/
+
+/*multimedia team*/
+
+/*publicity team*/
+
+/*tech team*/
+#rony .profile-span {
+    background-image: url("../assets/img/gdsc/tech/rony.jpg");
+}
+
+#husam .profile-span {
+    background-image: url("../assets/img/gdsc/tech/husam.jpg");
+}
+
+#wong .profile-span {
+    background-image: url("../assets/img/gdsc/tech/wong.jpg");
+}
+
+#nik .profile-span {
+    background-image: url("../assets/img/gdsc/tech/nik.jpg");
+}
+
+#fikri .profile-span {
+    background-image: url("../assets/img/gdsc/tech/fikri.jpg");
+}
+
+#amirah .profile-span {
+    background-image: url("../assets/img/gdsc/tech/amirah.jpg");
+}
+#sakib .profile-span {
+    background-image: url("../assets/img/gdsc/tech/sakib.jpg");
+}
+
+/*sponsorship & partnership team*/
+
+.profile {
+    margin: 20px auto !important;
+}
+
+#teams p {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+header{
+    z-index: 1000;
+    width: 100%;
+    position: fixed !important;
+    background-color: #1F1F1F ;
+    opacity: 0.7;
+    /* background-color: white; */
+}
+
+footer {
+    background-color: #FEF1E7 !important;
+}
+
+
+@media screen and (max-width: 1023px){
+    #teams {
+        font-size: 1rem;
+        padding: 2.5rem 1rem !important;
+    }
+}
