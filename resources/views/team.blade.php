@@ -277,6 +277,18 @@
                     </div>
                 </div>
             </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="Jihin">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Jihin</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
