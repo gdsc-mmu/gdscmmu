@@ -251,7 +251,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
                 <div class="profile" id="omar">
                     <span class="profile-span"></span>
