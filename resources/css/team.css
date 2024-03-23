@@ -125,9 +125,6 @@ body{
 #amir-haziq .profile-span {
     background-image: url("../assets/img/gdsc/bigfive/amir-haziq.jpg");
 }
-#omar .profile-span {
-    background-image: url("../assets/img/gdsc/bigfive/omar.jpg");
-}
 
 /*event team*/
 
@@ -158,6 +155,9 @@ body{
 
 #amirah .profile-span {
     background-image: url("../assets/img/gdsc/tech/amirah.jpg");
+}
+#omar .profile-span {
+    background-image: url("../assets/img/gdsc/tech/omar.jpg");
 }
 #sakib .profile-span {
     background-image: url("../assets/img/gdsc/tech/sakib.jpg");
