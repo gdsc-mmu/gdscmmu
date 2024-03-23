@@ -291,6 +291,20 @@
             </div>
         </div>
     </div>
+    <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="omar">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Omar</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="teams" class="teams team-8 container-fluid">
         <h2 class="mb-2">Skills Development</h2>
@@ -310,6 +324,7 @@
             </div>
         </div>
     </div>
+    
 
     <!-- <div id="teams" class="teams team-9 container-fluid">
     <h2 class="mb-2">HR and Communications</h2>
