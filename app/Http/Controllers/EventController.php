@@ -25,7 +25,7 @@ class EventController extends Controller
     $request->validate([
       'title' => 'required',
       'description' => 'required',
-      'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
   
     $event = new Event;
@@ -35,7 +35,9 @@ class EventController extends Controller
   
     $event->title = $request->title;
     $event->description = $request->description;
-    $event->image = $file_name;
+    if ($request->hasFile('image')) {
+      $event->image = $file_name;
+    }
     $event->save();
 
     return redirect()->route('events.index')->with('success', 'Event created successfully.');
