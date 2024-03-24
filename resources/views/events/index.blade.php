@@ -9,9 +9,11 @@
         <div class="buttons-container">
             <a href="#events" class="btn find-out-more mt-4">View Events</a>
         </div>
+        @if (Auth::check())
         <div class="buttons-container">
             <a href="/events/create" class="btn find-out-more mt-4">Create New Event</a>
         </div>
+        @endif
     </div>
 </div>
 

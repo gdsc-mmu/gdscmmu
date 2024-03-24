@@ -22,9 +22,9 @@ Route::get('/team', [IndexController::class, 'team']);
 
 Route::get('/events', [EventController::class, 'events'])->name('events.index');
 
-Route::get('/events/create', [EventController::class, 'create']);
+Route::get('/events/create', [EventController::class, 'create'])->middleware('auth');
 
-Route::post('/events/create/store', [EventController::class, 'store'])->name('events.store');
+Route::post('/events/create/store', [EventController::class, 'store'])->name('events.store')->middleware('auth');
 
 Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
 
