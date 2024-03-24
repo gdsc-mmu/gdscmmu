@@ -27,7 +27,7 @@
     <div class="col-md-6 mt-4 mb-4 d-flex flex-column justify-content-center">
         <h3 class="mb-4">{{ $event->title }}</h3>
         <p>{{ $event->description }}</p>
-        <a href="/jsweek.html">
+        <a href="/events/{{$event->id}}">
             <button class="btn btn-warning">
                 Read More!
             </button>

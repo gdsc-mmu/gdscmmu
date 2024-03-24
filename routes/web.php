@@ -26,6 +26,8 @@ Route::get('/events/create', [EventController::class, 'create']);
 
 Route::post('/events/create/store', [EventController::class, 'store'])->name('events.store');
 
+Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
+
 Route::get('/login', [UserController::class, 'login']);
 
 Route::post('/login', [UserController::class, 'loginUser']);

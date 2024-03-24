@@ -15,9 +15,4 @@ class IndexController extends Controller
     function team() {
         return view('team');
     }
-
-    // Events page
-    function events() {
-        return view('events.index');
-    }
 }

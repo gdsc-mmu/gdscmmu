@@ -40,4 +40,10 @@ class EventController extends Controller
 
     return redirect()->route('events.index')->with('success', 'Event created successfully.');
   }
+
+    // Show page
+    public function show(Event $event) {
+        return view('events.show', ['event' => $event]);
+    }
+
 }
