@@ -93,70 +93,6 @@
         </div>
     </div>
 
-    <div id="teams" class="teams team-5 container-fluid">
-        <h2 class="mb-2">Media and Creativity, Social Media</h2>
-        <p>We're the cool kids that design what you see here</p>
-        <div id="pic">
-            <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-                <div class="profile">
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <div class="profile-text">
-                        <h2>Hi, I'm Haqeem</h2>
-                        <p>Creativity and Media Lead</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="row justify-content-center">
-      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile profile-12">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Ayat</h2>
-            <p>Core Member</p>
-          </div>
-        </div>
-      </div>
-      <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-        <div class="profile profile-13">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Beckham</h2>
-            <p>Core Member</p>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    </div>
-
-    <!-- <div id="teams" class="teams team-6 container-fluid">
-    <h2 class="mb-2">Sponsorship and Industrial Outreach</h2>
-    <p>One man team? No problem!</p>
-    <div id="pic">
-      <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-        <div class="profile profile-7">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Jason</h2>
-            <p>Industrial Outreach Lead</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
     <div id="teams" class="teams team-7 container-fluid">
         <h2 class="mb-2">Technical and Technology</h2>
         <p>We hack, we tech</p>
@@ -324,24 +260,4 @@
             </div>
         </div>
     </div>
-    
-
-    <!-- <div id="teams" class="teams team-9 container-fluid">
-    <h2 class="mb-2">HR and Communications</h2>
-    <p>Oh another one man team</p>
-    <div id="pic">
-      <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-        <div class="profile profile-4">
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <span class="profile-span"></span>
-          <div class="profile-text">
-            <h2>Hi, I'm Nadia</h2>
-            <p>HR Lead</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
 </x-layout>
