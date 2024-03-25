@@ -97,41 +97,29 @@
         <h2 class="mb-2">Technical and Technology</h2>
         <p>We hack, we tech</p>
         <div id="pic">
-            <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-                <div class="profile" id="rony">
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <div class="profile-text">
-                        <h2>Hi, I'm Rony</h2>
-                        <p>Technical Lead</p>
+            <div class="row mb-3 justify-content-center">
+                <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center col-lg-4 col-md-6 col-sm-6">
+                    <div class="profile" id="rony">
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <div class="profile-text">
+                            <h2>Hi, I'm Rony</h2>
+                            <p>Technical Lead</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row mb-3 justify-content-center">
-            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-                <div class="profile" id="husam">
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <div class="profile-text">
-                        <h2>Hi, I'm Husam</h2>
-                        <p>Co-Technical Lead</p>
-                    </div>
-                </div>
-            </div>
-            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-                <div class="profile" id="sakib">
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <div class="profile-text">
-                        <h2>Hi, I'm Sakib</h2>
-                        <p>Core Member</p>
+                <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="profile" id="husam">
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <div class="profile-text">
+                            <h2>Hi, I'm Husam</h2>
+                            <p>Co-Technical Lead</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -150,31 +138,31 @@
                 </div>
             </div>
             <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-                <div class="profile">
+                <div class="profile" id="nik">
                     <span class="profile-span"></span>
                     <span class="profile-span"></span>
                     <span class="profile-span"></span>
                     <span class="profile-span"></span>
                     <div class="profile-text">
-                        <h2>Hi, I'm Yuen Khai</h2>
+                        <h2>Hi, I'm Nik</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="sakib">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Sakib</h2>
                         <p>Core Member</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row mb-3 justify-content-center">
-            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-                <div class="profile">
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <div class="profile-text">
-                        <h2>Hi, I'm Jason</h2>
-                        <p>Core Member</p>
-                    </div>
-                </div>
-            </div>
             <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
                 <div class="profile" id="amirah">
                     <span class="profile-span"></span>
@@ -202,7 +190,7 @@
         </div>
     </div>
 
-        <div class="row mb-3 justify-content-center">
+        <div class="row justify-content-center team-2">
             <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
                 <div class="profile" id="wong">
                     <span class="profile-span"></span>
@@ -211,18 +199,6 @@
                     <span class="profile-span"></span>
                     <div class="profile-text">
                         <h2>Hi, I'm Wong</h2>
-                        <p>Core Member</p>
-                    </div>
-                </div>
-            </div>
-            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-                <div class="profile" id="nik">
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <div class="profile-text">
-                        <h2>Hi, I'm Nik</h2>
                         <p>Core Member</p>
                     </div>
                 </div>
@@ -240,7 +216,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
     <div id="teams" class="teams team-8 container-fluid">
         <h2 class="mb-2">Skills Development</h2>
