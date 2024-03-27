@@ -37,3 +37,11 @@ Route::get('/signup', [UserController::class, 'signup']);
 Route::post('/signup', [UserController::class, 'signupUser']);
 
 Route::get('/logout', [UserController::class, 'logout']);
+
+Route::get('/recovery', [UserController::class, 'recovery'])->middleware('guest')->name('password.request');
+
+Route::post('/recovery', [UserController::class, 'sendRecoveryEmail'])->middleware('guest')->name('password.email');
+
+Route::get('/recovery/{token}', [UserController::class, 'resetPasswordForm'])->middleware('guest')->name('password.reset');
+
+Route::post('/recovery/{token}', [UserController::class, 'resetPassword'])->middleware('guest')->name('password.update');
