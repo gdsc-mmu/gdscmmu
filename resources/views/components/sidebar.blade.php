@@ -43,7 +43,7 @@
         @endunless
     </ul>
     <div class="social-handles">
-        <a href="https://github.com/GDSCMMU" target="_"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+        <a href="https://github.com/gdsc-mmu" target="_"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
         <a href="https://www.facebook.com/dscmmu" target="_"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
         <a href="https://www.linkedin.com/in/dsc-mmu-123a261ba/" target="_"><i class="fa fa-linkedin fa-2x"
                 aria-hidden="true"></i></a>
