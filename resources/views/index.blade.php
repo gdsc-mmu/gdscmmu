@@ -90,7 +90,7 @@
                     <div class="guest-recruitment">
                         <div class="mb-2">Passionate about a topic and want to be a speaker?</div>
                         <div>
-                            <a href="https://forms.gle/GMKvauzW5nAYpTCx7" target="_"><button class="btn find-out-more">
+                            <a href="https://forms.gle/RVsXQTj44MCQ1H1d6" target="_"><button class="btn find-out-more">
                                     Propose Here
                                 </button></a>
                         </div>
