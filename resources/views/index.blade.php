@@ -291,12 +291,6 @@
                 <!-- <div class="col-md-4">
 
           </div> -->
-                <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 text-center">
-                    <h5 class="mb-4">Join Us On Discord!</h5>
-                    <iframe class="discord-widget" src="https://discord.com/widget?id=772431062532882432&theme=dark"
-                        width="350" height="500" allowtransparency="true" frameborder="0"
-                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-                </div>
             </div>
             <div class="row justify-content-center">
                 <p>Engineered by the <a href="https://github.com/gdsc-mmu" target="_">Technical Team</a> | All Rights
