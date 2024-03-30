@@ -20,22 +20,40 @@
 
     <div id="events">
         @foreach ($event as $event) 
+            @if ($loop->iteration % 2 == 0)
+                <x-event class="event-even">
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                        <img src="{{ asset('images/' . $event->image) }}" class="img-fluid rounded workshop-graphic"
+                                                                          alt="Webdev poster">
+                    </div>
+                    <div class="col-md-6 mt-4 mb-4 d-flex flex-column justify-content-center">
+                        <h3 class="mb-4">{{ $event->title }}</h3>
+                        <p>{{ $event->description }}</p>
+                        <a href="/events/{{$event->id}}">
+                            <button class="btn btn-warning">
+                                Read More!
+                            </button>
+                        </a>
+                    </div>
+                </x-event>
+            @else
+                <x-event class="event-odd">
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                        <img src="{{ asset('images/' . $event->image) }}" class="img-fluid rounded workshop-graphic"
+                                                                          alt="Webdev poster">
+                    </div>
+                    <div class="col-md-6 mt-4 mb-4 d-flex flex-column justify-content-center">
+                        <h3 class="mb-4">{{ $event->title }}</h3>
+                        <p>{{ $event->description }}</p>
+                        <a href="/events/{{$event->id}}">
+                            <button class="btn btn-warning">
+                                Read More!
+                            </button>
+                        </a>
+                    </div>
+                </x-event>
+            @endif
 
-            <x-event class="event-odd">
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
-                    <img src="{{ asset('images/' . $event->image) }}" class="img-fluid rounded workshop-graphic"
-                                                                      alt="Webdev poster">
-                </div>
-                <div class="col-md-6 mt-4 mb-4 d-flex flex-column justify-content-center">
-                    <h3 class="mb-4">{{ $event->title }}</h3>
-                    <p>{{ $event->description }}</p>
-                    <a href="/events/{{$event->id}}">
-                        <button class="btn btn-warning">
-                            Read More!
-                        </button>
-                    </a>
-                </div>
-            </x-event>
         @endforeach
     </div>
 
