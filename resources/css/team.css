@@ -127,10 +127,88 @@ body{
 }
 
 /*event team*/
+#addina .profile-span {
+    background-image: url("../assets/img/gdsc/event/addina.jpg");
+}
+
+#angel .profile-span {
+    background-image: url("../assets/img/gdsc/event/angel.jpg");
+}
+
+#aqilah .profile-span {
+    background-image: url("../assets/img/gdsc/event/aqilah.jpg");
+}
+
+#ariana .profile-span {
+    background-image: url("../assets/img/gdsc/event/ariana.jpg");
+}
+
+#koay-yee-shuen .profile-span {
+    background-image: url("../assets/img/gdsc/event/koay-yee-shuen.jpg");
+}
+
+#nashitah .profile-span {
+    background-image: url("../assets/img/gdsc/event/nashitah.jpg");
+}
+
+#syahir .profile-span {
+    background-image: url("../assets/img/gdsc/event/syahir.jpg");
+}
+
+#vaarindran .profile-span {
+    background-image: url("../assets/img/gdsc/event/vaarindran.jpg");
+}
 
 /*multimedia team*/
+#aishah .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/aishah.jpg");
+}
+
+#emiera .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/emiera.jpg");
+}
+
+#amira .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/amira.jpg");
+}
+
+#danesh-veran .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/danesh-veran.jpg");
+}
+
+#dhiyaul .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/dhiyaul.jpg");
+}
+
+#hemma-ravindran .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/hemma-ravindran.jpg");
+}
+
+#satishwaran .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/satishwaran.jpg");
+}
+
 
 /*publicity team*/
+#yasmin .profile-span {
+    background-image: url("../assets/img/gdsc/publicity/yasmin.jpg");
+}
+
+#afif-afham .profile-span {
+    background-image: url("../assets/img/gdsc/publicity/afif-afham.jpg");
+}
+
+#adam-hadziq .profile-span {
+    background-image: url("../assets/img/gdsc/publicity/adam-hadziq.jpg");
+}
+
+#azlan .profile-span {
+    background-image: url("../assets/img/gdsc/publicity/azlan.jpg");
+}
+
+#lim-xin-yee .profile-span {
+    background-image: url("../assets/img/gdsc/publicity/lim-xin-yee.jpg");
+}
 
 /*tech team*/
 #rony .profile-span {
@@ -168,6 +246,17 @@ body{
 }
 
 /*sponsorship & partnership team*/
+#arique .profile-span {
+    background-image: url("../assets/img/gdsc/sponsorship_partnership/arique.jpg");
+}
+
+#zharfan-mirza .profile-span {
+    background-image: url("../assets/img/gdsc/sponsorship_partnership/zharfan-mirza.jpg");
+}
+
+#al-amin .profile-span {
+    background-image: url("../assets/img/gdsc/sponsorship_partnership/al-amin.jpg");
+}
 
 .profile {
     margin: 20px auto !important;

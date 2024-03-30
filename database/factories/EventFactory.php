@@ -21,7 +21,6 @@ class EventFactory extends Factory
             'description' => $this->faker->text,
             'date' => $this->faker->date,
             'time' => $this->faker->time,
-            'user_id' => 1
         ];
     }
 }
