@@ -1,10 +1,10 @@
-body{
+body {
     background-image: url("../assets/img/team-background.svg") !important;
     backdrop-filter: brightness(0.8);
 }
 
-#teamPage{
-    color: #343434
+#teamPage {
+    color: #343434;
 }
 
 #teamPage h1 {
@@ -17,7 +17,7 @@ body{
     color: #000000;
 }
 
-#teamPage h3{
+#teamPage h3 {
     color: #0e174a;
     font-style: italic;
 }
@@ -28,58 +28,58 @@ body{
 
 .teams {
     font-weight: 200;
-    padding: 4rem; 
-    -webkit-box-shadow: 0px 6px 5px 3px rgba(0,0,0,0.42);
-    -moz-box-shadow: 0px 6px 5px 3px rgba(0,0,0,0.42);
-    box-shadow: 0px 6px 5px 3px rgba(0,0,0,0.42);
+    padding: 4rem;
+    -webkit-box-shadow: 0px 6px 5px 3px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow: 0px 6px 5px 3px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 6px 5px 3px rgba(0, 0, 0, 0.42);
 }
 
 .team-1 {
-    background-color: #FEF9E7;
+    background-color: #fef9e7;
 }
 
 .team-2 {
-    background-color: #FEF8E7;
+    background-color: #fef8e7;
 }
 
 .team-3 {
-    background-color: #FEF7E7;
+    background-color: #fef7e7;
 }
 
 .team-4 {
-    background-color: #FEF6E7;
+    background-color: #fef6e7;
 }
 
 .team-5 {
-    background-color: #FEF5E7;
+    background-color: #fef5e7;
 }
 
 .team-6 {
-    background-color: #FEF4E7;
+    background-color: #fef4e7;
 }
 
 .team-7 {
-    background-color: #FEF3E7;
+    background-color: #fef3e7;
 }
 
 .team-8 {
-    background-color: #FEF2E7;
+    background-color: #fef2e7;
 }
 
 .team-9 {
-    background-color: #FEF1E7;
+    background-color: #fef1e7;
 }
 
-.teams h2{
+.teams h2 {
     text-align: center;
     font-weight: bold;
 }
 
-.teams p{
+.teams p {
     text-align: center;
 }
 
-.profile-1{
+.profile-1 {
     border-radius: 50% !important;
 }
 
@@ -188,7 +188,6 @@ body{
     background-image: url("../assets/img/gdsc/multimedia/satishwaran.jpg");
 }
 
-
 /*publicity team*/
 #yasmin .profile-span {
     background-image: url("../assets/img/gdsc/publicity/yasmin.jpg");
@@ -267,21 +266,20 @@ body{
     margin: 0 auto;
 }
 
-header{
+header {
     z-index: 1000;
     width: 100%;
     position: fixed !important;
-    background-color: #1F1F1F ;
+    background-color: #1f1f1f;
     opacity: 0.7;
     /* background-color: white; */
 }
 
 footer {
-    background-color: #FEF1E7 !important;
+    background-color: #fef1e7 !important;
 }
 
-
-@media screen and (max-width: 1023px){
+@media screen and (max-width: 1023px) {
     #teams {
         font-size: 1rem;
         padding: 2.5rem 1rem !important;
