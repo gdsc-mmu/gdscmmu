@@ -19,12 +19,19 @@ class EventController extends Controller
        
         return view('events.create'); 
     }
+
+    public function editPage(){
+      $event = Event::orderBy('created_at', 'desc')->get();
+      return view('events.edit', ['event' => $event]); 
+  }
     
     public function store(Request $request) {
 
     $request->validate([
-      'title' => 'required',
+      'name' => 'required',
       'description' => 'required',
+      'date' => 'required|date',
+    //'time' => 'required|date_format: H:i', 
       'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
   
@@ -32,9 +39,11 @@ class EventController extends Controller
   
     $file_name = time() . '.' . request()->image->getClientOriginalExtension();
     request()->image->move(public_path('images'), $file_name);
-  
-    $event->title = $request->title;
+    
+    $event->name = $request->name;
     $event->description = $request->description;
+    $event->date = $request->date;
+  //$event->time = $request->time;
     if ($request->hasFile('image')) {
       $event->image = $file_name;
     }
@@ -47,5 +56,13 @@ class EventController extends Controller
     public function show(Event $event) {
         return view('events.show', ['event' => $event]);
     }
+
+    public function destroy($id){
+
+      $event = Event::find($id);
+      $event->delete();
+      return redirect()->route('events.index')->with('success', 'Event deleted successfully');
+    }
+
 
 }

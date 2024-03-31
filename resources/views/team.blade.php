@@ -92,6 +92,279 @@
             </div>
         </div>
     </div>
+    
+    <div id="teams" class="teams team-3 container-fluid">
+        <h2 class="mb-2">Event</h2>
+        <p>We organize. You engage</p>
+        <div id="pic">
+            <div class="row mb-3 justify-content-center">
+                <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center col-lg-4 col-md-6 col-sm-6">
+                    <div class="profile" id="aqilah">
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <div class="profile-text">
+                            <h2>Hi, I'm Aqilah</h2>
+                            <p>Event Lead</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="profile" id="nashitah">
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <div class="profile-text">
+                            <h2>Hi, I'm Nashitah</h2>
+                            <p>Co-Event Lead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3 justify-content-center">
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="addina">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Addina</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="angel">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Angel</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="ariana">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Ariana</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="koay-yee-shuen">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Koay Yee Shuen</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="syahir">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Syahir</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="vaarindran">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Vaarindran</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="teams" class="teams team-4 container-fluid">
+        <h2 class="mb-2">Multimedia</h2>
+        <p>We design for the events!</p>
+        <div id="pic">
+            <div class="row mb-3 justify-content-center">
+                <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center col-lg-4 col-md-6 col-sm-6">
+                    <div class="profile" id="aishah">
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <div class="profile-text">
+                            <h2>Hi, I'm Aisyah</h2>
+                            <p>Multimedia Lead</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="profile" id="emiera">
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <div class="profile-text">
+                            <h2>Hi, I'm Emiera</h2>
+                            <p>Co-Multimedia Lead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3 justify-content-center">
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="amira">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Amira</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="danesh-veran">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Danesh</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="dhiyaul">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Dhiyaul</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="hemma-ravindran">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Hemma</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="satishwaran">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Satishwaran</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="teams" class="teams team-5 container-fluid">
+        <h2 class="mb-2">Publicity</h2>
+        <p>We promote with impact</p>
+        <div id="pic">
+            <div class="row mb-3 justify-content-center">
+                <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center col-lg-4 col-md-6 col-sm-6">
+                    <div class="profile" id="yasmin">
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <div class="profile-text">
+                            <h2>Hi, I'm Yasmin</h2>
+                            <p>Publicity Lead</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="profile" id="afif-afham">
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <span class="profile-span"></span>
+                        <div class="profile-text">
+                            <h2>Hi, I'm Afif</h2>
+                            <p>Co-Publicity Lead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3 justify-content-center">
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="adam-hadziq">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Adam</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="azlan">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Azlan</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
+                <div class="profile" id="lim-xin-yee">
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <span class="profile-span"></span>
+                    <div class="profile-text">
+                        <h2>Hi, I'm Lim Xin Yee</h2>
+                        <p>Core Member</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="teams" class="teams team-3 container-fluid">
         <h2 class="mb-2">Event</h2>
@@ -534,7 +807,6 @@
                 </div>
             </div>
         </div>
-            
 
     <div id="teams" class="teams team-8 container-fluid">
         <h2 class="mb-2">Skills Development</h2>
