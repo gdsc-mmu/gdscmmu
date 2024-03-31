@@ -1,0 +1,48 @@
+.login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff; 
+    color: #000000; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  .blue{
+    color: #007bff;
+  }
+  .login-popup h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .login-popup input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-popup button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-popup button:hover {
+    background-color: #0056b3;
+  }
+  
+  .login-popup p {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
