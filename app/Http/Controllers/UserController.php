@@ -90,7 +90,7 @@ class UserController extends Controller
         $user = User::where('email', $email)->firstOrFail();
 
         if(!Password::tokenExists($user, $token)) {
-            return redirect('/recovery')->withErrors(['email' => 'Invalid token!', 'message' => 'Invalid token!'];
+            return redirect('/recovery')->withErrors(['email' => 'Invalid token!', 'message' => 'Invalid token!']);
         }
         return view('auth.reset-password', ['token' => $token, 'email' => $email]);
     }
