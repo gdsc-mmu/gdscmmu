@@ -37,14 +37,6 @@ class EventController extends Controller
     $formFields['time'] = now()->format('H:i:s');
     $formFields['user_id'] = auth()->user()->id;
   
-    $event = new Event;
-  
-    if ($request->hasFile('image')) {
-      $file_name = time() . '.' . request()->image->getClientOriginalExtension();
-      request()->image->move(public_path('images'), $file_name);
-      $event->image = $file_name;
-    }
-    
     if ($request->hasFile('image')) {
         $file_name = time() . '.' . request()->image->getClientOriginalExtension();
         request()->image->move(public_path('images'), $file_name);
