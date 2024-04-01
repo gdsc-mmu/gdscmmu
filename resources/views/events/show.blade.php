@@ -9,12 +9,14 @@
 
         @if (Auth::check())
             <div class="d-flex">
-                <a class="btn btn-warning">
+                <a href="/events" class="btn btn-warning">
                     Edit event
                 </a>
-                <a href="/events/edit-page/delete/{{$event->id}}" class="btn btn-danger ms-2">
-                    Delete event
-                </a>
+                <form href="/events/{{$event->id}}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button class="btn btn-danger ms-2">Delete event</button>
+                </form>
             </div>
         @endif
     </div>

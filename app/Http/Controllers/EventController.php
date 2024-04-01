@@ -61,7 +61,7 @@ class EventController extends Controller
 
       $event = Event::find($id);
       $event->delete();
-      return redirect()->route('events.index')->with('success', 'Event deleted successfully');
+      return redirect('/events')->with('message', 'Event deleted successfully');
     }
 
 

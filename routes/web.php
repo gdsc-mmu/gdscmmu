@@ -28,9 +28,9 @@ Route::get('/events/edit-page', [EventController::class, 'editPage'])->middlewar
 
 Route::post('/events/create/store', [EventController::class, 'store'])->name('events.store')->middleware('auth');
 
-Route::get('/events/edit-page/delete/{event}', [EventController::class, 'destroy'])->name('events.delete');
-
 Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
+
+Route::DELETE('/events/{event}', [EventController::class, 'destroy'])->name('events.delete');
 
 Route::get('/login', [UserController::class, 'login']);
 
