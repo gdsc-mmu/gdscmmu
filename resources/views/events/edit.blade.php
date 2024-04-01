@@ -1,5 +1,7 @@
-<div>
+<x-layout>
     <h1>Edit page</h1>
+</x-layout>
+<div>
     <div id="events">
     @foreach ($event as $event) 
 

@@ -6,6 +6,16 @@
         <p>{{ $event->date }}</p>
         <p>{{ $event->time }}</p>
         <p>Belongs to user id : {{ $event->user_id }}</p>
-    </div>
+
+        @if (Auth::check())
+            <div class="d-flex">
+                <a class="btn btn-warning">
+                    Edit event
+                </a>
+                <a href="/events/edit-page/delete/{{$event->id}}" class="btn btn-danger ms-2">
+                    Delete event
+                </a>
+            </div>
+        @endif
     </div>
 </x-layout>

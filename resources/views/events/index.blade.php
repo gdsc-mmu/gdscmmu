@@ -15,14 +15,6 @@
                 </div>
             @endif
         </div>
-        @if (Auth::check())
-        <div class="buttons-container">
-            <a href="/events/edit-page" class="btn find-out-more mt-4">Edit Events</a>
-        </div>
-        <div class="buttons-container">
-            <a href="/events/create" class="btn find-out-more mt-4">Create New Event</a>
-        </div>
-        @endif
     </div>
 
 
