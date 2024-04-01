@@ -20,18 +20,22 @@ class EventController extends Controller
         return view('events.create'); 
     }
 
-    public function editPage(){
+    public function edit(){
       $event = Event::orderBy('created_at', 'desc')->get();
       return view('events.edit', ['event' => $event]); 
   }
     
     public function store(Request $request) {
 
-    $request->validate([
+    $formFields = $request->validate([
       'title' => 'required',
       'description' => 'required',
       'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
+
+    $formFields['date'] = now()->format('Y-m-d');
+    $formFields['time'] = now()->format('H:i:s');
+    $formFields['user_id'] = auth()->user()->id;
   
     $event = new Event;
   
@@ -41,15 +45,12 @@ class EventController extends Controller
       $event->image = $file_name;
     }
     
-    $event->title = $request->title;
-    $event->description = $request->description;
-    $event->date = now()->format('Y-m-d');
-    $event->time = now()->format('H:i:s');
-    $event->user_id = auth()->user()->id;
     if ($request->hasFile('image')) {
-      $event->image = $file_name;
+        $file_name = time() . '.' . request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('images'), $file_name);
+        $formFields['image'] = $file_name;
     }
-    $event->save();
+    Event::create($formFields);
 
     return redirect()->route('events.index')->with('success', 'Event created successfully.');
   }
