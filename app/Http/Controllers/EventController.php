@@ -28,7 +28,7 @@ class EventController extends Controller
     public function store(Request $request) {
 
     $request->validate([
-      'name' => 'required',
+      'title' => 'required',
       'description' => 'required',
       'date' => 'required|date',
     //'time' => 'required|date_format: H:i', 
@@ -40,7 +40,7 @@ class EventController extends Controller
     $file_name = time() . '.' . request()->image->getClientOriginalExtension();
     request()->image->move(public_path('images'), $file_name);
     
-    $event->name = $request->name;
+    $event->title = $request->title;
     $event->description = $request->description;
     $event->date = $request->date;
   //$event->time = $request->time;

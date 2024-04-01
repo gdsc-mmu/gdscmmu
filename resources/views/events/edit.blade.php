@@ -1,29 +1,25 @@
 <x-layout>
-    <h1>Edit page</h1>
+    <div class="d-flex align-items-center justify-content-center flex-column min-vh-100">
+        <h3>Edit page</h3>
+        <form action="/events/{{$event->id}}/edit" method="POST" enctype="multipart/form-data">
+            @method('PUT')
+            @csrf
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{$event->title}}" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3"
+                    required>{{$event->description}}</textarea>
+            </div>
+            <input type="hidden" name="date" value="{{ now()->format('Y-m-d') }}">
+            <input type="hidden" name="time" value="{{ now()->format('H:i:s')}}">
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form> 
+    </div>
 </x-layout>
-<div>
-    <div id="events">
-    @foreach ($event as $event) 
-
-<x-event class="event-odd">
-    <div class="col-md-6 d-flex justify-content-center align-items-center">
-    <img src="{{ asset('images/' . $event->image) }}" class="img-fluid rounded workshop-graphic"
-            alt="Webdev poster">
-    </div>
-    <div class="col-md-6 mt-4 mb-4 d-flex flex-column justify-content-center">
-        <h3 class="mb-4">{{ $event->title }}</h3>
-        <p>{{ $event->description }}</p>
-        <a >
-            <button class="btn btn-warning">
-                Edit event
-            </button>
-        </a>
-        <a href="/events/edit-page/delete/{{$event->id}}">
-            <button class="btn btn-warning">
-                Delete event
-            </button>
-        </a>
-    </div>
-</x-event>
-@endforeach
-</div>
