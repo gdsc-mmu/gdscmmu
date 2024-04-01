@@ -59,5 +59,25 @@ class EventController extends Controller
       return redirect('/events')->with('message', 'Event deleted successfully');
     }
 
+    public function update(Request $request, Event $event) {
+        $formFields = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $file_name = time() . '.' . request()->image->getClientOriginalExtension();
+            request()->image->move(public_path('images'), $file_name);
+            $formFields['image'] = $file_name;
+        }
+
+        $formFields['date'] = now()->format('Y-m-d');
+        $formFields['time'] = now()->format('H:i:s');
+        $event->update($formFields);
+
+        return redirect('/events')->with('message', 'Event updated successfully');
+    }
+
 
 }
