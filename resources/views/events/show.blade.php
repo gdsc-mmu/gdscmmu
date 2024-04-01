@@ -9,7 +9,7 @@
 
         @if (Auth::check())
             <div class="d-flex">
-                <a href="/events" class="btn btn-warning">
+                <a href="/events/{{$event->id}}/edit" class="btn btn-warning">
                     Edit event
                 </a>
                 <form href="/events/{{$event->id}}" method="POST">

@@ -20,8 +20,8 @@ class EventController extends Controller
         return view('events.create'); 
     }
 
-    public function edit(){
-      $event = Event::orderBy('created_at', 'desc')->get();
+    public function edit($id){
+      $event = Event::find($id);
       return view('events.edit', ['event' => $event]); 
   }
     
