@@ -20,8 +20,6 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('admin')
         ]);
 
-        Event::factory()->count(10)->create([
-            'user_id' => $user->id
-        ]);
+        Event::factory()->count(10)->create();
     }
 }
