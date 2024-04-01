@@ -14,7 +14,7 @@
       @endif
       <div class="card p-3 mb-3">
         <label for="floatingInput">Event Name</label>
-        <input class="form-control" type="text" name="name">
+        <input class="form-control" type="text" name="title">
       </div>
       <div class="card p-3 mb-3">
         <label for="floatingTextArea">Description</label>
@@ -24,10 +24,6 @@
         <label for="formFile" class="form-label">Add Image</label>
         <img src="" alt="" class="img-blog">
         <input class="form-control" type="file" name="image">
-      </div>
-      <div class="card p-3 mb-3">
-        <label for="event_date">Event Date</label>
-        <input class="form-control" type="date" name="date"> 
       </div>
       <div class="card p-3 mb-3">
         <button class="btn btn-secondary" type="submit">ADD EVENT</button>
