@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Popup</title>
+  <link rel="stylesheet" href="RegisterPopup.css">
+</head>
+<body>
+  <div>
+    <button id="openRegister">Open Register</button>
+
+    <div id="registerPopup" class="register-popup">
+      <h2>Register</h2>
+      <button class="google-button">
+        <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="Google Logo">
+        Sign in with Google
+      </button>
+      <input type="email" id="email" placeholder="Email*">
+      <input type="text" id="username" placeholder="Username*">
+      <input type="password" id="password" placeholder="Password*">
+      <button id="registerBtn">Register</button>
+      <p>Already got an account? <a href="#">Log In!</a></p>
+      <button id="closeRegister">Close</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const openRegisterBtn = document.getElementById("openRegister");
+      const closeRegisterBtn = document.getElementById("closeRegister");
+      const registerPopup = document.getElementById("registerPopup");
+      const emailInput = document.getElementById("email");
+      const usernameInput = document.getElementById("username");
+      const passwordInput = document.getElementById("password");
+
+      openRegisterBtn.addEventListener("click", function() {
+        registerPopup.style.display = "block";
+      });
+
+      closeRegisterBtn.addEventListener("click", function() {
+        registerPopup.style.display = "none";
+      });
+
+      document.getElementById("registerBtn").addEventListener("click", function() {
+        const email = emailInput.value;
+        const username = usernameInput.value;
+        const password = passwordInput.value;
+        // Implement your registration logic here
+        console.log('Registering with:', email, username, password);
+      });
+    });
+  </script>
+</body>
+</html>
