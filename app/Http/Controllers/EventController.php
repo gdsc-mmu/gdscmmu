@@ -21,6 +21,9 @@ class EventController extends Controller
     }
 
     public function edit($id){
+      if (auth()->user()->id !== $event->user_id) {
+          return redirect('/events')->with('error', 'Unauthorized access');
+      }
       $event = Event::find($id);
       return view('events.edit', ['event' => $event]); 
   }
@@ -53,6 +56,9 @@ class EventController extends Controller
     }
 
     public function destroy($id){
+      if (auth()->user()->id !== $event->user_id) {
+          return redirect('/events')->with('error', 'Unauthorized access');
+      }
 
       $event = Event::find($id);
       $event->delete();
