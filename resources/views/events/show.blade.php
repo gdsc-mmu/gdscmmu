@@ -7,7 +7,7 @@
         <p>{{ $event->time }}</p>
         <p>Belongs to user id : {{ $event->user_id }}</p>
 
-        @if (Auth::check())
+        @if (Auth::check() && Auth::user()->id == $event->user_id)
             <div class="d-flex">
                 <a href="/events/{{$event->id}}/edit" class="btn btn-warning">
                     Edit event
