@@ -807,23 +807,4 @@
                 </div>
             </div>
         </div>
-
-    <div id="teams" class="teams team-8 container-fluid">
-        <h2 class="mb-2">Skills Development</h2>
-        <p>We get to decide what workshops we'll have</p>
-        <div id="pic">
-            <div data-aos="fade-down" data-aos-duration="1500" class="justify-self-center">
-                <div class="profile">
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <span class="profile-span"></span>
-                    <div class="profile-text">
-                        <h2>Hi, I'm Daniel</h2>
-                        <p>Core Member</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </x-layout>
