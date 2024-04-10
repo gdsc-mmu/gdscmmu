@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
+use App\Http\Middleware\EnsureCommittee;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +23,13 @@ Route::get('/team', [IndexController::class, 'team']);
 
 Route::get('/events', [EventController::class, 'events'])->name('events.index');
 
-Route::get('/events/create', [EventController::class, 'create'])->middleware('auth');
+Route::get('/events/create', [EventController::class, 'create'])->middleware('auth', EnsureCommittee::class);
 
-Route::post('/events/create/store', [EventController::class, 'store'])->name('events.store')->middleware('auth');
+Route::post('/events/create/store', [EventController::class, 'store'])->name('events.store')->middleware('auth', EnsureCommittee::class);
 
-Route::get('/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit')->middleware('auth');
+Route::get('/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit')->middleware('auth', EnsureCommittee::class);
 
-Route::PUT('/events/{event}/edit', [EventController::class, 'update'])->name('events.update')->middleware('auth');
+Route::PUT('/events/{event}/edit', [EventController::class, 'update'])->name('events.update')->middleware('auth', EnsureCommittee::class);
 
 Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
 
