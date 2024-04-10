@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@test.com',
             'password' => bcrypt('admin'),
-            'user_type' => 'commitee',
+            'user_type' => 'committee',
         ]);
 
         Event::factory()->count(10)->create();
