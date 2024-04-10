@@ -26,8 +26,10 @@ class UserController extends Controller
             'name' => ['required', 'min:3'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => 'required|min:6|confirmed',
-            'user_type' => 'member',
         ]);
+
+        // Set user type
+        $formFields['user_type'] = 'member';
 
         // Hash password
         $formFields['password'] = bcrypt($formFields['password']);
