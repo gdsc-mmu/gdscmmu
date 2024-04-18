@@ -36,7 +36,10 @@
             </ul>
         </nav>
     </div>
-    <div id="loginPopup" class="login-popup">
+  </div>
+</header> 
+
+  <div id="loginPopup" class="login-popup bg-white opacity-100 z-3">
       <h2>Login</h2>
       <input type="text" id="username" placeholder="Username">
       <input type="password" id="password" placeholder="Password">
@@ -44,7 +47,6 @@
       <p class="blue">Forget your password?</p>
       <p>Haven’t got an account? <span class="blue">Sign up!</span></p>
       <button id="closeLogin">Close</button>
-    </div>
   </div>
     
   <script>
@@ -74,5 +76,3 @@
             loginPopup.style.display = "none";
         });
     </script>
-
-</header>
