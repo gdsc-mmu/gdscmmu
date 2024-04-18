@@ -1,6 +1,5 @@
 body {
-    background-image: url("../assets/img/team-background.svg") !important;
-    backdrop-filter: brightness(0.8);
+    background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)),url("../assets/img/team-background.svg");
 }
 
 #teamPage {
