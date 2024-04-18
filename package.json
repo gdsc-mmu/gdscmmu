@@ -6,8 +6,18 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@types/react-beautiful-dnd": "^13.1.8",
+        "@types/react-dom": "^18.2.25",
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.8.0",
         "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "@vitejs/plugin-react": "^4.2.1",
+        "dotenv": "^16.4.5",
+        "react-beautiful-dnd": "^13.1.1",
+        "react-dom": "^18.2.0",
+        "react-responsive-modal": "^6.4.2",
+        "react-toastify": "^10.0.5"
     }
 }
