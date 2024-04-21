@@ -245,15 +245,17 @@ body {
 
 /*sponsorship & partnership team*/
 #arique .profile-span {
-    background-image: url("../assets/img/gdsc/sponsorship_partnership/arique.jpg");
+    background-image: url("../assets/img/gdsc/snp/arique.jpg");
+    /*background-image: url("../assets/img/gdsc/tech/Jihin.jpg");*/
+    /*background-color: black;*/
 }
 
 #zharfan-mirza .profile-span {
-    background-image: url("../assets/img/gdsc/sponsorship_partnership/zharfan-mirza.jpg");
+    background-image: url("../assets/img/gdsc/snp/zharfan-mirza.jpg");
 }
 
 #al-amin .profile-span {
-    background-image: url("../assets/img/gdsc/sponsorship_partnership/al-amin.jpg");
+    background-image: url("../assets/img/gdsc/snp/al-amin.jpg");
 }
 
 .profile {
