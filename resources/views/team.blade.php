@@ -652,7 +652,7 @@
                         <span class="profile-span"></span>
                         <div class="profile-text">
                             <h2>Hi, I'm Rony</h2>
-                            <p>Technical Lead</p>
+                            <p>Tech Lead</p>
                         </div>
                     </div>
                 </div>
@@ -664,7 +664,7 @@
                         <span class="profile-span"></span>
                         <div class="profile-text">
                             <h2>Hi, I'm Husam</h2>
-                            <p>Co-Technical Lead</p>
+                            <p>Co-Tech Lead</p>
                         </div>
                     </div>
                 </div>
