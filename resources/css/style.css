@@ -127,9 +127,7 @@ body > * {
 
 body {
   background-image: url("../assets/img/main-background.svg");
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
+  object-fit: contain;
 }
 
 header {
