@@ -1,6 +1,6 @@
-.container {
+#event-container {
+    font-family: sans-serif;
     width: 600px;
-    margin: 50px auto;
     padding: 30px;
     border: 1px solid #ddd;
     border-radius: 0;
@@ -8,6 +8,7 @@
     justify-content: space-between;
     align-items: flex-end;
 }
+
 .add-event-form {
     width: 500%
 }
