@@ -23,7 +23,7 @@
                         aria-hidden="true"></i></a>
                 <a href="https://www.facebook.com/dscmmu" target="_"><i class="fa fa-facebook fa-2x"
                         aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/dsc-mmu-123a261ba/" target="_"><i class="fa fa-linkedin fa-2x"
+                <a href="https://www.linkedin.com/company/developer-student-clubs-mmu" target="_"><i class="fa fa-linkedin fa-2x"
                         aria-hidden="true"></i></a>
                 <a href="https://www.youtube.com/channel/UCSonnieKvZDRUrKmzzUdv1w?" target="_"><i
                         class="fa fa-youtube-play fa-2x" aria-hidden="true"></i></a>
