@@ -1,3 +1,7 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.3)), url('https://media.istockphoto.com/id/1174704913/photo/neo-mint-background-grunge-texture-paper-cotton-concrete-cement-abstract-mint-green-teal.webp?b=1&s=170667a&w=0&k=20&c=jdYxVR24Swi4p_UZTRoDqNeWbJ2NJaV_qfQwNpb8VQo=');
+}
+
 #event-container {
     font-family: sans-serif;
     width: 600px;
