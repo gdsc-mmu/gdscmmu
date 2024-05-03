@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     // chekc if text isn't finished yet
     if (i < (text.length)) {
       // add next character to h1
-     document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+     document.querySelector(".anim-typewriter").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
 
       // wait for a while and call this function again for next character
       setTimeout(function() {
