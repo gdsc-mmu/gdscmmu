@@ -23,7 +23,7 @@
             @if ($loop->iteration % 2 == 0)
                 <x-event class="event-even">
                     <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <img src="{{ asset('images/' . $event->image) }}" class="img-fluid rounded workshop-graphic"
+                        <img src="{{$event->image ? asset('images/' . $event->image) : 'https://images.unsplash.com/photo-1520004434532-668416a08753?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" class="img-fluid rounded workshop-graphic"
                                                                           alt="Webdev poster">
                     </div>
                     <div class="col-md-6 mt-4 mb-4 d-flex flex-column justify-content-center">
@@ -39,7 +39,7 @@
             @else
                 <x-event class="event-odd">
                     <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <img src="{{ asset('images/' . $event->image) }}" class="img-fluid rounded workshop-graphic"
+                        <img src="{{$event->image ? asset('images/' . $event->image) : 'https://images.unsplash.com/photo-1520004434532-668416a08753?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" class="img-fluid rounded workshop-graphic"
                                                                           alt="Webdev poster">
                     </div>
                     <div class="col-md-6 mt-4 mb-4 d-flex flex-column justify-content-center">
