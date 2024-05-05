@@ -24,17 +24,17 @@
             </ul>
         </li>
         <li>
-            <a class="navbar-link hide-sidebar" href="team">Meet the Team</a>
+            <a class="navbar-link hide-sidebar" href="/team">Meet the Team</a>
         </li>
         <li>
-            <a class="navbar-link hide-sidebar" href="events">Events</a>
+            <a class="navbar-link hide-sidebar" href="/events">Events</a>
         </li>
         <li>
             <a class="navbar-link hide-sidebar" href="/#footer">Contact Us</a>
         </li>
         @unless(auth()->check())
         <li>
-            <a class="navbar-link hide-sidebar" href="login">Login</a>
+            <a class="navbar-link hide-sidebar" href="/login">Login</a>
         </li>
         @else
         <li>
