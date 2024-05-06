@@ -21,10 +21,10 @@ class EventController extends Controller
     }
 
     public function edit($id){
+      $event = Event::find($id);
       if (auth()->user()->id !== $event->user_id) {
           return redirect('/events')->with('error', 'Unauthorized access');
       }
-      $event = Event::find($id);
       return view('events.edit', ['event' => $event]); 
   }
     
