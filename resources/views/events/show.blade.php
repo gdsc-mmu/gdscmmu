@@ -1,26 +1,76 @@
 <x-layout>
-    <div class="d-flex align-items-center justify-content-center min-vh-100 flex-column">
-        <h1>Show page</h1>
-
-        <div class="card mb-4" style="max-width: 600px;">
-            <img src="{{ asset('images/' . $event->image) }}" class="card-img-top img-fluid rounded workshop-graphic" alt="Event poster">
-            <div class="card-body">
-    
-                <h2 class="card-title">{{ $event->title }}</h2>
-                <p class="card-text">Description: {{ $event->description }}</p>
-                <p class="card-text">Date Created: {{ $event->date }}, {{ $event->time }}</p>
-                <p class="card-text">Belongs to user id: {{ $event->user_id }}</p>
-
-                @if (Auth::check() && Auth::user()->id == $event->user_id)
-                    <div class="d-flex">
-                        <a href="/events/{{$event->id}}/edit" class="btn btn-warning btn-sm me-2">Edit event</a>
-                        <form href="/events/{{$event->id}}" method="POST">
-                            @method('DELETE')
-                            @csrf
-                            <button class="btn btn-danger btn-sm">Delete event</button>
-                        </form>
+    <div class="container-fluid" style="padding-top: 40px;"> 
+        <div class="row justify-content-center">
+            <div class="col-md-8 mt-5"> 
+                <!-- Event Banner Section -->
+                <div data-aos="fade-down" data-aos-duration="1500" class="mb-4 text-center banner-section">
+                    <img src="{{ asset('images/' . $event->image) }}" class="img-fluid mx-auto d-block rounded-start rounded-end shadow" style="max-width: auto; height: auto;" alt="Event banner">
+                </div>
+                
+                <!-- Event Title Section -->
+                <div data-aos="fade-down" data-aos-duration="1500" class="text-center mb-4">
+                    <h1 style="color: white;">{{ $event->title }}</h1>
+                </div>
+                
+                <!-- Event Details Section -->
+                <section data-aos="fade-down" data-aos-duration="1500" class="bg-light p-4 rounded mb-4 shadow">
+                    <div class="text-center">
+                        <div class="gray-area mt-3">
+                            <h2 class="description-title mb-4">Details</h2>
+                            <hr style="border-top: 2px solid black; margin: 20px 0;">
+                            <p class="card-text mt-3" style="font-size: 1.1rem;">
+                                {!! nl2br($event->description) !!}
+                            </p>
+                        </div>
                     </div>
-                @endif
+                </section>
+
+                <!-- Organizers Section -->
+                <section data-aos="fade-down" data-aos-duration="1500" class="bg-light p-4 rounded mb-4 text-center shadow">
+                    <h2 class="mb-4">Organizers</h2>
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-md-4 mb-4">
+                            <div class="rounded-circle bg-black mx-auto" style="width: 150px; height: 150px;"></div>
+                            <p class="mt-2">Organizer 1</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="rounded-circle bg-black mx-auto" style="width: 150px; height: 150px;"></div>
+                            <p class="mt-2">Organizer 2</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="rounded-circle bg-black mx-auto" style="width: 150px; height: 150px;"></div>
+                            <p class="mt-2">Organizer 3</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About the Event Section -->
+                <section data-aos="fade-down" data-aos-duration="1500" class="bg-light p-4 rounded mb-4 shadow">
+                    <div class="text-center">
+                        <h2 class="mb-4">About the Event</h2>
+                        <hr style="border-top: 2px solid black; margin: 20px 0;">
+                        <p class="card-text" style="font-size: 1.1rem;">
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- Card Footer (Actions) -->
+                <div class="card-footer text-center mb-3"> 
+                    @if (Auth::check() && Auth::user()->id == $event->user_id)
+                        <div class="d-flex justify-content-center">
+                            <div class="me-2">
+                                <a href="/events/{{$event->id}}/edit" class="btn btn-warning">Edit event</a>
+                            </div>
+                            <div>
+                                <form action="/events/{{$event->id}}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Delete event</button>
+                                </form>
+                            </div>
+                        </div>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

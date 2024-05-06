@@ -1,28 +1,37 @@
 <x-layout>
-    <div class="d-flex align-items-center justify-content-center flex-column min-vh-100">
-        <div class="card p-4" style="max-width: 600px;">
-            <h3 class="card-title mb-4">Edit Event</h3>
-            <form action="/events/{{$event->id}}/edit" method="POST" enctype="multipart/form-data">
-                @method('PUT')
-                @csrf
-                <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" value="{{$event->title}}" required>
+    <div class="container-fluid" style="padding-top: 40px;"> 
+        <div class="row justify-content-center">
+            <div class="col-md-8 mt-5" data-aos="fade-down" data-aos-duration="1500"> 
+                <!-- Edit Event Form -->
+                <div class="card p-4">
+                    <h3 class="card-title mb-4 text-center fs-4">Edit Event</h3>
+                    <form action="/events/{{$event->id}}/edit" method="POST" enctype="multipart/form-data">
+                        @method('PUT')
+                        @csrf
+                        <div class="mb-3" data-aos="fade-up"> 
+                            <label for="title" class="form-label fs-5">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" value="{{$event->title}}" required>
+                        </div>
+                        <div class="mb-3" data-aos="fade-up">
+                            <label for="description" class="form-label fs-5">Description</label>
+                            <textarea class="form-control" id="description" name="description" rows="8" required>{{$event->description}}</textarea>
+                        </div>
+                        <div class="mb-3" data-aos="fade-up">
+                            <label for="image" class="form-label fs-5">Image</label>
+                            <input type="file" class="form-control" id="image" name="image">
+                        </div>
+                        @if($event->image)
+                        <div class="mb-3" data-aos="fade-up">
+                            <label class="fs-5">Previous Image:</label><br>
+                            <img src="{{ asset('images/' . $event->image) }}" alt="Previous Image" style="max-width: 300px;">
+                        </div>
+                        @endif
+                        <div class="d-grid gap-2" data-aos="fade-up">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea class="form-control" id="description" name="description" rows="3" required>{{$event->description}}</textarea>
-                </div>
-                <input type="hidden" name="date" value="{{ now()->format('Y-m-d') }}">
-                <input type="hidden" name="time" value="{{ now()->format('H:i:s')}}">
-                <div class="mb-3">
-                    <label for="image" class="form-label">Image</label>
-                    <input type="file" class="form-control" id="image" name="image">
-                </div>
-                <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </x-layout>
