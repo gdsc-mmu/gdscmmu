@@ -1,0 +1,38 @@
+# render.yaml
+databases:
+  - name: gdscmmu_db
+    plan: free
+    databaseName: gdscmmu_db
+    user: gdscmmu_db
+
+services:
+  - type: web
+    plan: free
+    name: gdscmmu
+    runtime: docker
+    envVars:
+      # Database
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gdscmmu_db
+          property: connectionString
+      - key: DB_CONNECTION
+        value: pgsql
+      # Laravel
+      - key: APP_KEY
+        sync: false
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: LOG_CHANNEL
+        value: stderr
+      # Image-specific vars (richarvey/nginx-php-fpm)
+      - key: WEBROOT
+        value: /var/www/html/public
+      - key: RUN_SCRIPTS
+        value: 1
+      - key: REAL_IP_HEADER
+        value: 1
+      - key: SKIP_COMPOSER
+        value: 1
