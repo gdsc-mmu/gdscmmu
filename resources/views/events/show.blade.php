@@ -48,8 +48,7 @@
                     <div class="text-center">
                         <h2 class="mb-4">About the Event</h2>
                         <hr style="border-top: 2px solid black; margin: 20px 0;">
-                        <p class="card-text" style="font-size: 1.1rem;">
-                        </p>
+                        <p class="card-text" style="font-size: 1.1rem;">{{$event->description}}</p>
                     </div>
                 </section>
                 
