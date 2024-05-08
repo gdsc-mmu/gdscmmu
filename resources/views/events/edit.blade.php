@@ -26,7 +26,7 @@
                             <img src="{{ asset('images/' . $event->image) }}" alt="Previous Image" style="max-width: 300px;">
                         </div>
                         @endif
-                        <div class="d-grid gap-2" data-aos="fade-up">
+                        <div class="d-grid">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
