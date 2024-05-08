@@ -1,7 +1,6 @@
 <x-layout>
-    <div class="container-fluid" style="padding-top: 40px;"> 
-        <div class="row justify-content-center">
-            <div class="col-md-8 mt-5"> 
+        <div class="row pt-5">
+            <div class="col-md-8 offset-md-2 mt-5"> 
                 <!-- Event Banner Section -->
                 <div data-aos="fade-down" data-aos-duration="1500" class="mb-4 text-center banner-section">
                     <img src="{{ asset('images/' . $event->image) }}" class="img-fluid mx-auto d-block rounded-start rounded-end shadow" style="max-width: auto; height: auto;" alt="Event banner">
@@ -73,5 +72,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </x-layout>
