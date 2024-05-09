@@ -14,7 +14,7 @@
                         </div>
                         <div class="mb-3" data-aos="fade-up">
                             <label for="description" class="form-label fs-5">Description</label>
-                            <textarea class="form-control" id="description" name="description" rows="8" required>{{$event->description}}</textarea>
+                            <textarea class="form-control" id="description" name="description" wrap="hard" rows="8" required>{{$event->description}}</textarea>
                         </div>
                         <div class="mb-3" data-aos="fade-up">
                             <label for="image" class="form-label fs-5">Image</label>
