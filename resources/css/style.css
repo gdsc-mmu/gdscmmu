@@ -167,7 +167,7 @@ header:hover {
   opacity: 1;
 }
 
-.anim-typewriter {
+.anim-typewriter, .anim-typewriter-static {
   font-size: 6rem !important;
   /* font-family: "Montserrat", sans-serif; */
   font-weight: 800;
@@ -503,7 +503,7 @@ footer.container-fluid {
 }
 
 @media screen and (max-width: 767px) {
-  .anim-typewriter {
+  .anim-typewriter, .anim-typewriter-static {
     font-size: 2.5rem !important;
   }
   h3 {
@@ -515,7 +515,7 @@ footer.container-fluid {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .anim-typewriter {
+  .anim-typewriter, .anim-typewriter-static {
     font-size: 4rem !important;
   }
 }

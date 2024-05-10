@@ -1,7 +1,8 @@
 <x-layout>
     <div data-aos="fade-down" data-aos-duration="1500"
         class="main d-flex flex-column align-items-center justify-content-center text-center">
-        <h1 class="anim-typewriter"></h1>
+        <h1 class="anim-typewriter d-none d-md-block"></h1>
+        <h1 class="anim-typewriter-static d-md-none">#GDSC@MMU</h1>
         <h3>Google Developer Student Club, Multimedia University</h3>
         <div class="buttons">
             <a href="#" target="_"><button class="btn find-out-more mt-4 mr-4">
