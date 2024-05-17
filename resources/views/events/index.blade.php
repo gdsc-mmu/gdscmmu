@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-md-6 mt-4 mb-4 d-flex flex-column justify-content-center">
                         <h3 class="mb-4">{{ $event->title }}</h3>
-                        <p>{!! $event->description !!}</p>
+                        <p>{!! nl2br($event->description) !!}</p>
                         <a href="/events/{{$event->id}}">
                             <button class="btn btn-warning">
                                 Read More!
@@ -57,12 +57,12 @@
         @endforeach
     </div>
 
-    <div class="event event-even container-fluid align-items-center text-center">
-        <div data-aos="fade-down" data-aos-duration="1500" class="container">
-            <h3 class="mb-4">Future Events</h2>
-                <div id="calendar"></div>
-        </div>
-    </div>
+    {{--<div class="event event-even container-fluid align-items-center text-center">--}}
+        {{--<div data-aos="fade-down" data-aos-duration="1500" class="container">--}}
+            {{--<h3 class="mb-4">Future Events</h2>--}}
+                {{--<div id="calendar"></div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwnUWrY8gzGqbVZ4on6-hsPAbms8khQltLrV85cqOmO6kQklv0/exec'
