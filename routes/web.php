@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\DiveController;
 use App\Http\Middleware\EnsureCommittee;
 
 /*
@@ -34,6 +35,8 @@ Route::PUT('/events/{event}/edit', [EventController::class, 'update'])->name('ev
 Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
 
 Route::DELETE('/events/{event}', [EventController::class, 'destroy'])->name('events.delete');
+
+Route::get('/dives', [DiveController::class, 'dives'])->name('dives.index');
 
 Route::get('/login', [UserController::class, 'login']);
 
