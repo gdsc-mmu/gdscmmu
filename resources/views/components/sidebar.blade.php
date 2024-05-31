@@ -30,6 +30,9 @@
             <a class="navbar-link hide-sidebar" href="/events">Events</a>
         </li>
         <li>
+            <a class="navbar-link hide-sidebar" href="/dives">Dives</a>
+        </li>
+        <li>
             <a class="navbar-link hide-sidebar" href="/#footer">Contact Us</a>
         </li>
         @unless(auth()->check())
