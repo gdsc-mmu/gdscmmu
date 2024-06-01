@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Dive;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Event;
@@ -22,5 +24,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Event::factory()->count(10)->create();
+        Dive::factory()->count(10)->create();
     }
 }
