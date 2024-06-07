@@ -12,4 +12,9 @@ class DiveController extends Controller
         $dives = Dive::orderBy('created_at', 'desc')->get();
         return view('dives.index', ['dives' => $dives]);
     }
+
+    public function show(Dive $dive)
+    {
+        return view('dives.show', ['dive' => $dive]);
+    }
 }
