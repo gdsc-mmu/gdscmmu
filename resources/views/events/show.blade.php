@@ -1,6 +1,6 @@
 <x-layout>
     <link rel="stylesheet" href="{{asset('css/events.css')}}">
-    <div class="row pt-5">
+    <div class="row p-5">
         <div class="col-md-8 offset-md-2 mt-5">
             <!-- Event Banner Section -->
             <div data-aos="fade-down" data-aos-duration="1500" class="mt-2 mb-4 text-center banner-section">
