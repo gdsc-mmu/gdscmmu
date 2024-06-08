@@ -1,4 +1,5 @@
 <x-layout>
+    <link rel="stylesheet" href="{{asset('css/events.css')}}">
     <div class="row pt-5">
         <div class="col-md-8 offset-md-2 mt-5">
             <!-- Event Banner Section -->
@@ -12,40 +13,6 @@
             <div data-aos="fade-down" data-aos-duration="1500" class="text-center mb-4">
                 <h1 style="color: white;">{{ $event->title }}</h1>
             </div>
-
-            <!-- Event Details Section -->
-            {{--<section data-aos="fade-down" data-aos-duration="1500" class="bg-light p-4 rounded mb-4 shadow">--}}
-                {{--<div class="text-center">--}}
-                    {{--<div class="gray-area mt-3">--}}
-                        {{--<h2 class="description-title mb-4">Details</h2>--}}
-                        {{--
-                        <hr style="border-top: 2px solid black; margin: 20px 0;">--}}
-                        {{--<p class="card-text mt-3" style="font-size: 1.1rem;">--}}
-                            {{--</p>--}}
-                        {{--
-                    </div>--}}
-                    {{--</div>--}}
-                {{--</section>--}}
-
-            <!-- Organizers Section -->
-            {{--<section data-aos="fade-down" data-aos-duration="1500"
-                class="bg-light p-4 rounded mb-4 text-center shadow">--}}
-                {{--<h2 class="mb-4">Organizers</h2>--}}
-                {{--<div class="row justify-content-center align-items-center">--}}
-                    {{--<div class="col-md-4 mb-4">--}}
-                        {{--<div class="rounded-circle bg-black mx-auto" style="width: 150px; height: 150px;"></div>--}}
-                        {{--<p class="mt-2">Organizer 1</p>--}}
-                        {{--</div>--}}
-                    {{--<div class="col-md-4 mb-4">--}}
-                        {{--<div class="rounded-circle bg-black mx-auto" style="width: 150px; height: 150px;"></div>--}}
-                        {{--<p class="mt-2">Organizer 2</p>--}}
-                        {{--</div>--}}
-                    {{--<div class="col-md-4 mb-4">--}}
-                        {{--<div class="rounded-circle bg-black mx-auto" style="width: 150px; height: 150px;"></div>--}}
-                        {{--<p class="mt-2">Organizer 3</p>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</section>--}}
 
             <!-- About the Event Section -->
             <section data-aos="fade-down" data-aos-duration="1500" class="bg-light p-4 rounded mb-4 shadow">
