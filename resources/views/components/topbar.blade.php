@@ -9,11 +9,9 @@
                 <li><a href="/events" class="nav-link text-white">Events</a></li>
                 <li><a href="/dives" class="nav-link text-white">Dives</a></li>
                 <li><a href="/#footer" class="nav-link text-white">Contact Us</a></li>
-                @unless(auth()->check())
-                <li><a href="/login" class="nav-link text-white">Login</a></li>
-                @else
-                <li><a href="/logout" class="nav-link text-white">Logout</a></li>
-                @endunless
+                @if(auth()->check())
+                    <li><a href="/logout" class="nav-link text-white">Logout</a></li>
+                @endif
             </ul>
 
             <div class="spacer">
