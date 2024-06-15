@@ -1,6 +1,6 @@
 <x-layout>
-    <link rel="stylesheet" href="{{asset(" css/dives.css")}}">
-    <div class="row pt-5">
+    <link rel="stylesheet" href="{{asset("css/dives.css")}}">
+    <div id="dives" class="row pt-5 min-vh-100">
         <div class="col-md-8 offset-md-2 mt-5">
             <!-- Dive Banner Section -->
             <div data-aos="fade-down" data-aos-duration="1500" class="mt-2 mb-4 text-center banner-section">
