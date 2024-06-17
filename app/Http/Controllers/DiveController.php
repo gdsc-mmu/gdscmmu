@@ -17,4 +17,10 @@ class DiveController extends Controller
     {
         return view('dives.show', ['dive' => $dive]);
     }
+
+    public function edit(Dive $dive)
+    {
+        return view('dives.edit', ['dive' => $dive]);
+    }
+
 }

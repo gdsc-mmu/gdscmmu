@@ -38,6 +38,8 @@ Route::DELETE('/events/{event}', [EventController::class, 'destroy'])->name('eve
 
 Route::get('/dives', [DiveController::class, 'dives'])->name('dives.index');
 
+Route::get('/dives/{dive}/edit', [DiveController::class, 'edit'])->name('dives.edit')->middleware('auth');
+
 Route::get('/dives/{dive}', [DiveController::class, 'show'])->name('dives.show');
 
 Route::get('/login', [UserController::class, 'login']);
