@@ -4,7 +4,7 @@
         <div class="col-md-8 offset-md-2 mt-5">
             <!-- Dive Banner Section -->
             <div data-aos="fade-down" data-aos-duration="1500" class="mt-2 mb-4 text-center banner-section">
-                <img src="{{$dive->image ? asset('images/' . $dive->image) : 'https://images.unsplash.com/photo-1520004434532-668416a08753?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}}"
+                <img src="{{Str::startsWith($dive->image, 'https') ? $dive->image : asset('image/' . $dive-image)}}"
                     class="img-fluid mx-auto d-block rounded-start rounded-end shadow"
                     style="max-width: auto; height: auto;" alt="Dive banner">
             </div>
