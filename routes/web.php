@@ -44,7 +44,7 @@ Route::get('/dives/{dive}', [DiveController::class, 'show'])->name('dives.show')
 
 Route::get('/login', [UserController::class, 'login']);
 
-Route::post('/login', [UserController::class, 'loginUser']);
+Route::post('/login', [UserController::class, 'loginUser'])->name('login');
 
 Route::get('/signup', [UserController::class, 'signup']);
 
