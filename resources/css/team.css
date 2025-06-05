@@ -102,160 +102,125 @@ body {
     border: none;
 }
 
-/*Profile images*/
+/*Profile Pictures*/
 
 /*bigfive*/
-#firzan .profile-span {
-    background-image: url("../assets/img/gdsc/bigfive/firzan.jpg");
+/* Team Lead*/
+#adam .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/adam.png");
 }
 
-#aqra .profile-span {
-    background-image: url("../assets/img/gdsc/bigfive/aqra.jpg");
+/* Team Co-Lead I*/
+#shayan .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/shayan.JPG");
 }
 
-#inqsyira .profile-span {
-    background-image: url("../assets/img/gdsc/bigfive/inqsyira.jpg");
+/* Team Co-Lead II*/
+#junkit .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/junkit.jpg");
 }
 
-#hanisa .profile-span {
-    background-image: url("../assets/img/gdsc/bigfive/hanisa.jpg");
+/*Treasurer*/
+#ammar .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/ammar.png");
 }
 
-#amir-haziq .profile-span {
-    background-image: url("../assets/img/gdsc/bigfive/amir-haziq.jpg");
-}
-
-/*event team*/
-#addina .profile-span {
-    background-image: url("../assets/img/gdsc/event/addina.jpg");
-}
-
-#angel .profile-span {
-    background-image: url("../assets/img/gdsc/event/angel.jpg");
-}
-
-#aqilah .profile-span {
-    background-image: url("../assets/img/gdsc/event/aqilah.jpg");
-}
-
-#ariana .profile-span {
-    background-image: url("../assets/img/gdsc/event/ariana.jpg");
-}
-
-#koay-yee-shuen .profile-span {
-    background-image: url("../assets/img/gdsc/event/koay-yee-shuen.jpg");
-}
-
-#nashitah .profile-span {
-    background-image: url("../assets/img/gdsc/event/nashitah.jpg");
-}
-
-#syahir .profile-span {
-    background-image: url("../assets/img/gdsc/event/syahir.jpg");
-}
-
-#vaarindran .profile-span {
-    background-image: url("../assets/img/gdsc/event/vaarindran.jpg");
-}
-
-/*multimedia team*/
-#aishah .profile-span {
-    background-image: url("../assets/img/gdsc/multimedia/aishah.jpg");
-}
-
-#emiera .profile-span {
-    background-image: url("../assets/img/gdsc/multimedia/emiera.jpg");
-}
-
-#amira .profile-span {
-    background-image: url("../assets/img/gdsc/multimedia/amira.jpg");
-}
-
-#danesh-veran .profile-span {
-    background-image: url("../assets/img/gdsc/multimedia/danesh-veran.jpg");
-}
-
-#dhiyaul .profile-span {
-    background-image: url("../assets/img/gdsc/multimedia/dhiyaul.jpg");
-}
-
-#hemma-ravindran .profile-span {
-    background-image: url("../assets/img/gdsc/multimedia/hemma-ravindran.jpg");
-}
-
-#satishwaran .profile-span {
-    background-image: url("../assets/img/gdsc/multimedia/satishwaran.jpg");
-}
-
-/*publicity team*/
-#yasmin .profile-span {
-    background-image: url("../assets/img/gdsc/publicity/yasmin.jpg");
-}
-
-#afif-afham .profile-span {
-    background-image: url("../assets/img/gdsc/publicity/afif-afham.jpg");
-}
-
-#adam-hadziq .profile-span {
-    background-image: url("../assets/img/gdsc/publicity/adam-hadziq.jpg");
-}
-
-#azlan .profile-span {
-    background-image: url("../assets/img/gdsc/publicity/azlan.jpg");
-}
-
-#lim-xin-yee .profile-span {
-    background-image: url("../assets/img/gdsc/publicity/lim-xin-yee.jpg");
+/*Secretary*/
+#masha .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/masha.png");
 }
 
 /*tech team*/
-#rony .profile-span {
-    background-image: url("../assets/img/gdsc/tech/rony.jpg");
-}
-
-#husam .profile-span {
-    background-image: url("../assets/img/gdsc/tech/husam.jpg");
-}
-
-#wong .profile-span {
-    background-image: url("../assets/img/gdsc/tech/wong.jpg");
+#luqman .profile-span {
+    background-image: url("../assets/img/gdsc/tech/luqman.png");
 }
 
 #nik .profile-span {
-    background-image: url("../assets/img/gdsc/tech/nik.jpg");
-}
-
-#fikri .profile-span {
-    background-image: url("../assets/img/gdsc/tech/fikri.jpg");
+    background-image: url("../assets/img/gdsc/tech/nik.png");
 }
 
 #amirah .profile-span {
-    background-image: url("../assets/img/gdsc/tech/amirah.jpg");
-}
-#omar .profile-span {
-    background-image: url("../assets/img/gdsc/tech/omar.jpg");
-}
-#sakib .profile-span {
-    background-image: url("../assets/img/gdsc/tech/sakib.jpg");
+    background-image: url("../assets/img/gdsc/tech/amirah.png");
 }
 
-#Jihin .profile-span {
-    background-image: url("../assets/img/gdsc/tech/Jihin.jpg");
+#jiaquan .profile-span {
+    background-image: url("../assets/img/gdsc/tech/jiaquan.png");
+}
+
+#viiniesh .profile-span {
+    background-image: url("../assets/img/gdsc/tech/viiniesh.png");
+}
+
+#fikri .profile-span {
+    background-image: url("../assets/img/gdsc/tech/fikri.png");
+}
+
+/*multimedia team*/
+#haziq .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/haziq.png");
+}
+
+#satishwaran .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/satishwaran.png");
+}
+
+#hemma .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/hemma.png");
+}
+
+#danesh .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/danesh.png");
+}
+
+#syahmi .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/syahmi.png");
+}
+
+/*event team*/
+#issye .profile-span {
+    background-image: url("../assets/img/gdsc/event/issye.png");
+}
+
+#ariana .profile-span {
+    background-image: url("../assets/img/gdsc/event/ariana.png");
+}
+
+#intan .profile-span {
+    background-image: url("../assets/img/gdsc/event/intan.png");
+}
+
+#bukhary .profile-span {
+    background-image: url("../assets/img/gdsc/event/bukhary.png");
+}
+
+/*publicity team*/
+#ummu .profile-span {
+    background-image: url("../assets/img/gdsc/publicity/ummu.png");
+}
+
+#leen .profile-span {
+    background-image: url("../assets/img/gdsc/publicity/leen.png");
+}
+
+#rime .profile-span {
+    background-image: url("../assets/img/gdsc/publicity/rime.png");
+}
+
+#jiajin .profile-span {
+    background-image: url("../assets/img/gdsc/publicity/jiajin.png");
 }
 
 /*sponsorship & partnership team*/
-#arique .profile-span {
-    background-image: url("../assets/img/gdsc/snp/arique.jpg");
-    /*background-image: url("../assets/img/gdsc/tech/Jihin.jpg");*/
-    /*background-color: black;*/
+#aisyah .profile-span {
+    background-image: url("../assets/img/gdsc/snp/aisyah.png");
 }
 
-#zharfan-mirza .profile-span {
-    background-image: url("../assets/img/gdsc/snp/zharfan-mirza.jpg");
+#rishi .profile-span {
+    background-image: url("../assets/img/gdsc/snp/rishi.png");
 }
 
-#al-amin .profile-span {
-    background-image: url("../assets/img/gdsc/snp/al-amin.jpg");
+#nicole .profile-span {
+    background-image: url("../assets/img/gdsc/snp/nicole.png");
 }
 
 .profile {
