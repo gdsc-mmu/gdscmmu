@@ -7,9 +7,12 @@
             <h2>Spearheading key departments</h2>
             <h3>The people building a better tomorrow</h3>
             <br><br><br>
+            <!--
             <a href="https://docs.google.com/forms/d/1-fg0MlUBDAq0PquK3BEgl-gDwPNrLyC1xgHLVtD3dZA/viewform?chromeless=1&edit_requested=true" target="_"><button class="btn find-out-more">
                     Apply Here
             </button></a>
+            -->
+            <p>Interested to join us? Stay tuned.</p>
         </div>
     </div>
 
