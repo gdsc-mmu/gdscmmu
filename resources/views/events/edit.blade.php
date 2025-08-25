@@ -73,7 +73,7 @@
                                 <label for="start_time" class="form-label">
                                     <i class="fa fa-clock-o"></i> Start Time
                                 </label>
-                                <input type="time" class="form-control" id="start_time" name="start_time" 
+                                <input type="time" class="form-control" id="start_time" name="time" 
                                        value="{{ $event->start_time }}" required>
                             </div>
                             <div class="col-md-4">
@@ -161,6 +161,15 @@
                             </a>
                         </div>
                     </form>
+                    <div class="d-flex justify-content-center align-items-center" style="min-height: 10vh;">
+                        <form action="{{ route('events.delete', $event->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-lg" onclick="return confirm('Are you sure?')">
+                                        <i class="fa fa-trash"></i> Delete
+                                    </button>
+                        </form>
+                     </div>
                 </div>
             </div>
         </div>

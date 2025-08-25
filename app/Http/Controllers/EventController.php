@@ -22,9 +22,9 @@ class EventController extends Controller
 
     public function edit($id){
       $event = Event::find($id);
-      if (auth()->user()->id !== $event->user_id) {
+      /*if (auth()->user()->id !== $event->user_id) {
           return redirect('/events')->with('error', 'Unauthorized access');
-      }
+      }*/
       return view('events.edit', ['event' => $event]); 
   }
     
@@ -33,11 +33,13 @@ class EventController extends Controller
     $formFields = $request->validate([
       'title' => 'required',
       'description' => 'required',
+      'date' => 'required|date',
+      'time' => 'required',
       'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
 
-    $formFields['date'] = now()->format('Y-m-d');
-    $formFields['time'] = now()->format('H:i:s');
+    //$formFields['date'] = now()->format('Y-m-d');
+    //$formFields['time'] = now()->format('H:i:s');
     $formFields['user_id'] = auth()->user()->id;
   
     if ($request->hasFile('image')) {
@@ -47,7 +49,7 @@ class EventController extends Controller
     }
     Event::create($formFields);
 
-    return redirect()->route('events.index')->with('success', 'Event created successfully.');
+    return redirect()->route('events.index')->with('message', 'Event created successfully.');
   }
 
     // Show page
@@ -57,9 +59,9 @@ class EventController extends Controller
 
     public function destroy($id){
       $event = Event::find($id);
-      if (auth()->user()->id !== $event->user_id) {
+      /*if (auth()->user()->id !== $event->user_id) {
           return redirect('/events')->with('error', 'Unauthorized access');
-      }
+      }*/
 
       $event->delete();
       return redirect('/events')->with('message', 'Event deleted successfully');
@@ -69,6 +71,8 @@ class EventController extends Controller
         $formFields = $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'date' => 'required|date',
+            'time' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -78,8 +82,8 @@ class EventController extends Controller
             $formFields['image'] = $file_name;
         }
 
-        $formFields['date'] = now()->format('Y-m-d');
-        $formFields['time'] = now()->format('H:i:s');
+        //$formFields['date'] = now()->format('Y-m-d');
+        //$formFields['time'] = now()->format('H:i:s');
         $event->update($formFields);
 
         return redirect('/events')->with('message', 'Event updated successfully');

@@ -17,7 +17,7 @@ use App\Http\Middleware\EnsureCommittee;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::resource('events', EventController::class);
 Route::get('/', [IndexController::class, 'index']);
 
 Route::get('/team', [IndexController::class, 'team']);
@@ -30,7 +30,7 @@ Route::post('/events/create/store', [EventController::class, 'store'])->name('ev
 
 Route::get('/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit')->middleware('auth', EnsureCommittee::class);
 
-Route::PUT('/events/{event}/edit', [EventController::class, 'update'])->name('events.update')->middleware('auth', EnsureCommittee::class);
+Route::put('/events/{event}/edit', [EventController::class, 'update'])->name('events.update')->middleware('auth', EnsureCommittee::class);
 
 Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
 

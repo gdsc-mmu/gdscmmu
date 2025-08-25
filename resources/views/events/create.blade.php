@@ -58,7 +58,7 @@
                                 <label for="start_time" class="form-label">
                                     <i class="fa fa-clock-o"></i> Start Time
                                 </label>
-                                <input type="time" class="form-control" id="start_time" name="start_time" required>
+                                <input type="time" class="form-control" id="start_time" name="time" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="end_time" class="form-label">
