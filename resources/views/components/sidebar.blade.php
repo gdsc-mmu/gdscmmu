@@ -4,7 +4,7 @@
     </div>
 
     <div class="sidebar-header">
-        <h3>GDSC@MMU</h3>
+        <h3>GDGoC@MMU</h3>
     </div>
 
     <ul class="list-unstyled components">

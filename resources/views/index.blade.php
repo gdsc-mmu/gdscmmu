@@ -2,8 +2,8 @@
     <div data-aos="fade-down" data-aos-duration="1500"
         class="main d-flex flex-column align-items-center justify-content-center text-center">
         <h1 class="anim-typewriter d-none d-md-block"></h1>
-        <h1 class="anim-typewriter-static d-md-none">#GDSC@MMU</h1>
-        <h3>Google Developer Student Club, Multimedia University</h3>
+        <h1 class="anim-typewriter-static d-md-none">#GDGoC@MMU</h1>
+        <h3>Google Developer Groups on Campus, Multimedia University</h3>
         <div class="buttons">
             <a href="#" target="_"><button class="btn find-out-more mt-4 mr-4">
                     Join Us
@@ -295,7 +295,7 @@
             </div>
             <div class="row justify-content-center">
                 <p>Engineered by the <a href="https://github.com/gdsc-mmu" target="_">Technical Team</a> | All Rights
-                    Reserved by GDSC@MMU</p>
+                    Reserved by GDGoC@MMU</p>
             </div>
         </div>
     </footer>
