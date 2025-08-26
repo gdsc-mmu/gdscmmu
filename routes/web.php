@@ -35,12 +35,12 @@ Route::put('/events/{event}/edit', [EventController::class, 'update'])->name('ev
 Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
 
 Route::DELETE('/events/{event}', [EventController::class, 'destroy'])->name('events.delete');
-
-Route::get('/dives', [DiveController::class, 'dives'])->name('dives.index');
+// Dive is temporarily disabled, this was an unfinish festure of the previous developer team 
+/*Route::get('/dives', [DiveController::class, 'dives'])->name('dives.index');
 
 Route::get('/dives/{dive}/edit', [DiveController::class, 'edit'])->name('dives.edit')->middleware('auth');
 
-Route::get('/dives/{dive}', [DiveController::class, 'show'])->name('dives.show');
+Route::get('/dives/{dive}', [DiveController::class, 'show'])->name('dives.show');*/
 
 Route::get('/login', [UserController::class, 'login']);
 

@@ -140,10 +140,6 @@
                                     <a href="/events/{{$eventItem->id}}" class="btn btn-primary btn-sm">
                                         <i class="fa fa-eye"></i> View Details
                                     </a>
-                                    
-                                    <a href="/events/{{$eventItem->id}}/edit" class="btn btn-warning btn-sm">
-                                        <i class="fa fa-edit"></i> Edit
-                                    </a>
                                 </div>
 
                                 <!-- Registration Status -->
