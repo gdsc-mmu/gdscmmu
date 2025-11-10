@@ -20,6 +20,8 @@ use App\Http\Middleware\EnsureCommittee;
 
 Route::get('/', [IndexController::class, 'index']);
 
+Route::get('/membership' , [IndexController::class ,'membership']);
+
 Route::get('/team', [IndexController::class, 'team']);
 
 Route::get('/events', [EventController::class, 'events'])->name('events.index');

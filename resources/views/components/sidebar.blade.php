@@ -4,7 +4,7 @@
     </div>
 
     <div class="sidebar-header">
-        <h3>GDSC@MMU</h3>
+        <h3>GDGoC@MMU</h3>
     </div>
 
     <ul class="list-unstyled components">
@@ -32,6 +32,10 @@
         <li>
             <a class="navbar-link hide-sidebar" href="/dives">Dives</a>
         </li>
+         <li>
+            <a class="navbar-link hide-sidebar" href="/membership">Membership</a>
+        </li>
+
         <li>
             <a class="navbar-link hide-sidebar" href="/#footer">Contact Us</a>
         </li>
