@@ -17,7 +17,7 @@ use App\Http\Middleware\EnsureCommittee;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::resource('events', EventController::class);
 Route::get('/', [IndexController::class, 'index']);
 
 Route::get('/membership' , [IndexController::class ,'membership']);
@@ -32,17 +32,17 @@ Route::post('/events/create/store', [EventController::class, 'store'])->name('ev
 
 Route::get('/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit')->middleware('auth', EnsureCommittee::class);
 
-Route::PUT('/events/{event}/edit', [EventController::class, 'update'])->name('events.update')->middleware('auth', EnsureCommittee::class);
+Route::put('/events/{event}/edit', [EventController::class, 'update'])->name('events.update')->middleware('auth', EnsureCommittee::class);
 
 Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
 
 Route::DELETE('/events/{event}', [EventController::class, 'destroy'])->name('events.delete');
-
-Route::get('/dives', [DiveController::class, 'dives'])->name('dives.index');
+// Dive is temporarily disabled, this was an unfinish festure of the previous developer team 
+/*Route::get('/dives', [DiveController::class, 'dives'])->name('dives.index');
 
 Route::get('/dives/{dive}/edit', [DiveController::class, 'edit'])->name('dives.edit')->middleware('auth');
 
-Route::get('/dives/{dive}', [DiveController::class, 'show'])->name('dives.show');
+Route::get('/dives/{dive}', [DiveController::class, 'show'])->name('dives.show');*/
 
 Route::get('/login', [UserController::class, 'login']);
 

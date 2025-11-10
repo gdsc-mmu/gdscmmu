@@ -3,9 +3,9 @@
         class="main d-flex flex-column align-items-center justify-content-center text-center">
         <h1 class="anim-typewriter d-none d-md-block"></h1>
         <h1 class="anim-typewriter-static d-md-none">#GDGoC@MMU</h1>
-        <h3>Google Developer Group on Campus, Multimedia University</h3>
+        <h3>Google Developer Groups on Campus, Multimedia University</h3>
         <div class="buttons">
-            <a href="#" target="_"><button class="btn find-out-more mt-4 mr-4">
+            <a href="#moreondsc"><button class="btn find-out-more mt-4 mr-4">
                     Join Us
                 </button></a>
             <a href="#footer"><button class="btn find-out-more mt-4">
@@ -18,19 +18,19 @@
         <div data-aos="fade-down" data-aos-duration="1500" class="container">
             <div class="row about-box">
                 <div class="col-md-6 mb-4 d-flex flex-column justify-content-center">
-                    <img class="mb-4" src="{{asset("assets/img/dsc-logo.png")}}">
+                    <img class="mb-4" src="{{asset("assets/img/ClubLogo.png")}}">
                     <p>
-                        Developer Student Clubs (DSC) is a Google Developers program for university students to learn
+                        Google Developer Groups on Campus (GDGoC) is a Google Developers program for university students to learn
                         Google products, ranging from topics such as mobile application and website development, machine
                         learning, Google Cloud.
                     </p>
                     <p>
-                        By joining a DSC, students build their professional and personal networks, get access to Google
+                        By joining a GDGoC, students build their professional and personal networks, get access to Google
                         developer resources, and collaborate on building tech solutions for local community problems in
                         a peer-to-peer learning environment.
                     </p>
                     <div>
-                        <a href="https://forms.gle/shPhxa7mvCydmA8W6" target="_"><button class="btn find-out-more mt-4">
+                        <a href="https://forms.gle/cV6ePKgZYYnBFJJU6" target="_"><button class="btn find-out-more mt-4">
                                 Join Us
                             </button></a>
                     </div>
@@ -71,9 +71,8 @@
                     <div data-aos="fade-down" data-aos-duration="1500"
                         class="d-flex flex-column text-center align-items-center whattoexpect-item col-lg-3 col-md-4">
                         <h5>Google Solutions Challenges</h5>
-                        <p>Participate in an annual, global contest that invites students from DSC communities to
-                            utilize Google technologies for solving local community problems. More info <a
-                                href="https://events.withgoogle.com/dsc-solution-challenge/" target="_">here</a>.</p>
+                        <p>Solve real-world challenges with Google's recommended architectures and solutions. More info <a
+                                href="https://developers.google.com/solutions/catalog" target="_">here</a>.</p>
                     </div>
                     <div data-aos="fade-down" data-aos-duration="1500"
                         class="d-flex flex-column text-center align-items-center whattoexpect-item col-lg-3 col-md-4">
@@ -85,16 +84,6 @@
                         class="d-flex flex-column text-center align-items-center whattoexpect-item col-lg-3 col-md-4">
                         <h5>Industry Connections</h5>
                         <p>Get the chance to know more people who are passionate about tech.</p>
-                    </div>
-                </div>
-                <div class="mt-5 row justify-content-center align-items-center">
-                    <div class="guest-recruitment">
-                        <div class="mb-2">Passionate about a topic and want to be a speaker?</div>
-                        <div>
-                            <a href="https://forms.gle/RVsXQTj44MCQ1H1d6" target="_"><button class="btn find-out-more">
-                                    Propose Here
-                                </button></a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -111,7 +100,7 @@
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
                             <button type="button" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" role="button" aria-expanded="false" aria-controls="collapseOne">
-                                Who Should Join DSC MMU?
+                                Who Should Join GDGoC MMU?
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
                             </button>
                         </h5>
@@ -130,14 +119,14 @@
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
                                 aria-expanded="false" aria-controls="collapseTwo">
-                                Why DSC MMU?
+                                Why GDGoC MMU?
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
                             </button>
                         </h5>
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                         <div class="card-body">
-                            DSC provides the community with the opportunity to:
+                            GDGoC provides the community with the opportunity to:
                             <ul>
                                 <li>Growing their knowledge of developer technologies and more through peer to peer
                                     workshops and events.
@@ -162,7 +151,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree"
                                 aria-expanded="false" aria-controls="collapseThree">
-                                Who Would Benefit From Joining DSC MMU?
+                                Who Would Benefit From Joining GDGoC MMU?
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
                             </button>
                         </h5>
@@ -180,17 +169,15 @@
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseSeven"
                                 aria-expanded="false" aria-controls="collapseThree">
-                                What does the core team do? And how do I apply to join the core team?
+                                What does the core team do?
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
                             </button>
                         </h5>
                     </div>
                     <div id="collapseSeven" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                         <div class="card-body">
-                            The core team is a group of contributing members who are responsible for DSC@MMU's
-                            operations, including the planning and execution of activities and events. If you're
-                            thinking of joining the team, do apply <a href="https://forms.gle/k5fUGYY4PCQyhvDD9"
-                                target="_">here</a>.
+                            The core team is a group of contributing members who are responsible for GDGoC@MMU's
+                            operations, including the planning and execution of activities and events.
                         </div>
                     </div>
                 </div>
@@ -225,7 +212,7 @@
                     </div>
                     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
                         <div class="card-body">
-                            Come! It’s OK as long as you don’t wreak havoc here. Crash into our Discord server while
+                            Come! It’s OK as long as you don’t wreak havoc here. Crash into our WhatsApp group while
                             you’re at it.
                         </div>
                     </div>
@@ -236,7 +223,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseSix"
                                 aria-expanded="false" aria-controls="collapseSix">
-                                Is DSC MMU available for MMU students from all campuses?
+                                Is GDGoC MMU available for MMU students from all campuses?
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
                             </button>
                         </h5>
@@ -259,8 +246,8 @@
             </div>
             <div class="row mb-5 justify-content-center">
                 <div data-aos="fade-down" data-aos-duration="1500" class="form-section col-lg-4 col-md-6 mb-5">
-                    <h5 class="mb-4 text-sm-center">Have a Question?</h5>
-                    <div class="success-message"></div>
+                    <h5 class="mb-4 text-sm-center"><a href="https://forms.gle/AVYn4yjvRoNqRJCG6" target="_" class="nav-link text-black">Have a Question?</a></h5>
+                    <!-- <div class="success-message"></div>
                     <div>
                         <form name="submit-to-google-sheet">
                             <div class="form-group">
@@ -279,23 +266,20 @@
                                 <label for="Message">Message</label>
                                 <textarea name="message" type="textarea" class="form-control" id="message"
                                     aria-describedby="emailHelp" placeholder="Have anything on your mind?"></textarea>
-                                <!-- <input name="message" type="text" class="form-control" id="message" aria-describedby="emailHelp" placeholder="Have anything on your mind?"> -->
+                                 <input name="message" type="text" class="form-control" id="message" aria-describedby="emailHelp" placeholder="Have anything on your mind?">
                             </div>
-                            <!-- <div class="form-check">
+                            <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
-              </div> -->
+              </div>
                             <button type="submit" class="btn btn-primary">Send!</button>
-                        </form>
+                        </form> -->
                     </div>
-                </div>
-                <!-- <div class="col-md-4">
-
-          </div> -->
-            </div>
+            </div> 
+        </div>
             <div class="row justify-content-center">
                 <p>Engineered by the <a href="https://github.com/gdsc-mmu" target="_">Technical Team</a> | All Rights
-                    Reserved by GDSC@MMU</p>
+                    Reserved by GDGoC@MMU</p>
             </div>
         </div>
     </footer>
