@@ -148,9 +148,12 @@ header {
 }
 
 .nav-link:hover {
-  background-color: white;
-  color: black !important;
-  transition: 0.2s;
+  transform: scale(1.15);
+  background-color: whitesmoke;
+  color: red !important;
+  font-weight: bold;
+  transition: 0.3s;
+  border-radius: 25px;
 }
 
 .social-handles > * {
