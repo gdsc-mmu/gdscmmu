@@ -1,7 +1,7 @@
 <x-layout>
     <link rel="stylesheet" href="{{asset('css/login.css')}}">
     <div class="d-flex align-items-center justify-content-center min-vh-100 flex-column">
-        <form action="/login" method="POST" class="needs-validation" novalidate>
+                <form action="/login" method="POST" class="needs-validation" novalidate>
             @csrf
             <label for="name" class="form-label text-white">Username:</label>
             <input type="text" class="form-control" name="name" value="{{old('name')}}" required>

@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\DiveController;
 use App\Http\Middleware\EnsureCommittee;
+use App\Http\Controllers\ExcelSearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,14 @@ use App\Http\Middleware\EnsureCommittee;
 |
 */
 Route::resource('events', EventController::class);
-Route::get('/', [IndexController::class, 'index']);
 
-Route::get('/membership' , [IndexController::class ,'membership']);
+Route::get('/', action: [IndexController::class, 'index']);
+
+Route::get('/', [ExcelSearchController::class, 'showForm']); 
+
+Route::post('/', [ExcelSearchController::class, 'search'])->name('excel.search');
+
+
 
 Route::get('/team', [IndexController::class, 'team']);
 

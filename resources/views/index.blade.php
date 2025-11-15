@@ -238,6 +238,58 @@
             </div>
         </div>
     </div>
+<div id="membership" class="bg-white fade-down container-fluid">
+  <div class="p-5">
+    <h1 class="text-center mt-5" data-aos="fade-down" data-aos-duration="1000">
+      Check Your Membership Here!
+    </h1>
+    <p class="text-center mt-4 mb-5">
+      Forgot your GDGoC MMU membership? Enter your name below and we will find it for you!
+    </p>
+
+    <!-----search form----->
+    <div class="d-flex align-items-center justify-content-center mb-5">
+        <form method="POST" data-aos="fade-right" action="{{ route('excel.search') }}" class="d-flex flex-column p-4 border rounded shadow-sm" style="width: 450px;">
+            @csrf
+            <label for="name" class="mb-2">Name:</label>
+            <input type="text" id="name" name="name" class="form-control mb-3" required>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- results from search through xlsx sheet -->
+    @if(session()->has('results'))
+        <h3 class="mb-3 mt-5 p-3 text-center">Results for "{{ session('name') }}"</h3>
+
+       @if( count(session('results')) > 0)
+
+              <div class="d-flex align-items-center justify-content-center mb-3">
+                <table class="table table-bordered mb-5 p-5 w-75 text-center">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Registration Terms</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(session('results') as $row)
+                            <tr>
+                                <td>{{ $row[session('nameIndex')] ?? '' }}</td>
+                                <td>{{ $row[array_search('registration terms', session('headers'))] ?? '' }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        @else
+            <p class="text-center">We can't find your name, sign up to become a member!</p>
+        @endif
+    @endif
+  </div>
+</div>
+
+
+   
 
     <footer id="footer" class="container-fluid">
         <div class="container">

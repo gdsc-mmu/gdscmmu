@@ -29,6 +29,9 @@
         <li>
             <a class="navbar-link hide-sidebar" href="/events">Events</a>
         </li>
+          <li>
+            <a class="navbar-link hide-sidebar" href="/#membership">Membership</a>
+        </li>
         <!--<li>
             <a class="navbar-link hide-sidebar" href="/dives">Dives</a>
         </li>-->
