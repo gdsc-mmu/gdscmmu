@@ -30,7 +30,7 @@
                         a peer-to-peer learning environment.
                     </p>
                     <div>
-                        <a href="https://forms.gle/cV6ePKgZYYnBFJJU6" target="_"><button class="btn find-out-more mt-4">
+                        <a href=" https://forms.gle/2RUKXM3z6tjpMgvr9 " target="_"><button class="btn find-out-more mt-4">
                                 Join Us
                             </button></a>
                     </div>

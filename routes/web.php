@@ -28,7 +28,7 @@ Route::post('/', [ExcelSearchController::class, 'search'])->name('excel.search')
 
 
 
-Route::get('/team', [IndexController::class, 'team']);
+Route::get('/team', action: [IndexController::class, 'team']);
 
 Route::get('/events', [EventController::class, 'events'])->name('events.index');
 
