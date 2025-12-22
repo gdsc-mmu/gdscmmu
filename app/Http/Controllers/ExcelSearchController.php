@@ -34,14 +34,26 @@ class ExcelSearchController extends Controller
 
         if($nameIndex === false){
              return back()->with('error', 'Name column cannot be found in the database.');
-        }
+        } 
 
         $results = array_values(array_filter($dataRows , function($row) use ($nameIndex , $name){
              return isset($row[$nameIndex]) && stripos($row[$nameIndex] , $name) !== false;
         }));
 
+        $termIndex = array_search('term' , $headers);
 
-       
+        $studentTerm = $results[0][$termIndex] ?? null;
+
+        
+        $expired_terms = ['2430'];
+
+        if(in_array($studentTerm , $expired_terms)){
+            return redirect('/#membership') ->with('error' , 'Your membership has expired. Please renew your membership with us!');
+        }
+
+        
+
+
 
         // Get first sheet
        
