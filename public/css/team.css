@@ -106,122 +106,173 @@ body {
 
 /*bigfive*/
 /* Team Lead*/
-#adam .profile-span {
-    background-image: url("../assets/img/gdsc/bigfive/adam.png");
+#issye2 .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/issye2.png");
 }
 
 /* Team Co-Lead I*/
-#shayan .profile-span {
-    background-image: url("../assets/img/gdsc/bigfive/shayan.JPG");
-}
-
-/* Team Co-Lead II*/
-#junkit .profile-span {
-    background-image: url("../assets/img/gdsc/bigfive/junkit.jpg");
-}
-
-/*Treasurer*/
 #ammar .profile-span {
     background-image: url("../assets/img/gdsc/bigfive/ammar.png");
 }
 
+/* Team Co-Lead II*/
+#viinieesh .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/Viinieesh.png");
+   
+}
+
+/*Treasurer*/
+#ariana2 .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/ariana2.png");
+}
+
 /*Secretary*/
-#masha .profile-span {
-    background-image: url("../assets/img/gdsc/bigfive/masha.png");
+#intan2 .profile-span {
+    background-image: url("../assets/img/gdsc/bigfive/intan.png");
 }
 
-/*tech team*/
-#luqman .profile-span {
-    background-image: url("../assets/img/gdsc/tech/luqman.png");
-}
 
-#nik .profile-span {
-    background-image: url("../assets/img/gdsc/tech/nik.png");
-}
 
-#amirah .profile-span {
-    background-image: url("../assets/img/gdsc/tech/amirah.png");
-}
-
-#jiaquan .profile-span {
-    background-image: url("../assets/img/gdsc/tech/jiaquan.png");
-}
-
-#viiniesh .profile-span {
-    background-image: url("../assets/img/gdsc/tech/viiniesh.png");
-}
-
-#fikri .profile-span {
-    background-image: url("../assets/img/gdsc/tech/fikri.png");
-}
-
-/*multimedia team*/
-#haziq .profile-span {
-    background-image: url("../assets/img/gdsc/multimedia/haziq.png");
-}
-
-#satishwaran .profile-span {
-    background-image: url("../assets/img/gdsc/multimedia/satishwaran.png");
-}
-
-#hemma .profile-span {
-    background-image: url("../assets/img/gdsc/multimedia/hemma.png");
-}
-
-#danesh .profile-span {
-    background-image: url("../assets/img/gdsc/multimedia/danesh.png");
-}
-
-#syahmi .profile-span {
-    background-image: url("../assets/img/gdsc/multimedia/syahmi.png");
-}
 
 /*event team*/
-#issye .profile-span {
-    background-image: url("../assets/img/gdsc/event/issye.png");
-}
-
-#ariana .profile-span {
-    background-image: url("../assets/img/gdsc/event/ariana.png");
-}
-
-#intan .profile-span {
-    background-image: url("../assets/img/gdsc/event/intan.png");
-}
 
 #bukhary .profile-span {
     background-image: url("../assets/img/gdsc/event/bukhary.png");
 }
 
-/*publicity team*/
-#ummu .profile-span {
-    background-image: url("../assets/img/gdsc/publicity/ummu.png");
+#taseen .profile-span {
+    background-image: url("../assets/img/gdsc/event/taseen.png");
 }
 
-#leen .profile-span {
-    background-image: url("../assets/img/gdsc/publicity/leen.png");
+#elysia .profile-span {
+    background-image: url("../assets/img/gdsc/event/elysia.png");
 }
+
+
+
+#irdy .profile-span {
+    background-image: url("../assets/img/gdsc/event/irdy.png");
+}
+
+
+/*creativity & publicity team*/
+#hanani .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/hanani.png");
+}
+
+#liya .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/liya.png");
+}
+
+#amirah2 .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/amirah.png");
+}
+
+#shehab .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/shehab.png");
+}
+
+#vidhya .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/vidhya.png");
+}
+
+#yuning .profile-span {
+    background-image: url("../assets/img/gdsc/multimedia/yuning.png");
+}
+
+
+/*sponsorship & welfare team*/
+#danies .profile-span {
+    background-image: url("../assets/img/gdsc/snp/danies.png");
+}
+
+#cheammar .profile-span {
+    background-image: url("../assets/img/gdsc/snp/cheammar.png");
+}
+
+#agilan .profile-span {
+    background-image: url("../assets/img/gdsc/snp/agilan.png");
+}
+
+#hamizah .profile-span {
+    background-image: url("../assets/img/gdsc/snp/hamizah.png");
+}
+
+#losha .profile-span {
+    background-image: url("../assets/img/gdsc/snp/losha.png");
+}
+
+
+
+/*cybersec team*/
+#danish .profile-span {
+    background-image: url("../assets/img/gdsc/cybersec/danish.png");
+}
+
+#satish .profile-span {
+    background-image: url("../assets/img/gdsc/cybersec/satish.png");
+}
+
+#prabu .profile-span {
+    background-image: url("../assets/img/gdsc/cybersec/prabu.png");
+}
+
+#afham .profile-span {
+    background-image: url("../assets/img/gdsc/cybersec/afham.png");
+}
+
+
+
+
+
+#viiniesh .profile-span {
+    background-image: url("../assets/img/gdsc/tech/viiniesh.png");
+}
+
+/* software engineering team */
+
+#raziq .profile-span {
+    background-image: url("../assets/img/gdsc/softwareeng/raziq.png");
+}
+
+#aleessa .profile-span {
+    background-image: url("../assets/img/gdsc/softwareeng/aleessa.png");
+}
+
+#liouzi .profile-span {
+    background-image: url("../assets/img/gdsc/softwareeng/liouzi.png");
+}
+
+#yusof .profile-span {
+    background-image: url("../assets/img/gdsc/softwareeng/yusof.png");
+}
+
+/*AI-ML Team*/
+
+
 
 #rime .profile-span {
-    background-image: url("../assets/img/gdsc/publicity/rime.png");
+    background-image: url("../assets/img/gdsc/aiml/rime.png");
 }
+
+#prita .profile-span {
+    background-image: url("../assets/img/gdsc/aiml/prita.png");
+}
+
+#raghad .profile-span {
+    background-image: url("../assets/img/gdsc/aiml/raghad.png");
+}
+
+#yong .profile-span {
+    background-image: url("../assets/img/gdsc/aiml/yong.png");
+}
+
 
 #jiajin .profile-span {
     background-image: url("../assets/img/gdsc/publicity/jiajin.png");
 }
 
-/*sponsorship & partnership team*/
-#aisyah .profile-span {
-    background-image: url("../assets/img/gdsc/snp/aisyah.png");
-}
 
-#rishi .profile-span {
-    background-image: url("../assets/img/gdsc/snp/rishi.png");
-}
-
-#nicole .profile-span {
-    background-image: url("../assets/img/gdsc/snp/nicole.png");
-}
 
 .profile {
     margin: 20px auto !important;
