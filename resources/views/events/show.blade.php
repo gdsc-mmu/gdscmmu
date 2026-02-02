@@ -25,7 +25,7 @@
 
             <!-- Card Footer (Actions) -->
             <div class="card-footer text-center mb-3">
-                @if (Auth::check() && Auth::user()->id == $event->user_id)
+                @if (Auth::check() && Auth::user()->user_type == 'committee')
                 <div class="d-flex justify-content-center">
                     <div class="me-2">
                         <a href="/events/{{$event->id}}/edit" class="btn btn-warning">Edit event</a>

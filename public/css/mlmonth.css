@@ -1,0 +1,146 @@
+body {
+    background-color: #fffcfc;
+}
+
+.go-to-programme-button {
+    background-color: #ffb627 !important;
+    border-radius: 8px !important;
+    color: #fff !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.mlmonth-img {
+    max-width: 95%;
+}
+
+/* what-youll-learn section */
+.what-youll-learn {
+    background-color: #fcf9f3;
+}
+
+.python-box {
+    background: linear-gradient(
+        90deg,
+        #fda8a8 0%,
+        rgba(253, 168, 168, 0.05) 107.06%
+    );
+    box-shadow: 0px 4px 15px 5px rgba(180, 180, 180, 0.25);
+    border-radius: 15px;
+    width: 450px;
+    max-width: 95%;
+}
+
+.ml-box {
+    background: linear-gradient(
+        90deg,
+        #79c37c 0%,
+        rgba(136, 214, 139, 0.05) 100%
+    );
+    box-shadow: 0px 4px 15px 5px rgba(180, 180, 180, 0.25);
+    border-radius: 15px;
+    width: 450px;
+    max-width: 95%;
+}
+
+.tf-box {
+    background: linear-gradient(
+        90deg,
+        #37a5ea 0%,
+        rgba(55, 165, 234, 0.05) 99.71%
+    );
+    box-shadow: 0px 4px 15px 5px rgba(180, 180, 180, 0.25);
+    border-radius: 15px;
+    width: 450px;
+    max-width: 95%;
+}
+
+.ml-card-icon {
+    bottom: 20px;
+    right: 20px;
+    height: 95px;
+    width: 102px;
+}
+
+.programme {
+    width: 260px;
+}
+
+.register-btn {
+    border-radius: 8px !important;
+    color: #fff !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+    width: 50%;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* python jam section */
+
+.python-jam {
+    padding: 50px 0;
+    background-color: #ffdfd3;
+}
+
+.python-lottie {
+    width: 600px;
+    height: 470px;
+}
+
+.python-register-btn {
+    background-color: #ef7e8d !important;
+}
+
+.google-workshop {
+    padding: 120px 0;
+    background-color: #fffcfc;
+}
+
+.google-register-btn {
+    background-color: #00afff !important;
+}
+
+.dsc-lottie {
+    width: 260px;
+    height: 250px;
+}
+
+.tensor-flow {
+    background-color: #ffccba;
+    padding: 120px 0;
+}
+
+.floating-comp-lottie {
+    width: 490px;
+    height: 360px;
+}
+
+.tf-register-btn {
+    background-color: #60b349 !important;
+    cursor: not-allowed
+}
+
+.register-action {
+    background-color: #ffb627 !important;
+}
+
+#footer {
+    background-color: #febaaf !important;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        display: none !important;
+    }
+}

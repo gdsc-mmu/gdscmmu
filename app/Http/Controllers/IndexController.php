@@ -15,4 +15,8 @@ class IndexController extends Controller
     function team() {
         return view('team');
     }
+
+    function membership(){
+        return view ('membership');
+    }
 }

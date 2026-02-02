@@ -1,0 +1,108 @@
+body {
+    background-image: none !important;
+}
+
+h1 {
+    font-size: 3rem !important;
+    text-shadow: none;
+}
+
+.header-section {
+    min-height: 100vh;
+}
+
+.what-youll-learn {
+    background-color: ghostwhite;
+}
+
+.jsweek-splash {
+    max-width: 80%;
+}
+
+.jsweek-left-splash {
+    width: 500px;
+}
+
+.react-box {
+    background: linear-gradient(104.79deg, #0085FF -29.35%, rgba(255, 255, 255, 0) 128.25%), #FFFFFF;
+    box-shadow: 0px 4px 15px 5px rgba(180, 180, 180, 0.25);
+    border-radius: 15px;
+    width: 400px;
+    max-width: 90%;
+}
+
+.node-box {
+    background: linear-gradient(103.43deg, #8DFFB4 -68.84%, rgba(255, 255, 255, 0) 151.09%), #FFFFFF;
+    box-shadow: 0px 4px 15px 5px rgba(180, 180, 180, 0.25);
+    border-radius: 15px;
+    width: 400px;
+    max-width: 90%;
+}
+
+.postgres-box {
+    background: linear-gradient(102.69deg, #FFE300 -54.92%, rgba(255, 255, 255, 0) 147.99%), #FFFFFF;
+    box-shadow: 0px 4px 15px 5px rgba(180, 180, 180, 0.25);
+    border-radius: 15px;
+    width: 400px;
+    max-width: 90%;
+}
+
+.javascript-box{
+    background-color: white;
+    box-shadow: 0px 4px 15px 5px rgba(180, 180, 180, 0.25);
+    border-radius: 8px;
+}
+
+.card-icon{
+    bottom: 20px;
+    right: 20px;
+    height: 95px;
+    width: 95px;
+}
+
+.crazy-amount-box {
+    border-radius: 15px;
+    min-width: 80%;
+}
+
+.black-box {
+    background: #464646;
+    border-radius: 10px;
+    color: white;
+}
+
+h5 {
+    font-weight: 100 !important;
+}
+
+.requirements {
+    background-color: ghostwhite;
+    padding: 3rem;
+}
+
+footer {
+    background-color: beige !important;
+}
+
+.register {
+    padding: 5rem;
+}
+
+.register-button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 32px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 2px solid rgb(53, 134, 215);
+    transition: all 1s ease;
+    color: rgb(53, 134, 215);
+    overflow: hidden;
+    position: relative;
+    background: #f5f5f5 !important;
+    box-shadow: 0px 16px 40px rgba(204, 204, 204, 0.25);
+}
