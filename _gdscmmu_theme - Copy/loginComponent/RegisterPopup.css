@@ -1,0 +1,59 @@
+
+.register-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff; 
+    color: #000000; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    
+  }
+  
+  .register-popup h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .register-popup button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .register-popup button.google-button {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border: 1px solid black;
+  }
+  
+  .register-popup button.google-button img {
+    margin-right: 10px;
+    height: 20px;
+  }
+  
+  .register-popup input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+  }
+  
+  .register-popup p {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+  }
+  

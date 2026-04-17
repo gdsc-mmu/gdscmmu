@@ -6,15 +6,16 @@
                 <li><a href="/" class="nav-link text-white">Home</a></li>
                 <li><a href="/#moreondsc" class="nav-link text-white">About</a></li>
                 <li><a href="/team" class="nav-link text-white">Team</a></li>
-                <li><a href="/events" class="nav-link text-white">Events</a></li>
+                <!--- <li><a href="/events" class="nav-link text-white">Events</a></li> --->
                 <!--<li><a href="/dives" class="nav-link text-white">Dives</a></li>-->
                 <li><a href="/#membership" class="nav-link text-white">Membership</a></li>
+                <li><a href="/news" class="nav-link text-white">News</a></li>
                 <li><a href="/#footer" class="nav-link text-white">Contact Us</a></li>
-                @if(auth()->check())
+            <!---    @if(auth()->check())
                     <li><a href="/logout" class="nav-link text-white">Logout</a></li>
                 @else
                     <li><a href="/login" class="nav-link text-white">Login</a></li>
-                @endif
+                @endif --->
             </ul>
 
             <div class="spacer">

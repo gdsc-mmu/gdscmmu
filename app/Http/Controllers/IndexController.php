@@ -19,4 +19,8 @@ class IndexController extends Controller
     function membership(){
         return view ('membership');
     }
+
+    function news(){
+        return view('news');
+    }
 }

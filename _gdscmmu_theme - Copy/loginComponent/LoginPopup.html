@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Popup</title>
+  <link rel="stylesheet" href="LoginPopup.css">
+</head>
+<body>
+  <div>
+    <button id="openLogin">Open Login</button>
+
+    <div id="loginPopup" class="login-popup">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button id="loginBtn">Login</button>
+      <p class="blue">Forget your password?</p>
+      <p>Haven’t got an account? <span class="blue">Sign up!</span></p>
+      <button id="closeLogin">Close</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const openLoginBtn = document.getElementById("openLogin");
+      const closeLoginBtn = document.getElementById("closeLogin");
+      const loginPopup = document.getElementById("loginPopup");
+      const usernameInput = document.getElementById("username");
+      const passwordInput = document.getElementById("password");
+
+      openLoginBtn.addEventListener("click", function() {
+        loginPopup.style.display = "block";
+      });
+
+      closeLoginBtn.addEventListener("click", function() {
+        loginPopup.style.display = "none";
+      });
+
+      document.getElementById("loginBtn").addEventListener("click", function() {
+        const username = usernameInput.value;
+        const password = passwordInput.value;
+        // Implement your login logic here
+        console.log('Logging in with:', username, password);
+      });
+    });
+  </script>
+</body>
+</html>
