@@ -35,16 +35,20 @@
         <!--<li>
             <a class="navbar-link hide-sidebar" href="/dives">Dives</a>
         </li>-->
+
+            <li>
+                <a class="navbar-link hide-sidebar" href="/news">News</a>
+            </li>
         <li>
             <a class="navbar-link hide-sidebar" href="/#footer">Contact Us</a>
         </li>
-        @if(auth()->check())
+    <!---    @if(auth()->check())
             <li>
                 <a class="navbar-link hide-sidebar" href="/logout">Logout</a>
             </li>
         @else
                     <li><a href="/login" class="nav-link text-white">Login</a></li>
-        @endif
+        @endif --->
     </ul>
     <div class="social-handles">
         <a href="https://github.com/gdsc-mmu" target="_"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>

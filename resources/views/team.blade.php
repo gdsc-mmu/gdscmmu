@@ -43,7 +43,7 @@
         <p>We proofread, a lot</p>
         <div class="row justify-content-center">
             <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6">
-                <div class="profile" id="ammar">
+                <div class="profile"  >
                     <span class="profile-span"></span>
                     <span class="profile-span"></span>
                     <span class="profile-span"></span>

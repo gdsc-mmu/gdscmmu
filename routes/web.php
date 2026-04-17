@@ -43,12 +43,6 @@ Route::put('/events/{event}/edit', [EventController::class, 'update'])->name('ev
 Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
 
 Route::DELETE('/events/{event}', [EventController::class, 'destroy'])->name('events.delete');
-// Dive is temporarily disabled, this was an unfinish festure of the previous developer team 
-/*Route::get('/dives', [DiveController::class, 'dives'])->name('dives.index');
-
-Route::get('/dives/{dive}/edit', [DiveController::class, 'edit'])->name('dives.edit')->middleware('auth');
-
-Route::get('/dives/{dive}', [DiveController::class, 'show'])->name('dives.show');*/
 
 Route::get('/login', [UserController::class, 'login']);
 
@@ -67,3 +61,8 @@ Route::post('/recovery', [UserController::class, 'sendRecoveryEmail'])->middlewa
 Route::get('/recovery/{token}', [UserController::class, 'resetPasswordForm'])->middleware('guest')->name('password.reset');
 
 Route::post('/recovery/{token}', [UserController::class, 'resetPassword'])->middleware('guest')->name('password.update');
+
+
+// newsletter page route
+// for creating news regarding current tech trends according to cs domains (AI , Software Engineering , Cybersecurity)
+Route::get('/news', action: [IndexController::class, 'news']);
