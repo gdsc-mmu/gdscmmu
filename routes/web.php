@@ -7,6 +7,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\DiveController;
 use App\Http\Middleware\EnsureCommittee;
 use App\Http\Controllers\ExcelSearchController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,4 +66,7 @@ Route::post('/recovery/{token}', [UserController::class, 'resetPassword'])->midd
 
 // newsletter page route
 // for creating news regarding current tech trends according to cs domains (AI , Software Engineering , Cybersecurity)
-Route::get('/news', action: [IndexController::class, 'news']);
+
+Route::get('/news', action: [NewsController::class, 'index']);
+
+Route::get('/news/{id}', action: [NewsController::class, 'show']);

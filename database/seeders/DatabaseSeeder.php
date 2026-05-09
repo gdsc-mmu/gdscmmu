@@ -8,6 +8,8 @@ use App\Models\Dive;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Event;
+use App\Models\News;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,5 +27,6 @@ class DatabaseSeeder extends Seeder
 
         Event::factory()->count(10)->create();
         Dive::factory()->count(10)->create();
+        News::factory()->count(10)->create();
     }
 }

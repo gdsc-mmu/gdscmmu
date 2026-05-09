@@ -23,4 +23,8 @@ class IndexController extends Controller
     function news(){
         return view('news');
     }
+
+    function newsDetails(){
+        return view('news_specific');
+    }
 }

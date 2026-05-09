@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Routing\UrlGenerator;
+use Turso\Http\Laravel\LibSQLHttpServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        if (class_exists(LibSQLHttpServiceProvider::class)) {
+            $this->app->register(LibSQLHttpServiceProvider::class);
+        }
     }
 
     /**
