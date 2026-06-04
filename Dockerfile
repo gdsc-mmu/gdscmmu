@@ -24,7 +24,9 @@ RUN touch database/database.sqlite
 
 # 3. Give Nginx/PHP-FPM (www-data) ownership permissions to read/write the DB
 RUN chown -R www-data:www-data /var/www/html/database
+
+# 4. Run migrations so tables actually exist in the SQLite file
+RUN php artisan migrate --force
 # ----------------------
 
 CMD ["/start.sh"]
-
