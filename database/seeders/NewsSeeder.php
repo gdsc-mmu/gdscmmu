@@ -53,5 +53,7 @@ class NewsSeeder extends Seeder
             'date' => now(),
             'user_id' => 1,
         ]);
+
+        
     }
 }
