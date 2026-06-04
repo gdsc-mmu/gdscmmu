@@ -30,6 +30,6 @@ RUN touch database/database.sqlite
 RUN chown -R www-data:www-data /var/www/html/database
 
 # Run migrations
-RUN php artisan migrate --seed --force
+RUN php artisan migrate --seed --force 2>&1 || (php artisan migrate --seed --force 2>&1; exit 1)
 
 CMD ["/start.sh"]
