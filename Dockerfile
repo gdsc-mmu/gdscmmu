@@ -27,3 +27,4 @@ RUN chown -R www-data:www-data /var/www/html/database
 # ----------------------
 
 CMD ["/start.sh"]
+
