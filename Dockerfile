@@ -18,6 +18,7 @@ RUN echo "APP_NAME=Laravel" > .env && \
     echo "APP_KEY=" >> .env && \
     echo "APP_DEBUG=false" >> .env && \
     echo "APP_URL=http://localhost" >> .env && \
+    echo "APP_DEBUG=true" >> .env && \
     echo "DB_CONNECTION=sqlite" >> .env && \
     echo "DB_DATABASE=/var/www/html/database/database.sqlite" >> .env
 
