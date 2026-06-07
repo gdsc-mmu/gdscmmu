@@ -23,6 +23,7 @@ class NewsFactory extends Factory
             'title' => $this->faker->name,
             'description' => $this->faker->text,
             'date' => $this->faker->date,
+            
             'user_id' => 1
         ];
     }

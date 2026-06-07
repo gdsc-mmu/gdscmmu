@@ -16,6 +16,14 @@
         
         <!--------this is used to display each paragraph of the news article , use this if the data is an array or json format ------->
         @foreach ( $newsbyId->paragraph as $index=> $paragraph )
+
+                @if($newsbyId->news_img && $index === 0)
+                <div class="text-center mb-4">
+                    <img src="{{ $newsbyId->news_img }}" width="70%" alt="News Image" class="img-fluid news-image">
+                </div>
+                @endif
+            
+        
             <p class="mb-5">
                 {{ $paragraph }}
             </p>
