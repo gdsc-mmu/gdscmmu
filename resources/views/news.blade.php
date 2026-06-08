@@ -44,7 +44,7 @@
                             @endswitch
 
                             <div class="card-body d-flex flex-column">
-                                <img src="{{ $item->news_img }}" alt="News Image" class="card-img-top mb-3" style="height: 200px; object-fit: cover;">
+                                <img src="{{ $item->news_img[0] ?? '' }}" alt="News Image" class="card-img-top mb-3" style="height: 200px; object-fit: cover;">
                             </div>
 
                             <h4>{{$item->title}}</h4>

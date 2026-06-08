@@ -15,7 +15,7 @@ return new class extends Migration
              
             // set the characteristics of the news img column
             // we make it nullable
-            $table->string('news_img')->nullable()->after('content');
+            $table->json('news_img')->nullable()->after('content');
         });
     }
 

@@ -18,15 +18,24 @@
         @foreach ( $newsbyId->paragraph as $index=> $paragraph )
 
                 @if($newsbyId->news_img && $index === 0)
-                <div class="text-center mb-4">
-                    <img src="{{ $newsbyId->news_img }}" width="70%" alt="News Image" class="img-fluid news-image">
+                
+                    @foreach($newsbyId->news_img as $img)
+                    <div class="text-center mb-4">
+                     <img src="{{ $img }}" width="70%" alt="News Image" class="img-fluid news-image mb-3">
+                    </div> 
+
+                     
+                       <p class=" mb-5">
+                            {{ $paragraph }}
+                       </p>
+                    
+                    @endforeach
+                 
                 </div>
                 @endif
             
         
-            <p class="mb-5">
-                {{ $paragraph }}
-            </p>
+          
         @endforeach
         <!----------------------------------------------------------->
            

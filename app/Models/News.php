@@ -15,5 +15,6 @@ class News extends Model
     protected $casts = [
         'date' => 'date',
         'paragraph' => 'array',
+        'news_img' => 'array'
     ];
 }
