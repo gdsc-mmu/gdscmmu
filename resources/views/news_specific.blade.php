@@ -18,18 +18,25 @@
         @foreach ( $newsbyId->paragraph as $index=> $paragraph )
 
                
-                
-                   
-                     
+            
                     <div class="text-center mb-4">
-                      @if($index === 0 && !empty($newsbyId->news_img[0]))
-                        <img src="{{ $newsbyId->news_img[0] }}" alt="News Image" class="news-detail-image mb-4" style="max-width: 70%; height: auto; border-radius: 8px;">
+                     
+                       @if($index % 2 === 0)
+                       @php $imgIndex = $index / 2; @endphp
+            
+                        @if($newsbyId->news_img[$imgIndex] ?? false)
+                            <img src="{{ $newsbyId->news_img[$imgIndex] }}" alt="News Image {{ $imgIndex + 1 }}" class="news-detail-image mb-5" style="max-width: 65%; height: auto; border-radius: 8px;">
+                        @endif
                       @endif
-                      <p class="news-paragraph" >
-                            {{ $paragraph }}
+                     
+                      <p class="news-paragraph mb-5" >
+                          {{ $paragraph }}
                        </p>
 
-                </div>
+                       @if($index % 2 === 1 || $loop->last)
+                            </div>
+                        @endif
+                 
              
             
         
