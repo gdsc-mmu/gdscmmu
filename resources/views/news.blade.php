@@ -14,7 +14,7 @@
                 <div class="text-center mb-5" data-aos="fade-down">
                     <div class="news-category-list mt-4" aria-label="News categories">
                         <button type="button" class="news-category-pill is-active" data-news-filter="all">All</button>
-                        <button type="button" class="news-category-pill" data-news-filter="software engineering" >Software Engineering</button>
+                        <button type="button" class="news-category-pill" data-news-filter="software-engineering">Software Engineering</button>
                         <button type="button" class="news-category-pill" data-news-filter="cybersecurity">Cybersecurity</button>
                         <button type="button" class="news-category-pill" data-news-filter="ai">AI/ML</button>
                     </div>
@@ -24,13 +24,25 @@
           
                 <div class="row g-4">
                     @forelse($allNews as $item)
-                    <div class="col-md-4 news-item" data-news-category="{{$item->category}}" data-aos="fade-up" data-aos-delay="100">
+                    @php
+                        // normalize category for consistent filtering
+                        $normalizedCategory = strtolower(trim((string) ($item->category ?? '')));
+
+                        // replace spaces and special characters with hyphens
+                        $normalizedCategory = preg_replace('/[^a-z0-9]+/', '-', $normalizedCategory);
+                        $normalizedCategory = trim($normalizedCategory, '-');
+
+                        if (in_array($normalizedCategory, ['ai-ml', 'artificial-intelligence'], true)) {
+                            $normalizedCategory = 'ai';
+                        }
+                    @endphp
+                    <div class="col-md-4 news-item" data-news-category="{{ $normalizedCategory }}" data-aos="fade-up" data-aos-delay="100">
                     
                     <div class="news-entry-card h-100">
                             
 
-                            @switch(strtolower($item->category))
-                                @case('software engineering')
+                            @switch($normalizedCategory)
+                                @case('software-engineering')
                                     <div class="card-tag bg-primary text-white"><i class="bi bi-code-slash"></i> {{$item->category}}</div>
                                     @break
                                 @case('cybersecurity')
