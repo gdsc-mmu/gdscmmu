@@ -21,6 +21,10 @@ class NewsController extends Controller
 
         $newsbyId = \App\Models\News::find($id);
 
+        if (!$newsbyId) {
+            abort(404, 'News item not found');
+        }
+
         return view('news_specific', ['newsbyId' => $newsbyId]);
     }
 }
