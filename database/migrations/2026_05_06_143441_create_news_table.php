@@ -18,6 +18,7 @@ return new class extends Migration
         $table->string('category');   
         $table->json('paragraph')->nullable();
         $table->string('author')->nullable();
+        $table->string('news_source')->nullable();
         $table->date('date');           
         $table->foreignId('user_id');   
         $table->timestamps();           
