@@ -16,16 +16,21 @@
         
         <!--------this is used to display each paragraph of the news article , use this if the data is an array or json format ------->
         @foreach ( $newsbyId->paragraph as $index=> $paragraph )
-
-               
-            
                     <div class="text-center mb-4">
                      
+                       <!--- detect if the index of the paragraph is even -->
+                       <!--- if the index is even, display the image before the paragraph -->
                        @if($index % 2 === 0)
                        @php $imgIndex = $index / 2; @endphp
             
-                        @if($newsbyId->news_img[$imgIndex] ?? false)
-                            <img src="{{ $newsbyId->news_img[$imgIndex] }}" alt="News Image {{ $imgIndex + 1 }}" class="news-detail-image mb-5" style="max-width: 65%; height: auto; border-radius: 8px;">
+                       <!-- check if the current paragraph has an associated image -->
+                        @if(isset($newsbyId->news_img[$imgIndex]))
+
+                           <!--- map the image path to a variable -->
+                           @php $imagePath = $newsbyId->news_img[$imgIndex]; @endphp
+                          <!--- check if the image path is a valid URL or a local path -->
+                          <!--- display the image accordingly -->
+                           <img src="{{ str_starts_with($imagePath, 'http') ? $imagePath : asset($imagePath) }}" alt="News Image" class="news-image mb-3" width="600">
                         @endif
                       @endif
                      

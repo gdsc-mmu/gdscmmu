@@ -40,7 +40,37 @@ return new class extends Migration
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-           
+
+            [
+                'title' => 'Web Graphics Revolution: Chrome Open-Sources "HTML-in-Canvas" API to Unify DOM Interactivity with 3D Performance',
+                'description' => 'Google introduces the HTML-in-Canvas API, a new web platform standard allowing developers to render fully functional, interactive DOM elements directly inside high-performance 2D canvas, WebGL, and WebGPU contexts.',
+                'category' => 'Software Engineering',
+                'author' => 'GDGoC MMU Team',
+                'news_img' => json_encode([
+                    'images/canvas_cover_page.png',
+                    'images/code_example_before_canvas.png',
+                    'images/canvas_example_code_after_canvas.png',
+                ]),
+                    
+                'paragraph' => json_encode([
+                    "Google has officially launched the HTML-in-Canvas API origin trial (available across Chrome 148 through 150), introducing a groundbreaking web platform feature highlighted in the cover illustration above, designed to dissolve the historic boundary between UI semantics and graphics performance. This engineering release highlights a major advancement in browser capabilities via \"Spatial DOM Synchronization.\" Unlike legacy configurations that forced developers to choose between an accessible DOM or low-level pixel processing, this API enables native HTML structures to sit directly within hardware-accelerated spaces. According to initial benchmark telemetry evaluating cross-environment UI rendering, the native API secures definitive industry dominance by rendering complex layouts in a fraction of the execution time compared to heavy custom JavaScript layout clones.",
+
+                    "This technological leap is powered by three new web primitives: the layoutsubtree configuration attribute, a dedicated canvas event model, and specialized paint execution methods. In practical terms, this means heavy canvas-driven application environments like Figma, Miro, or Google Docs can now offload complex rich text, bidirectional layouts, and form fields natively to the browser's graphics layer rather than executing thousands of lines of bloated coordinate-mapping utilities. In early testing pipelines, implementing the native API compressed complex text wrapping bundle weights entirely, allowing real-time inspection via Chrome DevTools. It also set unprecedented efficiency records under heavy multi-element workloads, where the processing overhead drop vastly outperforms conventional manual vector path rendering routines.",
+
+                    "The legacy approach, shown in the before-code architecture image above, highlights the massive paradigm shift in accessibility and native system integration now offered by 3D graphics engines. Because the elements live inside a structurally acknowledged context, browser operations like Find-in-Page (Ctrl/Cmd+F), native language translation, and screen-reader accessibility trees function flawlessly inside WebGL and WebGPU scenes. Proving its utility across intricate layouts, the browser natively handles interactive input bounding-boxes on dynamic textures without manual spatial tracking logic. This deep conceptual layout sync relies heavily on returning transformation strings directly back to the active DOM element layer, securing perfect spatial convergence so that hover states, input foci, and mouse selection vectors map accurately to where the pixels physically reside on the screen area.",
+
+                    "To safely execute these capabilities across complex graphics contexts, the HTML-in-Canvas workflow exposes context-specific drawing bindings. For standard 2D viewports, developers use drawElementImage during the onpaint cycle. For WebGL, the browser introduces texElementImage2D, which maps DOM surfaces straight into texture memory, while WebGPU pipelines leverage copyElementImageToTexture on the active device queue. To ensure security boundaries, these hardware-backed primitives implement strict origin checks. The system automatically restricts cross-origin iframe painting to protect user sessions from clickjacking and pixel-sniffing attempts. These security boundaries trigger cleanly across standard operations, ensuring that privacy is fully protected while drawing elements at structural speed.",
+
+                    "As detailed in the optimized after-code implementation example above, leading 3D frameworks are rapidly deploying native wrappers to streamline integration into modern web apps. Three.js has already shipped experimental support using THREE.HTMLTexture, while PlayCanvas has deployed automated texture hookups using their native event emitters. For verified production environments, these modules accelerate rich dashboard workflows and immersive interface architectures by offloading raw transformation updates to modern device GPUs. However, due to inherent main-thread JavaScript execution loops during painting cycles, engineers should note that internal scrolling performance characteristics must be evaluated carefully against traditional compositor threads, bringing real-world usage optimization back to standard structural best practices."
+                ]),
+                'news_source' => 'https://developer.chrome.com/blog/html-in-canvas-origin-trial',
+                
+                'date' => now(),
+                'user_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+                    
         ]);
     }
 
