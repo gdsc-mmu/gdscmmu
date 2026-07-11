@@ -69,7 +69,35 @@ return new class extends Migration
                 'user_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
+            ],
+             [
+                'title' => 'Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever',
+                'description' => 'Google and Mandiant detail how advanced AI models accelerate the vulnerability threat lifecycle and outline a modern, automated defensive roadmap for enterprises to counter machine-speed attacks.',
+                'category' => 'Cybersecurity',
+                'author' => 'GDGoC MMU Team',
+                'news_img' => json_encode([
+                    'images/threat_intelligence.jpg',
+                    'images/threat_intelligence-2.jpg',
+                ]),
+                    
+                'paragraph' => json_encode([
+                    "The cybersecurity landscape is facing a massive paradigm shift driven by advanced artificial intelligence. General purpose AI models are demonstrating an unprecedented ability to discover software vulnerabilities and generate functional exploits, lowering the barrier to entry for threat actors of all skill levels. Historically, developing a zero day exploit required deep human expertise, substantial funding, and months of time. Today, AI compresses this timeline drastically. As a result, the historical time window that organizations once relied on to test and deploy patches after a vulnerability was publicly disclosed has effectively disappeared.",
+
+                    "With AI driving the offensive cycle, threat actors are shifting toward mass exploitation, ransomware operations, and high frequency extortion campaigns. Security researchers warn that the traditional concept of \"vulnerability severity\" is changing. While human hackers might ignore a minor, local bug in favor of a major remote code execution (RCE) flaw, AI agents excel at discovering and connecting \"attack chains.\" By linking multiple seemingly minor, isolated weaknesses together, automated attacks can compromise an enterprise environment just as effectively as a single critical vulnerability, resulting in a sudden, overwhelming surge of security alerts.",
+
+                    "Defending against automated, machine speed threats requires shifting from manual, human speed workflows to AI integrated operations. Relying on legacy ticketing systems and manual sorting will inevitably lead to staff burnout and system failure. Mature organizations must deploy specialized AI security agents, such as Google Cloud's Triage and Investigation Agent—, to autonomously investigate alerts and generate real time playbooks. Furthermore, enterprises need to apply strict security protocols directly to their source code repositories and CI/CD pipelines, reduce their internet exposed attack surface using Zero Trust parameters, and safeguard their internal AI tools using dedicated firewalls like Google Cloud Model Armor to prevent prompt injections.",
+                    
+                    "For organizations that are still maturing and lack advanced automated environments, the report stresses that the immediate goal is building a bulletproof security baseline rather than deploying complex AI agents. This foundational approach begins with eliminating critical blind spots through automated, continuously updated asset inventories, discarding outdated tracking spreadsheets entirely. From there, security teams must enforce strict, pre approved emergency patching deadlines (SLAs) for internet facing systems, prioritize high risk infrastructure, and establish fallback, secondary technical processes for critical business applications to maintain operational resilience during a live breach."
+                ]),
+
+                'news_source' => 'https://cloud.google.com/blog/topics/threat-intelligence/defending-enterprise-ai-vulnerabilities',
+                
+                'date' => now(),
+                'user_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]
+
                     
         ]);
     }

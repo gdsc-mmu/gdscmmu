@@ -59,8 +59,9 @@
                                 <img src="{{ $item->news_img[0] ?? '' }}" alt="News Image" class="card-img-top mb-3" style="height: 200px; object-fit: cover;">
                             </div>
 
-                            <h4>{{$item->title}}</h4>
-                            <p>{{$item->description}}</p>
+                            <h4 style="font-size: 19px;" class="card-title">{{$item->title}}</h4>
+                            <p style="font-size:15px" class="mt-3">{{$item->description}}</p>
+                            <p class="text-muted" style="font-size: 13px;">Date created: {{ $item->date->format('F j, Y') }}</p>
                             <a  href='/news/{{$item->id}}' class="stretched-link">Read Full Story →</a>
                             
                         </div>
