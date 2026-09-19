@@ -45,7 +45,13 @@ Route::get('/events/{event}', [EventController::class, 'show'])->name('events.sh
 
 Route::DELETE('/events/{event}', [EventController::class, 'destroy'])->name('events.delete');
 
+// admin sign in page through direct url endpoint redirection
+Route::get('/admin/signin', [UserController::class, 'login']);
 Route::get('/login', [UserController::class, 'login']);
+
+// admin dashboard
+Route::get('/admin/dashboard', [UserController::class, 'dashboard'])->middleware('auth', EnsureCommittee::class)->name('admin.dashboard');
+Route::get('/admin', [UserController::class, 'dashboard'])->middleware('auth', EnsureCommittee::class);
 
 Route::post('/login', [UserController::class, 'loginUser'])->name('login');
 

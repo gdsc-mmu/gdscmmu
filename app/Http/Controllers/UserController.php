@@ -53,6 +53,16 @@ class UserController extends Controller
         return redirect('/')->with('message', 'You have been logged out!');
     }
 
+    // fetching the metrics of each features for admin dashboard
+    public function dashboard() {
+        $eventsCount = \App\Models\Event::count();
+        $newsCount = \App\Models\News::count();
+        $recentEvents = \App\Models\Event::orderBy('created_at', 'desc')->take(5)->get();
+        $recentNews = \App\Models\News::orderBy('created_at', 'desc')->take(5)->get();
+
+        return view('admin.dashboard', compact('eventsCount', 'newsCount', 'recentEvents', 'recentNews'));
+    }
+
     public function loginUser() {
         // validate form
         $formFields = request()->validate([
@@ -65,7 +75,7 @@ class UserController extends Controller
             // regenerate session
             request()->session()->regenerate();
 
-            return redirect('/')->with('message', 'You have been logged in!');
+            return redirect('/admin/dashboard')->with('message', 'Welcome to the Admin Dashboard!');
         }
 
         return back()->with('message', 'Invalid credentials!');

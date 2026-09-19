@@ -20,6 +20,7 @@ class IndexController extends Controller
         return view ('membership');
     }
 
+    
     function news(){
         return view('news');
     }

@@ -8,9 +8,14 @@
             <a href="#moreondsc"><button class="btn find-out-more mt-4 mr-4">
                     Join Us
                 </button></a>
-            <a href="#footer"><button class="btn find-out-more mt-4">
+            <a href="#footer">
+                <button class="btn find-out-more mt-4">
                     Contact Us
-                </button></a>
+                </button>
+            </a>
+           
+
+             
         </div>
     </div>
 

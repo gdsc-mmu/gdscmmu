@@ -42,13 +42,14 @@
         <li>
             <a class="navbar-link hide-sidebar" href="/#footer">Contact Us</a>
         </li>
-    <!---    @if(auth()->check())
+        @if(auth()->check())
             <li>
-                <a class="navbar-link hide-sidebar" href="/logout">Logout</a>
+                <a class="navbar-link hide-sidebar text-warning font-weight-bold" href="/admin/dashboard"><i class="fa fa-tachometer mr-2"></i>Admin Dashboard</a>
             </li>
-        @else
-                    <li><a href="/login" class="nav-link text-white">Login</a></li>
-        @endif --->
+            <li>
+                <a class="navbar-link hide-sidebar" href="/logout"><i class="fa fa-sign-out mr-2"></i>Logout</a>
+            </li>
+        @endif
     </ul>
     <div class="social-handles">
         <a href="https://github.com/gdsc-mmu" target="_"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>

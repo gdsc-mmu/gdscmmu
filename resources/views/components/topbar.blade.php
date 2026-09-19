@@ -2,7 +2,7 @@
     <div class="container">
         <nav data-aos="fade-down" class="nav d-flex justify-content-between align-items-center">
 
-            <ul class="main-links list-unstyled d-flex">
+            <ul class="main-links list-unstyled d-flex mb-0 align-items-center">
                 <li><a href="/" class="nav-link text-white">Home</a></li>
                 <li><a href="/#moreondsc" class="nav-link text-white">About</a></li>
                 <li><a href="/team" class="nav-link text-white">Team</a></li>
@@ -11,27 +11,26 @@
                 <li><a href="/#membership" class="nav-link text-white">Membership</a></li>
                 <li><a href="/news" class="nav-link text-white">News</a></li>
                 <li><a href="/#footer" class="nav-link text-white">Contact Us</a></li>
-            <!---    @if(auth()->check())
-                    <li><a href="/logout" class="nav-link text-white">Logout</a></li>
-                @else
-                    <li><a href="/login" class="nav-link text-white">Login</a></li>
-                @endif --->
             </ul>
 
             <div class="spacer">
             </div>
 
-            <div class="social-handles">
-                <a href="https://github.com/gdsc-mmu" target="_"><i class="fa fa-github fa-2x"
+            <div class="social-handles d-flex align-items-center">
+                <a href="https://github.com/gdsc-mmu" target="_" title="GitHub"><i class="fa fa-github fa-2x"
                         aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/company/google-developer-student-club-mmu/" target="_"><i class="fa fa-linkedin fa-2x"
+                <a href="https://www.linkedin.com/company/google-developer-student-club-mmu/" target="_" title="LinkedIn"><i class="fa fa-linkedin fa-2x"
                         aria-hidden="true"></i></a>
-                <a href="https://www.youtube.com/@GDGoC_MMU" target="_"><i
+                <a href="https://www.youtube.com/@GDGoC_MMU" target="_" title="YouTube"><i
                         class="fa fa-youtube-play fa-2x" aria-hidden="true"></i></a>
-                <a href="https://www.instagram.com/gdg.mmu" target="_"><i class="fa fa-instagram fa-2x"
+                <a href="https://www.instagram.com/gdg.mmu" target="_" title="Instagram"><i class="fa fa-instagram fa-2x"
                         aria-hidden="true"></i></a>
+
+                @if(auth()->check())
+                    <a href="/admin/dashboard" class="btn-dashboard-nav"><i class="fa fa-tachometer mr-1"></i> Dashboard</a>
+                    <a href="/logout" class="btn-signin-nav"><i class="fa fa-sign-out mr-1"></i> Logout</a>
+                @endif
             </div>
-            </ul>
         </nav>
     </div>
 </header>
