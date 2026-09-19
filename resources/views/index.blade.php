@@ -4,14 +4,18 @@
         <h1 class="anim-typewriter d-none d-md-block"></h1>
         <h1 class="anim-typewriter-static d-md-none">#GDGoC@MMU</h1>
         <h3>Google Developer Groups on Campus, Multimedia University</h3>
-        <h4>this is a new version of raziq's change ( 16/9/2026 ) </h4>
         <div class="buttons">
             <a href="#moreondsc"><button class="btn find-out-more mt-4 mr-4">
                     Join Us
                 </button></a>
-            <a href="#footer"><button class="btn find-out-more mt-4">
+            <a href="#footer">
+                <button class="btn find-out-more mt-4">
                     Contact Us
-                </button></a>
+                </button>
+            </a>
+           
+
+             
         </div>
     </div>
 
