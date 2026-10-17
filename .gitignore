@@ -17,3 +17,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/public/assets/img/members/*
+!/public/assets/img/members/.gitkeep

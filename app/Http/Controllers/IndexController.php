@@ -13,7 +13,8 @@ class IndexController extends Controller
 
     // Team page
     function team() {
-        return view('team');
+        $divisions = \App\Models\TeamDivision::with('members')->orderBy('order')->orderBy('id')->get();
+        return view('team', compact('divisions'));
     }
 
     function membership(){
