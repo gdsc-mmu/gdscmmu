@@ -16,6 +16,46 @@
         </div>
     </div>
 
+    @if(isset($divisions) && $divisions->isNotEmpty())
+        @foreach($divisions as $divIndex => $division)
+            <div id="teams" class="teams team-{{ ($divIndex % 8) + 1 }} container-fluid">
+                @if($divIndex === 0 && str_contains(strtolower($division->name), 'lead'))
+                    <h2 class="mb-2">GDGoC Core Team 2025/2026</h2>
+                    <h3 class="position-absolute start-50 translate-middle-x">{{ $division->name }}</h3>
+                    <p class="mt-5"></p>
+                @else
+                    <h2 class="mb-2">{{ $division->name }}</h2>
+                    @if($division->description)
+                        <p>{{ $division->description }}</p>
+                    @endif
+                @endif
+                <div id="pic">
+                    <div class="row mb-3 justify-content-center">
+                        @foreach($division->members as $member)
+                            <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6 mb-4 d-flex justify-content-center">
+                                <div class="profile" @if($member->avatar && !str_starts_with($member->avatar, 'http') && !str_contains($member->avatar, '/')) id="{{ $member->avatar }}" @endif>
+                                    @php
+                                        $bgStyle = '';
+                                        if ($member->avatar && (str_starts_with($member->avatar, 'http') || str_contains($member->avatar, '/'))) {
+                                            $bgStyle = 'style="background-image: url(' . asset($member->avatar) . ') !important;"';
+                                        }
+                                    @endphp
+                                    <span class="profile-span" {!! $bgStyle !!}></span>
+                                    <span class="profile-span" {!! $bgStyle !!}></span>
+                                    <span class="profile-span" {!! $bgStyle !!}></span>
+                                    <span class="profile-span" {!! $bgStyle !!}></span>
+                                    <div class="profile-text">
+                                        <h2>Hi, I'm {{ $member->name }}</h2>
+                                        <p>{{ $member->role }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    @else
 <!----------------------------------------------------Team Lead --------------------------------------------------->
 
     <div id="teams" class="teams team-1 container-fluid">
@@ -526,6 +566,5 @@
             </div>
         </div>
     </div>
-        
- 
+    @endif
 </x-layout>

@@ -8,6 +8,7 @@ use App\Http\Controllers\DiveController;
 use App\Http\Middleware\EnsureCommittee;
 use App\Http\Controllers\ExcelSearchController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\TeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,17 @@ Route::get('/login', [UserController::class, 'login']);
 // admin dashboard
 Route::get('/admin/dashboard', [UserController::class, 'dashboard'])->middleware('auth', EnsureCommittee::class)->name('admin.dashboard');
 Route::get('/admin', [UserController::class, 'dashboard'])->middleware('auth', EnsureCommittee::class);
+
+// Admin Team Management
+Route::middleware(['auth', EnsureCommittee::class])->prefix('admin')->group(function () {
+    Route::post('/divisions', [TeamController::class, 'storeDivision'])->name('admin.divisions.store');
+    Route::put('/divisions/{division}', [TeamController::class, 'updateDivision'])->name('admin.divisions.update');
+    Route::delete('/divisions/{division}', [TeamController::class, 'destroyDivision'])->name('admin.divisions.destroy');
+
+    Route::post('/members', [TeamController::class, 'storeMember'])->name('admin.members.store');
+    Route::put('/members/{member}', [TeamController::class, 'updateMember'])->name('admin.members.update');
+    Route::delete('/members/{member}', [TeamController::class, 'destroyMember'])->name('admin.members.destroy');
+});
 
 Route::post('/login', [UserController::class, 'loginUser'])->name('login');
 
