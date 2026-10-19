@@ -1,0 +1,23 @@
+# Configuration for GitHub's native automated release notes
+changelog:
+  categories:
+    - title: "✨ Features Added"
+      labels:
+        - "feature"
+        - "enhancement"
+        - "feat"
+    - title: "🐛 Bug Fixes & Patches"
+      labels:
+        - "fix"
+        - "bug"
+        - "hotfix"
+    - title: "🛠️ Maintenance & Refactoring"
+      labels:
+        - "refactor"
+        - "chore"
+        - "perf"
+        - "documentation"
+        - "docs"
+    - title: "🔍 Other Changes"
+      labels:
+        - "*"
