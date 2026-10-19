@@ -122,6 +122,41 @@ jobs:
           path: DEVELOPER_NOTES.md
           if-no-files-found: error
 
+      - name: Update and Commit CHANGELOG.md
+        if: steps.version_info.outputs.should_publish == 'true'
+        shell: bash
+        run: |
+          TAG="${{ steps.version_info.outputs.target_tag }}"
+
+          # If CHANGELOG.md exists and is not identical to current DEVELOPER_NOTES.md, prepend
+          if [ -f "CHANGELOG.md" ] && [ -f "DEVELOPER_NOTES.md" ]; then
+            if ! cmp -s "CHANGELOG.md" "DEVELOPER_NOTES.md"; then
+              {
+                cat DEVELOPER_NOTES.md
+                echo ""
+                echo "---"
+                echo ""
+                cat CHANGELOG.md
+              } > temp_changelog.md
+              mv temp_changelog.md CHANGELOG.md
+            fi
+          else
+            cp DEVELOPER_NOTES.md CHANGELOG.md
+          fi
+
+          # Commit CHANGELOG.md directly back to the branch
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          
+          if ! git diff --staged --quiet; then
+            echo "Committing updated CHANGELOG.md..."
+            git commit -m "docs(changelog): update CHANGELOG.md for $TAG [skip ci]"
+            git push origin "$GITHUB_REF_NAME" || true
+          else
+            echo "No changes detected in CHANGELOG.md"
+          fi
+
       - name: Publish / Update GitHub Release Notes
         if: steps.version_info.outputs.should_publish == 'true'
         env:
