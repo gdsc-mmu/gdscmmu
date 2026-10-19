@@ -1,0 +1,162 @@
+name: Generate Developer Release Notes
+
+on:
+  # Triggers whenever code is merged into the 'frontend' branch (via Pull Request or direct push)
+  push:
+    branches:
+      - frontend
+
+  # Optional manual trigger from GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Target Version / Tag (e.g. v1.0.0 or HEAD)'
+        required: false
+        default: 'HEAD'
+        type: string
+      prev_tag:
+        description: 'Previous Tag / Ref to compare against (leave empty for automatic detection)'
+        required: false
+        default: ''
+        type: string
+      publish_release:
+        description: 'Publish / update GitHub Release (uncheck for dry-run preview)'
+        required: true
+        type: boolean
+        default: false
+      is_prerelease:
+        description: 'Mark as Pre-release'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  generate-developer-notes:
+    name: Generate Developer Notes
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+        with:
+          # Fetch all history and tags for accurate commit comparison
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Determine Target Version & Execution Mode
+        id: version_info
+        shell: bash
+        run: |
+          TARGET_TAG=""
+          PREV_TAG="${{ inputs.prev_tag }}"
+          SHOULD_PUBLISH="false"
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            TARGET_TAG="${{ inputs.tag }}"
+            [ -z "$TARGET_TAG" ] && TARGET_TAG="HEAD"
+            SHOULD_PUBLISH="${{ inputs.publish_release }}"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            # Check if this merge commit already has an explicit tag
+            EXACT_TAG="$(git describe --tags --exact-match 2>/dev/null || echo '')"
+            if [ -n "$EXACT_TAG" ]; then
+              TARGET_TAG="$EXACT_TAG"
+            else
+              # Generate version label for the frontend merge release
+              TARGET_TAG="frontend-$(date +'%Y.%m.%d')-${GITHUB_SHA::7}"
+            fi
+
+            # Use previous commit before merge to isolate features in this merge
+            BEFORE_SHA="${{ github.event.before }}"
+            if [ -n "$BEFORE_SHA" ] && [ "$BEFORE_SHA" != "0000000000000000000000000000000000000000" ]; then
+              PREV_TAG="$BEFORE_SHA"
+            fi
+
+            SHOULD_PUBLISH="true"
+          fi
+
+          echo "Event: ${{ github.event_name }}"
+          echo "Target tag: $TARGET_TAG"
+          echo "Previous tag: $PREV_TAG"
+          echo "Should publish release: $SHOULD_PUBLISH"
+
+          echo "target_tag=$TARGET_TAG" >> "$GITHUB_OUTPUT"
+          echo "prev_tag=$PREV_TAG" >> "$GITHUB_OUTPUT"
+          echo "should_publish=$SHOULD_PUBLISH" >> "$GITHUB_OUTPUT"
+          echo "RELEASE_TAG=$TARGET_TAG" >> "$GITHUB_ENV"
+
+      - name: Generate Developer Notes
+        shell: bash
+        run: |
+          ARGS=(--tag "${{ steps.version_info.outputs.target_tag }}" --repo "${{ github.repository }}" --output "DEVELOPER_NOTES.md")
+          
+          if [ -n "${{ steps.version_info.outputs.prev_tag }}" ]; then
+            ARGS+=(--prev-tag "${{ steps.version_info.outputs.prev_tag }}")
+          fi
+
+          python .github/scripts/generate_developer_notes.py "${ARGS[@]}"
+
+      - name: Display Developer Notes in Job Summary
+        shell: bash
+        run: |
+          if [ "${{ steps.version_info.outputs.should_publish }}" != "true" ]; then
+            echo "> ℹ️ **Manual Preview Run**: Release publishing was skipped. Review the generated developer notes below." >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          if [ -f "DEVELOPER_NOTES.md" ]; then
+            cat DEVELOPER_NOTES.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload Developer Notes Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: developer-notes-${{ env.RELEASE_TAG }}
+          path: DEVELOPER_NOTES.md
+          if-no-files-found: error
+
+      - name: Publish / Update GitHub Release Notes
+        if: steps.version_info.outputs.should_publish == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ steps.version_info.outputs.target_tag }}
+          IS_PRERELEASE: ${{ inputs.is_prerelease || false }}
+        shell: bash
+        run: |
+          if [ "$TAG" = "HEAD" ]; then
+            echo "Target is HEAD; please specify a concrete version tag (e.g. v1.0.0) to publish a release."
+            exit 1
+          fi
+
+          # Ensure the tag exists locally
+          if ! git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Creating tag $TAG..."
+            git tag "$TAG"
+            git push origin "$TAG" || true
+          fi
+
+          PRERELEASE_FLAG=""
+          if [ "$IS_PRERELEASE" = "true" ]; then
+            PRERELEASE_FLAG="--prerelease"
+          fi
+
+          # Check if the GitHub release already exists
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists. Updating release notes..."
+            gh release edit "$TAG" --notes-file DEVELOPER_NOTES.md $PRERELEASE_FLAG
+          else
+            echo "Creating new GitHub release for $TAG..."
+            gh release create "$TAG" \
+              --title "Release $TAG" \
+              --notes-file DEVELOPER_NOTES.md \
+              --draft=false \
+              $PRERELEASE_FLAG
+          fi
+          echo "Release notes successfully published to GitHub Release $TAG!"
