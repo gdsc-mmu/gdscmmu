@@ -9,6 +9,17 @@ use Illuminate\Http\Request;
 class TeamController extends Controller
 {
     /**
+     * Dedicated Admin Team & Divisions Management View
+     */
+    public function adminIndex()
+    {
+        $divisions = TeamDivision::with('members')->orderBy('order')->orderBy('id')->get();
+        $teamMembersCount = TeamMember::count();
+
+        return view('admin.team.index', compact('divisions', 'teamMembersCount'));
+    }
+
+    /**
      * Store a newly created team division.
      */
     public function storeDivision(Request $request)
@@ -34,7 +45,7 @@ class TeamController extends Controller
             ]);
         }
 
-        return redirect('/admin/dashboard#manage-team-section')->with('message', "Division '{$division->name}' created successfully!");
+        return redirect()->route('admin.team.index')->with('message', "Division '{$division->name}' created successfully!");
     }
 
     /**
@@ -58,7 +69,7 @@ class TeamController extends Controller
             ]);
         }
 
-        return redirect('/admin/dashboard#manage-team-section')->with('message', "Division '{$division->name}' updated!");
+        return redirect()->route('admin.team.index')->with('message', "Division '{$division->name}' updated!");
     }
 
     /**
@@ -76,7 +87,7 @@ class TeamController extends Controller
             ]);
         }
 
-        return redirect('/admin/dashboard#manage-team-section')->with('message', "Division '{$name}' removed.");
+        return redirect()->route('admin.team.index')->with('message', "Division '{$name}' removed.");
     }
 
     /**
@@ -124,7 +135,7 @@ class TeamController extends Controller
             ]);
         }
 
-        return redirect('/admin/dashboard#division-' . $member->team_division_id)->with('message', "Member '{$member->name}' added successfully!");
+        return redirect('/admin/team#division-' . $member->team_division_id)->with('message', "Member '{$member->name}' added successfully!");
     }
 
     /**
@@ -167,7 +178,7 @@ class TeamController extends Controller
             ]);
         }
 
-        return redirect('/admin/dashboard#division-' . $member->team_division_id)->with('message', "Member '{$member->name}' updated!");
+        return redirect('/admin/team#division-' . $member->team_division_id)->with('message', "Member '{$member->name}' updated!");
     }
 
     /**
@@ -186,6 +197,6 @@ class TeamController extends Controller
             ]);
         }
 
-        return redirect('/admin/dashboard#division-' . $divId)->with('message', "Member '{$name}' removed.");
+        return redirect('/admin/team#division-' . $divId)->with('message', "Member '{$name}' removed.");
     }
 }
