@@ -2,6 +2,18 @@
 
 ## [Unreleased] - 2026-11-05
 ### ✨ Features Added
+- **members**: added dedicated **Manage Members** feature and admin tab (`/admin/members`):
+  - Created `club_members` database table and `ClubMember` model with initial 296 active members seeded from cohort spreadsheet.
+  - Implemented smart Excel import (`.xlsx`, `.xls`, `.csv`) with auto-sync and upsert matching by `Student ID`, `Name`, and `Term`.
+  - Added **Manage Terms (Archive / Delete)** feature with two distinct actions:
+    - **Archive Term (Set Inactive)**: Sets all members of a cohort term to `inactive` status, preserving records in the database while hiding them from the public member tracker search, with one-click reactivate support.
+    - **Delete Term (Permanent)**: Permanently purges all member records for that term from the database with confirmation guards.
+  - Removed persistent `0 member(s) selected` floating notifier and streamlined roster table view.
+  - Added full search & filter by Name, Student ID, Email, Term, and Status (Active/Inactive/Expired).
+  - Added **Export by Range** modal with flexible filtering by Term Cohort, Membership Status, Date Added range, Record volume limits (50, 100, 250, 500, 1000, All), and keyword search.
+  - Added manual Member CRUD (Add/Edit/Delete modals) and sample Excel template / data export.
+  - Connected public homepage membership checker (`/#membership`) directly to the member database for instant verification.
+  - Replaced unstyled Tailwind pagination with clean, modern Bootstrap 5 pill controls.
 - **admin**: separated monolithic Admin Dashboard SPA into dedicated routes and views:
   - `/admin/dashboard`: centralized high-level command center overview with quick metrics, management hub cards, and recent activity tables.
   - `/admin/events`: dedicated event management view with status badges, live search filter, and CRUD controls.

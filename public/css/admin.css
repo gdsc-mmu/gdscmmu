@@ -1908,6 +1908,94 @@ body {
     margin-top: auto;
 }
 
+/* ========================================================
+   Admin Pagination Styling (Clean Bootstrap 5 Pills)
+   ======================================================== */
+.admin-pagination-wrapper {
+    padding-top: 18px;
+    margin-top: 15px;
+    border-top: 1px solid #eef2f6;
+}
+
+.admin-pagination-wrapper nav {
+    width: 100%;
+}
+
+.admin-pagination-wrapper nav > div:first-child.d-sm-none {
+    display: none !important;
+}
+
+.admin-pagination-wrapper nav > div:last-child {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.admin-pagination-wrapper p.small.text-muted {
+    margin-bottom: 0 !important;
+    font-size: 0.88rem !important;
+    color: #64748b !important;
+}
+
+.admin-pagination-wrapper p.small.text-muted span {
+    font-weight: 700;
+    color: #0e174a;
+}
+
+.admin-pagination-wrapper ul.pagination {
+    margin-bottom: 0 !important;
+    display: flex !important;
+    gap: 4px !important;
+    align-items: center;
+}
+
+.admin-pagination-wrapper .page-item .page-link {
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #334155 !important;
+    padding: 6px 14px !important;
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+    background: #ffffff !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 36px;
+    height: 36px;
+    text-decoration: none !important;
+}
+
+.admin-pagination-wrapper .page-item:hover .page-link {
+    background: #f1f5f9 !important;
+    color: #0e174a !important;
+    border-color: #cbd5e1 !important;
+}
+
+.admin-pagination-wrapper .page-item.active .page-link {
+    background: #0e174a !important;
+    border-color: #0e174a !important;
+    color: #ffffff !important;
+    box-shadow: 0 3px 8px rgba(14, 23, 74, 0.25) !important;
+}
+
+.admin-pagination-wrapper .page-item.disabled .page-link {
+    color: #94a3b8 !important;
+    background: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+    opacity: 0.7;
+    cursor: not-allowed !important;
+}
+
+.admin-pagination-wrapper svg {
+    width: 14px !important;
+    height: 14px !important;
+    display: inline-block !important;
+}
+
+
 
 
 

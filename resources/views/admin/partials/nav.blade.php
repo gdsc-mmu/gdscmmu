@@ -18,6 +18,10 @@
             <i class="fa fa-users"></i>
             <span>Manage Team</span>
         </a>
+        <a href="{{ route('admin.club_members.index') }}" class="admin-subnav-link {{ $active === 'members' ? 'active' : '' }}">
+            <i class="fa fa-id-card-o"></i>
+            <span>Manage Members</span>
+        </a>
     </div>
 
     <div class="admin-subnav-actions">

@@ -65,21 +65,21 @@
 
                 <div class="stat-card">
                     <div class="stat-icon-wrapper icon-yellow">
-                        <i class="fa fa-users"></i>
+                        <i class="fa fa-id-card-o"></i>
                     </div>
                     <div>
-                        <div class="stat-number">{{ $teamMembersCount ?? 0 }}</div>
-                        <p class="stat-label">Committee Members</p>
+                        <div class="stat-number">{{ number_format($clubMembersCount ?? 0) }}</div>
+                        <p class="stat-label">Club Members</p>
                     </div>
                 </div>
 
                 <div class="stat-card">
                     <div class="stat-icon-wrapper icon-green">
-                        <i class="fa fa-check-circle"></i>
+                        <i class="fa fa-users"></i>
                     </div>
                     <div>
-                        <div class="stat-number">Active</div>
-                        <p class="stat-label">Portal Status</p>
+                        <div class="stat-number">{{ $teamMembersCount ?? 0 }}</div>
+                        <p class="stat-label">Committee Team</p>
                     </div>
                 </div>
             </div>
@@ -180,6 +180,39 @@
                             </a>
                             <a href="/team" target="_blank" class="btn-card-action btn-card-secondary" style="border: 1px solid #dadce0;">
                                 <span><i class="fa fa-users me-2"></i> View Team Showcase</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Manage Club Members -->
+                <div class="mgmt-card">
+                    <div class="mgmt-card-stripe stripe-accent-yellow"></div>
+                    <div class="mgmt-card-body">
+                        <div class="mgmt-card-header">
+                            <div class="mgmt-card-icon icon-yellow">
+                                <i class="fa fa-id-card-o"></i>
+                            </div>
+                            <div>
+                                <h3 class="mgmt-card-title">Manage Members</h3>
+                                <span class="mgmt-card-tag text-warning">{{ number_format($clubMembersCount ?? 0) }} Registered Members</span>
+                            </div>
+                        </div>
+                        <p class="mgmt-card-desc">
+                            Import Excel spreadsheets, auto-sync club member records by Name, Student ID, and Term, and manage membership status.
+                        </p>
+                        <div class="mgmt-card-actions">
+                            <a href="{{ route('admin.club_members.index') }}" class="btn-card-action btn-card-accent">
+                                <span><i class="fa fa-id-card-o me-2"></i> Manage Members Page</span>
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                            <a href="{{ route('admin.club_members.index') }}?action=import" class="btn-card-action btn-card-primary">
+                                <span><i class="fa fa-file-excel-o me-2"></i> Import Excel</span>
+                                <i class="fa fa-upload"></i>
+                            </a>
+                            <a href="/#membership" target="_blank" class="btn-card-action btn-card-secondary" style="border: 1px solid #dadce0;">
+                                <span><i class="fa fa-search me-2"></i> Public Member Checker</span>
                                 <i class="fa fa-external-link"></i>
                             </a>
                         </div>
