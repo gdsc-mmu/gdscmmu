@@ -61,8 +61,9 @@ class UserController extends Controller
         $recentNews = \App\Models\News::orderBy('created_at', 'desc')->take(5)->get();
         $divisions = \App\Models\TeamDivision::with('members')->orderBy('order')->orderBy('id')->get();
         $teamMembersCount = \App\Models\TeamMember::count();
+        $allNews = \App\Models\News::orderBy('date', 'desc')->orderBy('id', 'desc')->get();
 
-        return view('admin.dashboard', compact('eventsCount', 'newsCount', 'recentEvents', 'recentNews', 'divisions', 'teamMembersCount'));
+        return view('admin.dashboard', compact('eventsCount', 'newsCount', 'recentEvents', 'recentNews', 'divisions', 'teamMembersCount', 'allNews'));
     }
 
     public function loginUser() {

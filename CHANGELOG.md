@@ -1,3 +1,21 @@
+# 🚀 Developer Release Notes
+
+## [Unreleased] - 2026-11-05
+### ✨ Features Added
+- **admin**: separated monolithic Admin Dashboard SPA into dedicated routes and views:
+  - `/admin/dashboard`: centralized high-level command center overview with quick metrics, management hub cards, and recent activity tables.
+  - `/admin/events`: dedicated event management view with status badges, live search filter, and CRUD controls.
+  - `/admin/news`: dedicated news management page featuring 3-step article creation/editing wizard, paragraph CRUD with image attachments, and live reader preview.
+  - `/admin/team`: dedicated team division and member roster management with live search, accordion, and showcase preview.
+- **admin-navigation**: added unified Admin Sub-Navigation bar (`resources/views/admin/partials/nav.blade.php`) across all admin pages with active state highlighting.
+- **news-crud**: implemented multi-paragraph story support with per-paragraph image uploads, external links, and preview drawer.
+
+### 🐛 Fixes & Improvements
+- **news-draft**: completely removed the intrusive "Unfinished News Draft: Untitled Draft" banner from dashboard and news views, and purged lingering draft keys from local storage.
+- **ui-polish**: fixed button icon-to-text spacing with Bootstrap 5 gap conventions and responsive modal scrolling.
+
+---
+
 # 🚀 Developer Release Notes - v1.0.0
 
 > **Release Date:** 2026-10-19  

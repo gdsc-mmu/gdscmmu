@@ -54,8 +54,14 @@ Route::get('/login', [UserController::class, 'login']);
 Route::get('/admin/dashboard', [UserController::class, 'dashboard'])->middleware('auth', EnsureCommittee::class)->name('admin.dashboard');
 Route::get('/admin', [UserController::class, 'dashboard'])->middleware('auth', EnsureCommittee::class);
 
-// Admin Team Management
+// Admin Management
 Route::middleware(['auth', EnsureCommittee::class])->prefix('admin')->group(function () {
+    // Dedicated Admin Pages
+    Route::get('/events', [EventController::class, 'adminIndex'])->name('admin.events.index');
+    Route::get('/news', [NewsController::class, 'adminIndex'])->name('admin.news.index');
+    Route::get('/team', [TeamController::class, 'adminIndex'])->name('admin.team.index');
+
+    // Admin Team Management
     Route::post('/divisions', [TeamController::class, 'storeDivision'])->name('admin.divisions.store');
     Route::put('/divisions/{division}', [TeamController::class, 'updateDivision'])->name('admin.divisions.update');
     Route::delete('/divisions/{division}', [TeamController::class, 'destroyDivision'])->name('admin.divisions.destroy');
@@ -63,6 +69,12 @@ Route::middleware(['auth', EnsureCommittee::class])->prefix('admin')->group(func
     Route::post('/members', [TeamController::class, 'storeMember'])->name('admin.members.store');
     Route::put('/members/{member}', [TeamController::class, 'updateMember'])->name('admin.members.update');
     Route::delete('/members/{member}', [TeamController::class, 'destroyMember'])->name('admin.members.destroy');
+
+    // Admin News Management
+    Route::post('/news', [NewsController::class, 'store'])->name('admin.news.store');
+    Route::put('/news/{news}', [NewsController::class, 'update'])->name('admin.news.update');
+    Route::delete('/news/{news}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
+    Route::get('/news/{news}/json', [NewsController::class, 'getNewsJson'])->name('admin.news.json');
 });
 
 Route::post('/login', [UserController::class, 'loginUser'])->name('login');
@@ -85,6 +97,6 @@ Route::post('/recovery/{token}', [UserController::class, 'resetPassword'])->midd
 // newsletter page route
 // for creating news regarding current tech trends according to cs domains (AI , Software Engineering , Cybersecurity)
 
-Route::get('/news', action: [NewsController::class, 'index']);
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 
-Route::get('/news/{id}', action: [NewsController::class, 'show']);
+Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
