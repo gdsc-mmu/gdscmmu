@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Routing\UrlGenerator;
+use Illuminate\Pagination\Paginator;
 use Turso\Http\Laravel\LibSQLHttpServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(UrlGenerator $url): void
     {
         Model::unguard(); // Disable need of using $fillables
+
+        Paginator::useBootstrapFive();
 
         // Enforce HTTPS on all pages
         if (env('APP_ENV') == 'production') {

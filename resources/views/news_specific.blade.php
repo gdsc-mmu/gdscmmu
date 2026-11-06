@@ -8,31 +8,39 @@
                 <p class="news-hero-subtitle mt-3">{{ $newsbyId->description }}</p>
               <div class="news-footer-info text-center mt-4 mb-5">
                 <p class="news-hero-author">- {{ $newsbyId->author }} -</p>
-                <p class="text-muted">Last Updated: {{ $newsbyId->date->format('d M Y') }} </p>
+                <p class="text-muted">Last Updated: {{ $newsbyId->date ? $newsbyId->date->format('d M Y') : 'Recent' }} </p>
+                @if(auth()->check() && (auth()->user()->user_type === 'committee'))
+                  <div class="mt-2">
+                    <a href="/admin/dashboard#news-item-{{ $newsbyId->id }}" class="btn btn-sm btn-outline-danger rounded-pill px-3">
+                      <i class="fa fa-pencil me-1"></i> Edit Article in Admin
+                    </a>
+                  </div>
+                @endif
               </div>
             </div>
          <div id="newsSection"  class="news-surface mt-5 mb-5">
          <div id="newsParagraph">
         
+        @php
+            $paragraphs = is_array($newsbyId->paragraph) ? $newsbyId->paragraph : (!empty($newsbyId->paragraph) ? [$newsbyId->paragraph] : [$newsbyId->description]);
+            $images = is_array($newsbyId->news_img) ? $newsbyId->news_img : [];
+        @endphp
         <!--------this is used to display each paragraph of the news article , use this if the data is an array or json format ------->
-        @foreach ( $newsbyId->paragraph as $index=> $paragraph )
+        @foreach ( $paragraphs as $index=> $paragraph )
                     <div class="text-center mb-4">
                      
-                       <!--- detect if the index of the paragraph is even -->
-                       <!--- if the index is even, display the image before the paragraph -->
-                       @if($index % 2 === 0)
-                       @php $imgIndex = $index / 2; @endphp
-            
-                       <!-- check if the current paragraph has an associated image -->
-                        @if(isset($newsbyId->news_img[$imgIndex]))
+                        @php
+                            $imagePath = null;
+                            if (!empty($images[$index])) {
+                                $imagePath = $images[$index];
+                            } elseif ($index % 2 === 0 && isset($images[$index / 2]) && !empty($images[$index / 2])) {
+                                $imagePath = $images[$index / 2];
+                            }
+                        @endphp
 
-                           <!--- map the image path to a variable -->
-                           @php $imagePath = $newsbyId->news_img[$imgIndex]; @endphp
-                          <!--- check if the image path is a valid URL or a local path -->
-                          <!--- display the image accordingly -->
-                           <img src="{{ str_starts_with($imagePath, 'http') ? $imagePath : asset($imagePath) }}" alt="News Image" class="news-image mb-3" width="600">
+                        @if(!empty($imagePath))
+                            <img src="{{ str_starts_with($imagePath, 'http') ? $imagePath : asset($imagePath) }}" alt="News Image" class="news-image mb-3" width="600" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
                         @endif
-                      @endif
                      
                       <p class="news-paragraph mb-5" >
                           {{ $paragraph }}

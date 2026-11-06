@@ -9,6 +9,7 @@ use App\Http\Middleware\EnsureCommittee;
 use App\Http\Controllers\ExcelSearchController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\ClubMemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,8 +55,27 @@ Route::get('/login', [UserController::class, 'login']);
 Route::get('/admin/dashboard', [UserController::class, 'dashboard'])->middleware('auth', EnsureCommittee::class)->name('admin.dashboard');
 Route::get('/admin', [UserController::class, 'dashboard'])->middleware('auth', EnsureCommittee::class);
 
-// Admin Team Management
+// Admin Management
 Route::middleware(['auth', EnsureCommittee::class])->prefix('admin')->group(function () {
+    // Dedicated Admin Pages
+    Route::get('/events', [EventController::class, 'adminIndex'])->name('admin.events.index');
+    Route::get('/news', [NewsController::class, 'adminIndex'])->name('admin.news.index');
+    Route::get('/team', [TeamController::class, 'adminIndex'])->name('admin.team.index');
+    Route::get('/members', [ClubMemberController::class, 'index'])->name('admin.club_members.index');
+
+    // Admin Club Members Management & Excel Auto-Sync
+    Route::post('/club-members/import', [ClubMemberController::class, 'import'])->name('admin.club_members.import');
+    Route::post('/club-members', [ClubMemberController::class, 'store'])->name('admin.club_members.store');
+    Route::put('/club-members/{member}', [ClubMemberController::class, 'update'])->name('admin.club_members.update');
+    Route::post('/club-members/archive-term', [ClubMemberController::class, 'archiveTerm'])->name('admin.club_members.archive_term');
+    Route::post('/club-members/activate-term', [ClubMemberController::class, 'activateTerm'])->name('admin.club_members.activate_term');
+    Route::delete('/club-members/delete-by-term', [ClubMemberController::class, 'deleteByTerm'])->name('admin.club_members.delete_by_term');
+    Route::delete('/club-members/bulk-delete', [ClubMemberController::class, 'bulkDelete'])->name('admin.club_members.bulk_delete');
+    Route::delete('/club-members/{member}', [ClubMemberController::class, 'destroy'])->name('admin.club_members.destroy');
+    Route::get('/club-members/export', [ClubMemberController::class, 'export'])->name('admin.club_members.export');
+    Route::get('/club-members/template', [ClubMemberController::class, 'downloadTemplate'])->name('admin.club_members.template');
+
+    // Admin Team Management
     Route::post('/divisions', [TeamController::class, 'storeDivision'])->name('admin.divisions.store');
     Route::put('/divisions/{division}', [TeamController::class, 'updateDivision'])->name('admin.divisions.update');
     Route::delete('/divisions/{division}', [TeamController::class, 'destroyDivision'])->name('admin.divisions.destroy');
@@ -63,6 +83,12 @@ Route::middleware(['auth', EnsureCommittee::class])->prefix('admin')->group(func
     Route::post('/members', [TeamController::class, 'storeMember'])->name('admin.members.store');
     Route::put('/members/{member}', [TeamController::class, 'updateMember'])->name('admin.members.update');
     Route::delete('/members/{member}', [TeamController::class, 'destroyMember'])->name('admin.members.destroy');
+
+    // Admin News Management
+    Route::post('/news', [NewsController::class, 'store'])->name('admin.news.store');
+    Route::put('/news/{news}', [NewsController::class, 'update'])->name('admin.news.update');
+    Route::delete('/news/{news}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
+    Route::get('/news/{news}/json', [NewsController::class, 'getNewsJson'])->name('admin.news.json');
 });
 
 Route::post('/login', [UserController::class, 'loginUser'])->name('login');
@@ -85,6 +111,6 @@ Route::post('/recovery/{token}', [UserController::class, 'resetPassword'])->midd
 // newsletter page route
 // for creating news regarding current tech trends according to cs domains (AI , Software Engineering , Cybersecurity)
 
-Route::get('/news', action: [NewsController::class, 'index']);
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 
-Route::get('/news/{id}', action: [NewsController::class, 'show']);
+Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
