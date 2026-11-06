@@ -102,47 +102,106 @@ class ClubMemberController extends Controller
                 return redirect()->back()->with('error', 'The uploaded Excel file is empty or missing data rows.');
             }
 
-            // Normalize header columns
-            $headers = array_map(function($h) {
-                return strtolower(trim((string)$h));
-            }, $rows[0]);
-
-            // Locate column indices flexibly
+            // Dynamically scan for the actual header row (handles metadata, cards like "Total Active 592", or blank top rows)
+            $headerRowIndex = false;
             $nameIndex = false;
             $studentIdIndex = false;
             $termIndex = false;
             $emailIndex = false;
 
-            foreach ($headers as $idx => $header) {
-                if (in_array($header, ['name', 'full name', 'student name', 'member name', 'nama'])) {
-                    $nameIndex = $idx;
-                } elseif (in_array($header, ['student id', 'student_id', 'id', 'student number', 'matric no', 'matric_no', 'student no', 'matric'])) {
-                    $studentIdIndex = $idx;
-                } elseif (in_array($header, ['term', 'registration terms', 'registration term', 'session', 'cohort', 'terms'])) {
-                    $termIndex = $idx;
-                } elseif (in_array($header, ['email', 'student email', 'e-mail'])) {
-                    $emailIndex = $idx;
+            $scanLimit = min(20, count($rows));
+            for ($r = 0; $r < $scanLimit; $r++) {
+                $candidateHeaders = array_map(function($h) {
+                    return strtolower(preg_replace('/\s+/', ' ', trim((string)$h)));
+                }, $rows[$r]);
+
+                $tempNameIdx = false;
+                $tempStudentIdIdx = false;
+                $tempTermIdx = false;
+                $tempEmailIdx = false;
+
+                foreach ($candidateHeaders as $idx => $cell) {
+                    if (in_array($cell, ['name', 'full name', 'student name', 'member name', 'nama'])) {
+                        $tempNameIdx = $idx;
+                    } elseif (in_array($cell, ['student id', 'student_id', 'id', 'student number', 'matric no', 'matric_no', 'student no', 'matric'])) {
+                        $tempStudentIdIdx = $idx;
+                    } elseif (in_array($cell, ['registration term', 'registration terms', 'term', 'terms', 'session', 'cohort'])) {
+                        $tempTermIdx = $idx;
+                    } elseif (in_array($cell, ['email', 'student email', 'e-mail'])) {
+                        $tempEmailIdx = $idx;
+                    }
+                }
+
+                // If this row contains "Name" along with either "Student ID" or "Registration Term"
+                if ($tempNameIdx !== false && ($tempStudentIdIdx !== false || $tempTermIdx !== false)) {
+                    $headerRowIndex = $r;
+                    $nameIndex = $tempNameIdx;
+                    $studentIdIndex = $tempStudentIdIdx;
+                    $termIndex = $tempTermIdx;
+                    $emailIndex = $tempEmailIdx;
+                    break;
                 }
             }
 
-            if ($nameIndex === false && $studentIdIndex === false) {
-                return redirect()->back()->with('error', 'Could not detect a "Name" or "Student ID" column in the Excel header row. Please check your file formatting.');
+            // Fallback: check if any row has either Name or Student ID
+            if ($headerRowIndex === false) {
+                for ($r = 0; $r < $scanLimit; $r++) {
+                    $candidateHeaders = array_map(function($h) {
+                        return strtolower(preg_replace('/\s+/', ' ', trim((string)$h)));
+                    }, $rows[$r]);
+
+                    foreach ($candidateHeaders as $idx => $cell) {
+                        if ($nameIndex === false && in_array($cell, ['name', 'full name', 'student name', 'member name', 'nama'])) {
+                            $nameIndex = $idx;
+                        }
+                        if ($studentIdIndex === false && in_array($cell, ['student id', 'student_id', 'id', 'student number', 'matric no', 'matric_no', 'student no', 'matric'])) {
+                            $studentIdIndex = $idx;
+                        }
+                        if ($termIndex === false && in_array($cell, ['registration term', 'registration terms', 'term', 'terms', 'session', 'cohort'])) {
+                            $termIndex = $idx;
+                        }
+                    }
+
+                    if ($nameIndex !== false || $studentIdIndex !== false) {
+                        $headerRowIndex = $r;
+                        break;
+                    }
+                }
+            }
+
+            if ($headerRowIndex === false || ($nameIndex === false && $studentIdIndex === false)) {
+                return redirect()->back()->with('error', 'Could not detect the header row containing "Name" and "Student ID" columns in your Excel file. Please verify column headers.');
             }
 
             $createdCount = 0;
-            $updatedCount = 0;
+            $filledCount = 0;
+            $duplicatesIgnored = 0;
             $skippedCount = 0;
             $now = now();
+            $currentTerm = $defaultTerm;
 
-            // Process data rows
-            for ($i = 1; $i < count($rows); $i++) {
+            // Process data rows starting immediately after the detected header row
+            for ($i = $headerRowIndex + 1; $i < count($rows); $i++) {
                 $row = $rows[$i];
 
-                $name = $nameIndex !== false && isset($row[$nameIndex]) ? trim((string)$row[$nameIndex]) : '';
-                $studentId = $studentIdIndex !== false && isset($row[$studentIdIndex]) ? trim((string)$row[$studentIdIndex]) : null;
-                $term = $termIndex !== false && isset($row[$termIndex]) && trim((string)$row[$termIndex]) !== ''
-                    ? trim((string)$row[$termIndex])
-                    : $defaultTerm;
+                // If the term column has a value on this row, switch active cohort term
+                $rowTerm = $termIndex !== false && isset($row[$termIndex]) ? trim((string)$row[$termIndex]) : '';
+                if ($rowTerm !== '') {
+                    $currentTerm = $rowTerm;
+                }
+
+                $rawName = $nameIndex !== false && isset($row[$nameIndex]) ? trim((string)$row[$nameIndex]) : '';
+                // Normalize spaces in name (e.g. collapse multiple internal spaces)
+                $name = preg_replace('/\s+/', ' ', $rawName);
+                $normalizedIncomingName = strtolower($name);
+
+                $rawStudentId = $studentIdIndex !== false && isset($row[$studentIdIndex]) ? trim((string)$row[$studentIdIndex]) : null;
+                $studentId = ($rawStudentId !== null && in_array(trim($rawStudentId), ['?', '-', 'N/A', 'n/a', ''])) ? null : $rawStudentId;
+                if ($studentId !== null) {
+                    $studentId = trim($studentId);
+                }
+
+                $term = $currentTerm;
                 $email = $emailIndex !== false && isset($row[$emailIndex]) && trim((string)$row[$emailIndex]) !== ''
                     ? trim((string)$row[$emailIndex])
                     : null;
@@ -156,43 +215,83 @@ class ClubMemberController extends Controller
                 // Default name fallback if only studentId provided
                 if (empty($name) && !empty($studentId)) {
                     $name = 'Student ' . $studentId;
+                    $normalizedIncomingName = strtolower($name);
                 }
 
                 $status = in_array($term, ['2430', '2330', '2230']) ? 'expired' : 'active';
 
-                // Find existing record for auto-update
+                // Duplicate checking and flexible matching
                 $existing = null;
 
-                // 1. Try matching by student_id and term first
+                // 1. Match by Student ID (if incoming row has a valid ID)
                 if (!empty($studentId)) {
                     $existing = ClubMember::where('student_id', $studentId)
                         ->where('term', $term)
                         ->first();
 
-                    // If not found, match by student_id across any term
                     if (!$existing) {
                         $existing = ClubMember::where('student_id', $studentId)->first();
                     }
                 }
 
-                // 2. If still not found, match by name and term
-                if (!$existing && !empty($name)) {
-                    $existing = ClubMember::where('name', $name)
-                        ->where('term', $term)
+                // 2. Match by Name (case-insensitive & trimmed)
+                if (!$existing && !empty($normalizedIncomingName)) {
+                    // Try exact/case-insensitive match within same term
+                    $existing = ClubMember::where('term', $term)
+                        ->where(function($q) use ($name, $normalizedIncomingName) {
+                            $q->where('name', $name)
+                              ->orWhereRaw('LOWER(TRIM(name)) = ?', [$normalizedIncomingName]);
+                        })
                         ->first();
+
+                    // If not found in same term, match by name across any term
+                    if (!$existing) {
+                        $existing = ClubMember::where(function($q) use ($name, $normalizedIncomingName) {
+                            $q->where('name', $name)
+                              ->orWhereRaw('LOWER(TRIM(name)) = ?', [$normalizedIncomingName]);
+                        })->first();
+                    }
                 }
 
                 if ($existing) {
-                    $existing->update([
-                        'name' => $name,
-                        'student_id' => !empty($studentId) ? $studentId : $existing->student_id,
-                        'term' => $term,
-                        'email' => !empty($email) ? $email : $existing->email,
-                        'status' => $status,
-                        'updated_at' => $now,
-                    ]);
-                    $updatedCount++;
+                    // Duplicate found: Only fill in whatever is missing, without overwriting existing data
+                    $updates = [];
+
+                    // 1. Fill missing Student ID (e.g. first record had no ID, imported row has ID)
+                    $existingId = $existing->student_id !== null ? trim($existing->student_id) : '';
+                    $hasExistingId = $existingId !== '' && !in_array($existingId, ['?', '-', 'N/A', 'n/a']);
+                    if (!$hasExistingId && !empty($studentId)) {
+                        $updates['student_id'] = $studentId;
+                    }
+
+                    // 2. Fill missing or generic Name
+                    $existingName = trim($existing->name);
+                    $isGenericName = empty($existingName) || str_starts_with($existingName, 'Student ');
+                    if ($isGenericName && !empty($name) && !str_starts_with($name, 'Student ')) {
+                        $updates['name'] = $name;
+                    }
+
+                    // 3. Fill missing Email
+                    if (empty($existing->email) && !empty($email)) {
+                        $updates['email'] = $email;
+                    }
+
+                    // 4. Fill missing Term if existing is empty
+                    if (empty($existing->term) && !empty($term)) {
+                        $updates['term'] = $term;
+                    }
+
+                    // If anything missing was completed, save updates
+                    if (!empty($updates)) {
+                        $updates['updated_at'] = $now;
+                        $existing->update($updates);
+                        $filledCount++;
+                    } else {
+                        // Complete duplicate with no new missing fields to fill: do nothing
+                        $duplicatesIgnored++;
+                    }
                 } else {
+                    // New unique member: insert record
                     ClubMember::create([
                         'name' => $name,
                         'student_id' => !empty($studentId) ? $studentId : null,
@@ -206,10 +305,22 @@ class ClubMemberController extends Controller
                 }
             }
 
-            $totalProcessed = $createdCount + $updatedCount;
+            $totalProcessed = $createdCount + $filledCount + $duplicatesIgnored;
+            $msgParts = [];
+            if ($createdCount > 0) {
+                $msgParts[] = "{$createdCount} new member(s) added";
+            }
+            if ($filledCount > 0) {
+                $msgParts[] = "{$filledCount} record(s) completed with missing data (e.g. IDs filled)";
+            }
+            if ($duplicatesIgnored > 0) {
+                $msgParts[] = "{$duplicatesIgnored} duplicate(s) verified";
+            }
+            $summaryText = !empty($msgParts) ? implode(', ', $msgParts) : "No changes detected";
+
             return redirect()->route('admin.club_members.index')->with(
                 'message',
-                "Excel sync successful! {$createdCount} new members added, {$updatedCount} records auto-updated ({$totalProcessed} total synced)."
+                "Excel sync complete! {$summaryText} ({$totalProcessed} total rows processed)."
             );
         } catch (\Throwable $e) {
             return redirect()->back()->with('error', 'Error reading Excel file: ' . $e->getMessage());
@@ -391,8 +502,8 @@ class ClubMemberController extends Controller
             $query->whereDate('created_at', '<=', $dateTo);
         }
 
-        // Ordering
-        $query->orderBy('term', 'desc')->orderBy('name', 'asc');
+        // Ordering: group by term chronologically, then by name
+        $query->orderBy('term', 'asc')->orderBy('name', 'asc');
 
         // Range Filter: Record Limit
         $limit = (int)$request->input('limit', 0);
@@ -410,27 +521,33 @@ class ClubMemberController extends Controller
         $sheet = $spreadsheet->getActiveSheet();
         $sheet->setTitle('GDGoC Members');
 
-        // Headers
-        $sheet->setCellValue('A1', 'Student ID');
+        // Headers: Registration Term | Name | Student ID
+        $sheet->setCellValue('A1', 'Registration Term');
         $sheet->setCellValue('B1', 'Name');
-        $sheet->setCellValue('C1', 'Registration Term');
-        $sheet->setCellValue('D1', 'Email');
-        $sheet->setCellValue('E1', 'Status');
-        $sheet->setCellValue('F1', 'Date Added');
+        $sheet->setCellValue('C1', 'Student ID');
 
         // Style Header Row
-        $sheet->getStyle('A1:F1')->getFont()->setBold(true);
+        $sheet->getStyle('A1:C1')->getFont()->setBold(true);
 
         $rowNum = 2;
+        $lastTerm = null;
         foreach ($members as $m) {
-            $sheet->setCellValue('A' . $rowNum, $m->student_id ?? '');
+            // Write term on the first row of each cohort group, leave blank for following members
+            if ($m->term !== $lastTerm) {
+                $sheet->setCellValue('A' . $rowNum, $m->term);
+                $lastTerm = $m->term;
+            } else {
+                $sheet->setCellValue('A' . $rowNum, '');
+            }
+
             $sheet->setCellValue('B' . $rowNum, $m->name);
-            $sheet->setCellValue('C' . $rowNum, $m->term);
-            $sheet->setCellValue('D' . $rowNum, $m->email ?? '');
-            $sheet->setCellValue('E' . $rowNum, ucfirst($m->status));
-            $sheet->setCellValue('F' . $rowNum, $m->created_at ? $m->created_at->format('Y-m-d') : '');
+            $sheet->setCellValue('C' . $rowNum, $m->student_id ?? '');
             $rowNum++;
         }
+
+        $sheet->getColumnDimension('A')->setWidth(20);
+        $sheet->getColumnDimension('B')->setWidth(35);
+        $sheet->getColumnDimension('C')->setWidth(20);
 
         $termTag = ($term !== '' && $term !== 'all') ? "_Term{$term}" : '';
         $fileName = 'GDGoC_MMU_Members' . $termTag . '_' . date('Ymd_His') . '.xlsx';
@@ -446,7 +563,7 @@ class ClubMemberController extends Controller
     }
 
     /**
-     * Download a blank Excel import template.
+     * Download a blank Excel import template matching the expected grouped structure.
      */
     public function downloadTemplate()
     {
@@ -454,24 +571,42 @@ class ClubMemberController extends Controller
         $sheet = $spreadsheet->getActiveSheet();
         $sheet->setTitle('Template');
 
-        $sheet->setCellValue('A1', 'Name');
-        $sheet->setCellValue('B1', 'Student ID');
-        $sheet->setCellValue('C1', 'Term');
-        $sheet->setCellValue('D1', 'Email');
+        $sheet->setCellValue('A1', 'Registration Term');
+        $sheet->setCellValue('B1', 'Name');
+        $sheet->setCellValue('C1', 'Student ID');
 
-        // Sample Row
-        $sheet->setCellValue('A2', 'Muhammad Raziq');
-        $sheet->setCellValue('B2', '1211103984');
-        $sheet->setCellValue('C2', '2530');
-        $sheet->setCellValue('D2', 'raziq@student.mmu.edu.my');
+        $sheet->getStyle('A1:C1')->getFont()->setBold(true);
 
-        $sheet->getStyle('A1:D1')->getFont()->setBold(true);
+        // Sample rows matching the exact grouping structure
+        $sampleRows = [
+            ['2510', 'NISHANT', '243UC247DF'],
+            ['',     'Liw Jin Han', '243UC247K8'],
+            ['',     'PRABU NATAR A/L DHARMENDRA', '243UC2463Z'],
+            ['2520', 'LEE KAI SHUEN', '252FC2525K'],
+            ['',     'Shamkumar', '242UC244NQ'],
+            ['2530', 'Muhammad Amir Rahimi Bin Muhammad Assuad', '242UC244G4'],
+            ['',     'KHALID HOSHAM OMER MOHAMED', '253FC255ZU'],
+            ['2610', 'NUR DAMIA\' BATRISYIA BINTI MOHAMMAD DENEE ROSDI', '252UC243Y5'],
+            ['',     'Qaisarah binti Shamsul Azran', '252UC243DY'],
+        ];
 
-        $writer = new Xlsx($spreadsheet);
+        $rowNum = 2;
+        foreach ($sampleRows as $row) {
+            $sheet->setCellValue('A' . $rowNum, $row[0]);
+            $sheet->setCellValue('B' . $rowNum, $row[1]);
+            $sheet->setCellValue('C' . $rowNum, $row[2]);
+            $rowNum++;
+        }
+
+        $sheet->getColumnDimension('A')->setWidth(20);
+        $sheet->getColumnDimension('B')->setWidth(35);
+        $sheet->getColumnDimension('C')->setWidth(20);
+
         $fileName = 'GDGoC_Members_Import_Template.xlsx';
 
-        return new StreamedResponse(function() use ($writer) {
-            $writer->save('php://output');
+        return new StreamedResponse(function() use ($spreadsheet) {
+            $xlsxWriter = new Xlsx($spreadsheet);
+            $xlsxWriter->save('php://output');
         }, 200, [
             'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
             'Content-Disposition' => "attachment; filename=\"{$fileName}\"",
