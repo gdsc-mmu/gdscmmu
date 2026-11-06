@@ -621,20 +621,27 @@
 
                         <!-- Header Guidance -->
                         <div class="card p-3 bg-light border-0 rounded-3">
-                            <span class="small fw-bold text-dark mb-2 d-block"><i class="fa fa-table text-primary me-1"></i> Supported Column Header Names:</span>
-                            <div class="row g-2 small text-muted">
+                            <span class="small fw-bold text-dark mb-2 d-block"><i class="fa fa-table text-primary me-1"></i> Expected Spreadsheet Columns &amp; Structure:</span>
+                            <div class="row g-2 small text-muted mb-2">
                                 <div class="col-md-4">
-                                    <strong>Name Column:</strong><br>
-                                    <code>Name</code>, <code>Student Name</code>, <code>Full Name</code>
+                                    <strong>Column A (Term):</strong><br>
+                                    <code>Registration Term</code> / <code>Term</code><br>
+                                    <span class="text-secondary small fst-italic">Put term (e.g. 2510) on the 1st row of each cohort. Blank rows carry down the same term automatically.</span>
                                 </div>
                                 <div class="col-md-4">
-                                    <strong>Student ID Column:</strong><br>
-                                    <code>Student ID</code>, <code>Matric No</code>, <code>ID</code>
+                                    <strong>Column B (Name):</strong><br>
+                                    <code>Name</code> / <code>Student Name</code><br>
+                                    <span class="text-secondary small fst-italic">Full name of the student member.</span>
                                 </div>
                                 <div class="col-md-4">
-                                    <strong>Term Column:</strong><br>
-                                    <code>Term</code>, <code>Registration terms</code>, <code>Session</code>
+                                    <strong>Column C (Student ID):</strong><br>
+                                    <code>Student ID</code> / <code>ID</code><br>
+                                    <span class="text-secondary small fst-italic">Matric ID (e.g. 243UC247DF or ? for pending).</span>
                                 </div>
+                            </div>
+                            <div class="p-2 bg-white rounded border small text-secondary">
+                                <i class="fa fa-info-circle text-primary me-1"></i>
+                                <strong>Tip:</strong> You can download the sample template to see the exact grouped cohort format.
                             </div>
                         </div>
                     </div>
