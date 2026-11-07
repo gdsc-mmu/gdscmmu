@@ -2,6 +2,11 @@
 
 ## [Unreleased] - 2026-11-05
 ### ✨ Features Added
+- **team-avatars-cloud-storage**: integrated cloud avatar storage for team members:
+  - Created `SupabaseStorageService` to upload member photos to the `team_avatars` Supabase Storage bucket with automatic fallback to persistent PostgreSQL Base64.
+  - Migrated `avatar` column in `team_members` table to `TEXT` to accommodate full cloud URLs and data URIs.
+  - Added smart `avatar_url` accessor on `TeamMember` model to resolve cloud bucket URLs, data URIs, local files, and static CSS avatar asset maps.
+  - Updated `/team` and `/admin/team` to display real member photos across all environments and prevent broken 404 images in production.
 - **events-bevy-sync**: implemented automated Bevy event synchronization from official Google Developer Groups platform (`gdg.community.dev` Chapter 2886):
   - Created `BevyEventService` and artisan command `php artisan bevy:sync-events` to automatically pull, parse, and synchronize all chapter events.
   - Added smart `updateOrCreate` deduplication by `bevy_id`: automatically updates dates, descriptions, venues, and banners without creating duplicates.

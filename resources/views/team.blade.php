@@ -33,11 +33,11 @@
                     <div class="row mb-3 justify-content-center">
                         @foreach($division->members as $member)
                             <div data-aos="fade-down" data-aos-duration="1500" class="col-lg-4 col-md-6 col-sm-6 mb-4 d-flex justify-content-center">
-                                <div class="profile" @if($member->avatar && !str_starts_with($member->avatar, 'http') && !str_contains($member->avatar, '/')) id="{{ $member->avatar }}" @endif>
+                                <div class="profile" @if($member->avatar && !str_starts_with($member->avatar, 'http') && !str_starts_with($member->avatar, 'data:') && !str_contains($member->avatar, '/')) id="{{ $member->avatar }}" @endif>
                                     @php
                                         $bgStyle = '';
-                                        if ($member->avatar && (str_starts_with($member->avatar, 'http') || str_contains($member->avatar, '/'))) {
-                                            $bgStyle = 'style="background-image: url(' . asset($member->avatar) . ') !important;"';
+                                        if ($member->avatar_url && (str_starts_with($member->avatar, 'http') || str_starts_with($member->avatar, 'data:') || str_contains($member->avatar, '/'))) {
+                                            $bgStyle = 'style="background-image: url(' . $member->avatar_url . ') !important;"';
                                         }
                                     @endphp
                                     <span class="profile-span" {!! $bgStyle !!}></span>
