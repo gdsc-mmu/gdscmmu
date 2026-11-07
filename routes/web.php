@@ -59,6 +59,7 @@ Route::get('/admin', [UserController::class, 'dashboard'])->middleware('auth', E
 Route::middleware(['auth', EnsureCommittee::class])->prefix('admin')->group(function () {
     // Dedicated Admin Pages
     Route::get('/events', [EventController::class, 'adminIndex'])->name('admin.events.index');
+    Route::post('/events/sync-bevy', [EventController::class, 'syncBevy'])->name('admin.events.sync_bevy');
     Route::get('/news', [NewsController::class, 'adminIndex'])->name('admin.news.index');
     Route::get('/team', [TeamController::class, 'adminIndex'])->name('admin.team.index');
     Route::get('/members', [ClubMemberController::class, 'index'])->name('admin.club_members.index');

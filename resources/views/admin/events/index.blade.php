@@ -25,7 +25,14 @@
                         <h1 class="admin-title">Manage Events</h1>
                         <p class="admin-subtitle">Schedule, organize, edit, and maintain GDGoC workshops, hackathons, and speaker sessions.</p>
                     </div>
-                    <div class="admin-header-actions mt-3 mt-md-0">
+                    <div class="admin-header-actions mt-3 mt-md-0 d-flex gap-2 flex-wrap align-items-center">
+                        <form action="{{ route('admin.events.sync_bevy') }}" method="POST" class="d-inline" id="bevySyncForm">
+                            @csrf
+                            <button type="submit" class="btn-admin-action" style="background: linear-gradient(135deg, #4285F4 0%, #1a73e8 100%); color: white; border: none;" id="bevySyncBtn" onclick="this.innerHTML='<i class=\'fa fa-spinner fa-spin me-1\'></i> Syncing...'; this.disabled=true; this.form.submit();">
+                                <i class="fa fa-refresh me-1"></i>
+                                <span>Sync with Bevy</span>
+                            </button>
+                        </form>
                         <a href="/events/create" class="btn-admin-action btn-admin-primary">
                             <i class="fa fa-plus-circle"></i>
                             <span>Create New Event</span>
@@ -41,6 +48,13 @@
             @if(session('message'))
                 <div class="alert alert-success alert-dismissible fade show rounded-4 shadow-sm mb-4" role="alert">
                     <i class="fa fa-check-circle me-2"></i> {{ session('message') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show rounded-4 shadow-sm mb-4" role="alert">
+                    <i class="fa fa-exclamation-triangle me-2"></i> {{ session('error') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
@@ -135,17 +149,22 @@
                          data-desc="{{ strtolower($eventItem->description ?? '') }}">
                         <div class="event-admin-card">
                             <div class="event-admin-img-wrap">
-                                <img src="{{ $eventItem->image ? asset('images/' . $eventItem->image) : 'https://images.unsplash.com/photo-1520004434532-668416a08753?q=80&w=800&auto=format&fit=crop' }}" 
+                                <img src="{{ $eventItem->image_url }}" 
                                      alt="{{ $eventItem->title }}" 
                                      class="event-admin-img">
                                 <span class="event-admin-status {{ $statusClass }}">
                                     {{ $statusLabel }}
                                 </span>
+                                @if($eventItem->isFromBevy())
+                                    <span class="position-absolute bottom-0 start-0 m-2 badge bg-primary shadow-sm" style="font-size: 0.72rem; border-radius: 6px;">
+                                        <i class="fa fa-google me-1"></i> Bevy
+                                    </span>
+                                @endif
                             </div>
 
                             <div class="event-admin-body">
                                 <div class="event-admin-date-time">
-                                    <span><i class="fa fa-calendar me-1 text-primary"></i> {{ $eventItem->date }}</span>
+                                    <span><i class="fa fa-calendar me-1 text-primary"></i> {{ $eventItem->date?->format('M d, Y') ?? $eventItem->date }}</span>
                                     @if(!empty($eventItem->time))
                                         <span>&bull;</span>
                                         <span><i class="fa fa-clock-o me-1 text-muted"></i> {{ $eventItem->time }}</span>
@@ -157,11 +176,16 @@
                                 </h3>
 
                                 <p class="event-admin-desc">
-                                    {{ \Illuminate\Support\Str::limit($eventItem->description, 130) }}
+                                    {{ \Illuminate\Support\Str::limit(strip_tags($eventItem->description), 130) }}
                                 </p>
 
                                 <div class="event-admin-footer">
-                                    <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                                        @if($eventItem->bevy_url)
+                                            <a href="{{ $eventItem->bevy_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info rounded-pill px-3" title="Open on Bevy Platform">
+                                                <i class="fa fa-external-link me-1"></i> Bevy
+                                            </a>
+                                        @endif
                                         <a href="/events/{{ $eventItem->id }}/edit" class="btn btn-sm btn-outline-primary rounded-pill px-3" title="Edit Event">
                                             <i class="fa fa-pencil me-1"></i> Edit
                                         </a>

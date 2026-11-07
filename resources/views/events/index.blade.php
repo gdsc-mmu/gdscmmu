@@ -48,7 +48,7 @@
                     <div class="event-card h-100">
                         <!-- Event Image -->
                         <div class="event-image-container">
-                            <img src="{{$eventItem->image ? asset('images/' . $eventItem->image) : 'https://images.unsplash.com/photo-1520004434532-668416a08753?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}" 
+                            <img src="{{ $eventItem->image_url }}" 
                                  class="event-image" 
                                  alt="{{ $eventItem->title }}">
                             
@@ -136,8 +136,13 @@
 
                             <!-- Event Actions -->
                             <div class="event-actions">
-                                <div class="action-buttons">
-                                    <a href="/events/{{$eventItem->id}}" class="btn btn-primary btn-sm">
+                                <div class="action-buttons d-flex gap-2 align-items-center flex-wrap">
+                                    @if($eventItem->bevy_url)
+                                        <a href="{{ $eventItem->bevy_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-ticket"></i> RSVP on Bevy
+                                        </a>
+                                    @endif
+                                    <a href="/events/{{$eventItem->id}}" class="btn {{ $eventItem->bevy_url ? 'btn-outline-primary' : 'btn-primary' }} btn-sm">
                                         <i class="fa fa-eye"></i> View Details
                                     </a>
                                 </div>
