@@ -12,7 +12,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        // Automatically sync events from official GDG Bevy platform daily
+        $schedule->command('bevy:sync-events')->daily();
     }
 
     /**

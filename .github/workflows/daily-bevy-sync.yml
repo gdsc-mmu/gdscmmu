@@ -1,0 +1,51 @@
+name: Daily Bevy Events Sync
+
+on:
+  schedule:
+    # Runs at 00:00 UTC (8:00 AM MYT) every day
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      force_sync:
+        description: 'Force immediate manual sync from Bevy'
+        required: false
+        default: 'true'
+
+jobs:
+  sync-bevy-events:
+    name: Sync GDGoC MMU Events from Bevy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Laravel Bevy Sync Webhook
+        env:
+          APP_URL: ${{ secrets.APP_URL || 'https://dev.gdgmmu.com' }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET || 'mmu_gdg_cron_secret_2026' }}
+        run: |
+          echo "Triggering Bevy Event Sync on $APP_URL..."
+          
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+            -H "Accept: application/json" \
+            -H "X-CRON-KEY: $CRON_SECRET" \
+            "$APP_URL/api/cron/sync-bevy?key=$CRON_SECRET")
+            
+          HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+          
+          echo "HTTP Status: $HTTP_STATUS"
+          echo "Response Payload: $BODY"
+          
+          if [ "$HTTP_STATUS" -ne 200 ]; then
+            echo "❌ Bevy Sync failed with status $HTTP_STATUS"
+            echo "::error title=Bevy Sync Failed::HTTP $HTTP_STATUS - $BODY"
+            exit 1
+          fi
+          
+          echo "✅ Bevy Sync completed successfully!"
+          
+          # Add GitHub Action Step Summary
+          echo "### 📅 Bevy Events Sync Status" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status**: ✅ Success (HTTP $HTTP_STATUS)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Target URL**: \`$APP_URL\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Response**: \`$BODY\`" >> $GITHUB_STEP_SUMMARY
+
