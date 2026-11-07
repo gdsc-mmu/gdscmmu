@@ -93,7 +93,7 @@ class TeamController extends Controller
     /**
      * Store a newly created team member with complete naming fields.
      */
-    public function storeMember(Request $request)
+    public function storeMember(Request $request, \App\Services\SupabaseStorageService $storageService)
     {
         $validated = $request->validate([
             'team_division_id' => 'required|exists:team_divisions,id',
@@ -108,14 +108,7 @@ class TeamController extends Controller
         ]);
 
         if ($request->hasFile('avatar_file')) {
-            $image = $request->file('avatar_file');
-            $imageName = time() . '_' . preg_replace('/[^a-zA-Z0-9_\.]/', '', $image->getClientOriginalName());
-            $destinationPath = public_path('assets/img/members');
-            if (!file_exists($destinationPath)) {
-                mkdir($destinationPath, 0755, true);
-            }
-            $image->move($destinationPath, $imageName);
-            $validated['avatar'] = 'assets/img/members/' . $imageName;
+            $validated['avatar'] = $storageService->uploadAvatar($request->file('avatar_file'));
         }
 
         if (!isset($validated['order']) || $validated['order'] === null) {
@@ -141,7 +134,7 @@ class TeamController extends Controller
     /**
      * Update the specified team member.
      */
-    public function updateMember(Request $request, TeamMember $member)
+    public function updateMember(Request $request, TeamMember $member, \App\Services\SupabaseStorageService $storageService)
     {
         $validated = $request->validate([
             'team_division_id' => 'sometimes|required|exists:team_divisions,id',
@@ -156,14 +149,7 @@ class TeamController extends Controller
         ]);
 
         if ($request->hasFile('avatar_file')) {
-            $image = $request->file('avatar_file');
-            $imageName = time() . '_' . preg_replace('/[^a-zA-Z0-9_\.]/', '', $image->getClientOriginalName());
-            $destinationPath = public_path('assets/img/members');
-            if (!file_exists($destinationPath)) {
-                mkdir($destinationPath, 0755, true);
-            }
-            $image->move($destinationPath, $imageName);
-            $validated['avatar'] = 'assets/img/members/' . $imageName;
+            $validated['avatar'] = $storageService->uploadAvatar($request->file('avatar_file'));
         }
 
         unset($validated['avatar_file']);

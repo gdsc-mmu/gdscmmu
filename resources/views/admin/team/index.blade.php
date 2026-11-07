@@ -204,10 +204,8 @@
                                                              data-member-role="{{ strtolower($member->role) }}">
                                                             <div class="member-item-top">
                                                                 <div class="member-avatar-wrapper">
-                                                                    @if($member->avatar && file_exists(public_path($member->avatar)))
-                                                                        <img src="{{ asset($member->avatar) }}" alt="{{ $member->name }}">
-                                                                    @elseif($member->avatar && str_starts_with($member->avatar, 'http'))
-                                                                        <img src="{{ $member->avatar }}" alt="{{ $member->name }}">
+                                                                    @if($member->avatar_url)
+                                                                        <img src="{{ $member->avatar_url }}" alt="{{ $member->name }}">
                                                                     @else
                                                                         <span>{{ strtoupper(substr($member->name, 0, 2)) }}</span>
                                                                     @endif
@@ -275,11 +273,11 @@
                                                     <div class="row mb-3 justify-content-center">
                                                         @forelse($division->members as $member)
                                                             <div class="col-lg-4 col-md-6 col-sm-6 mb-4 d-flex justify-content-center">
-                                                                <div class="profile" @if($member->avatar && !str_starts_with($member->avatar, 'http') && !str_contains($member->avatar, '/')) id="{{ $member->avatar }}" @endif>
+                                                                <div class="profile" @if($member->avatar && !str_starts_with($member->avatar, 'http') && !str_starts_with($member->avatar, 'data:') && !str_contains($member->avatar, '/')) id="{{ $member->avatar }}" @endif>
                                                                     @php
                                                                         $bgStyle = '';
-                                                                        if ($member->avatar && (str_starts_with($member->avatar, 'http') || str_contains($member->avatar, '/'))) {
-                                                                            $bgStyle = 'style="background-image: url(' . asset($member->avatar) . ') !important;"';
+                                                                        if ($member->avatar_url && (str_starts_with($member->avatar, 'http') || str_starts_with($member->avatar, 'data:') || str_contains($member->avatar, '/'))) {
+                                                                            $bgStyle = 'style="background-image: url(' . $member->avatar_url . ') !important;"';
                                                                         }
                                                                     @endphp
                                                                     <span class="profile-span" {!! $bgStyle !!}></span>
