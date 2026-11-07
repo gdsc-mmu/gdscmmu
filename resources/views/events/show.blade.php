@@ -4,22 +4,31 @@
         <div class="col-md-8 offset-md-2 mt-5">
             <!-- Event Banner Section -->
             <div data-aos="fade-down" data-aos-duration="1500" class="mt-2 mb-4 text-center banner-section">
-                <img src="{{$event->image ? asset('images/' . $event->image) : 'https://images.unsplash.com/photo-1520004434532-668416a08753?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}}"
-                    class="img-fluid mx-auto d-block rounded-start rounded-end shadow"
-                    style="max-width: auto; height: 300px;" alt="Event banner">
+                <img src="{{ $event->image_url }}"
+                    class="img-fluid mx-auto d-block rounded shadow"
+                    style="max-height: 400px; width: 100%; object-fit: cover;" alt="{{ $event->title }}">
             </div>
 
             <!-- Event Title Section -->
             <div data-aos="fade-down" data-aos-duration="1500" class="text-center mb-4">
                 <h1 class="text-white fs-1">{{ $event->title }}</h1>
+                @if($event->bevy_url)
+                    <div class="mt-3">
+                        <a href="{{ $event->bevy_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg rounded-pill px-4 shadow">
+                            <i class="fa fa-ticket me-2"></i> RSVP on Official Bevy Platform
+                        </a>
+                    </div>
+                @endif
             </div>
 
             <!-- About the Event Section -->
             <section data-aos="fade-down" data-aos-duration="1500" class="bg-light p-4 rounded mb-4 shadow">
-                <div class="text-center">
-                    <h2 class="mb-4 fs-2">About the Event</h2>
+                <div class="text-center text-md-start">
+                    <h2 class="mb-4 fs-2 text-center">About the Event</h2>
                     <hr style="border-top: 2px solid black; margin: 20px 0;">
-                    <p class="card-text" style="font-size: 1.1rem;">{!!nl2br($event->description)!!}</p>
+                    <div class="card-text text-start" style="font-size: 1.1rem; line-height: 1.7;">
+                        {!! str_contains($event->description, '<p>') ? $event->description : nl2br(e($event->description)) !!}
+                    </div>
                 </div>
             </section>
 

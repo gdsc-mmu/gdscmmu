@@ -14,7 +14,7 @@ class EventController extends Controller
      */
     public function adminIndex()
     {
-        $events = Event::orderBy('date', 'desc')->orderBy('created_at', 'desc')->get();
+        $events = Event::orderBy('date', 'desc')->orderBy('time', 'desc')->orderBy('created_at', 'desc')->get();
         $eventsCount = $events->count();
         $upcomingCount = $events->filter(function($e) {
             try {
@@ -28,9 +28,43 @@ class EventController extends Controller
         return view('admin.events.index', compact('events', 'eventsCount', 'upcomingCount', 'pastCount'));
     }
 
+    /**
+     * Sync events from the official GDG Bevy API
+     */
+    public function syncBevy(\App\Services\BevyEventService $bevyService)
+    {
+        $result = $bevyService->syncEvents(true);
+
+        if ($result['success']) {
+            return redirect()->route('admin.events.index')->with('message', $result['message']);
+        }
+
+        return redirect()->route('admin.events.index')->with('error', $result['message']);
+    }
+
+    /**
+     * Webhook endpoint for automated cron synchronization (e.g. GitHub Actions, cron-job.org)
+     */
+    public function cronSync(Request $request, \App\Services\BevyEventService $bevyService)
+    {
+        $expectedKey = env('CRON_SECRET', 'mmu_gdg_cron_secret_2026');
+        $providedKey = $request->input('key') ?? $request->header('X-CRON-KEY') ?? $request->bearerToken();
+
+        if (empty($providedKey) || !hash_equals($expectedKey, (string)$providedKey)) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Unauthorized: Invalid cron access key.',
+            ], 403);
+        }
+
+        $result = $bevyService->syncEvents(true);
+
+        return response()->json($result, $result['success'] ? 200 : 500);
+    }
+
     // Events page
     function events() {
-        $event = Event::orderBy('created_at', 'desc')->get();
+        $event = Event::orderBy('date', 'desc')->orderBy('time', 'desc')->orderBy('created_at', 'desc')->get();
         return view('events.index', ['event' => $event]); 
     }
 

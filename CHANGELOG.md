@@ -2,6 +2,15 @@
 
 ## [Unreleased] - 2026-11-05
 ### ✨ Features Added
+- **events-bevy-sync**: implemented automated Bevy event synchronization from official Google Developer Groups platform (`gdg.community.dev` Chapter 2886):
+  - Created `BevyEventService` and artisan command `php artisan bevy:sync-events` to automatically pull, parse, and synchronize all chapter events.
+  - Added smart `updateOrCreate` deduplication by `bevy_id`: automatically updates dates, descriptions, venues, and banners without creating duplicates.
+  - Added 1-click **"Sync with Bevy"** button with live spinner feedback in Manage Events (`/admin/events`).
+  - Added secure cron webhook endpoint (`/api/cron/sync-bevy`) protected with token authentication.
+  - Created serverless GitHub Actions scheduled workflow (`.github/workflows/daily-bevy-sync.yml`) that runs daily at 00:00 UTC (8:00 AM MYT) with manual dispatch trigger support.
+  - Added automatic daily scheduled sync in `app/Console/Kernel.php`.
+  - Added direct **"RSVP on Bevy"** redirection buttons across public event cards (`/events`) and event detail views (`/events/{id}`).
+  - Added `bevy_id`, `bevy_url`, `end_date`, `location`, `event_type`, and `tags` database columns in PostgreSQL migration.
 - **members**: added dedicated **Manage Members** feature and admin tab (`/admin/members`):
   - Created `club_members` database table and `ClubMember` model with initial 296 active members seeded from cohort spreadsheet.
   - Implemented smart Excel import (`.xlsx`, `.xls`, `.csv`) with dynamic header row & column detection (supporting sheets with top summary cards, empty leading columns, and arbitrary header positions).
