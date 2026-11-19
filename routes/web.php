@@ -29,6 +29,10 @@ Route::get('/', [ExcelSearchController::class, 'showForm']);
 
 Route::post('/', [ExcelSearchController::class, 'search'])->name('excel.search');
 
+// Cron Bevy Event Synchronization (Fallback for web router)
+Route::match(['get', 'post'], '/api/cron/sync-bevy', [EventController::class, 'cronSync'])->name('web.api.cron.sync_bevy');
+Route::match(['get', 'post'], '/cron/sync-bevy', [EventController::class, 'cronSync'])->name('web.cron.sync_bevy');
+
 
 
 Route::get('/team', action: [IndexController::class, 'team']);
