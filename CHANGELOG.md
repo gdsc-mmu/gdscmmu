@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-11-05
 ### ✨ Features Added
+- **automated-runner-scripts**: added zero-configuration startup scripts and modernized documentation:
+  - Created `start.ps1` (PowerShell with colored status feedback), `start.bat` (Windows double-clickable batch), and `start.sh` (Linux/macOS/Git Bash).
+  - Automatically verifies PHP, Composer, and Node/NPM prerequisites, provisions `.env`, downloads packages, compiles Vite assets, runs migrations, clears stale caches, and launches `php artisan serve`.
+  - Comprehensively updated `README.md` with Quick Start instructions, manual installation steps, Supabase/SQLite configuration, public user endpoints, and key feature overviews.
 - **team-avatars-cloud-storage**: integrated cloud avatar storage for team members:
   - Created `SupabaseStorageService` to upload member photos to the `team_avatars` Supabase Storage bucket with automatic fallback to persistent PostgreSQL Base64.
   - Migrated `avatar` column in `team_members` table to `TEXT` to accommodate full cloud URLs and data URIs.
