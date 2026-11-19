@@ -143,6 +143,16 @@ DB_DATABASE=C:\path\to\database\database.sqlite
 
 ---
 
+## 📘 Developer Handover & Production Deployment
+
+For incoming maintainers and developers taking over this repository, refer to the complete [Developer Handover & Production Deployment Playbook](DEPLOYMENT_HANDOVER.md) covering:
+- Render Docker web service configuration and auto-deployment.
+- Supabase PostgreSQL (Session Pooler) and Supabase Storage bucket (`team_avatars`) setup.
+- Automated Bevy event synchronization and GitHub Actions cron maintenance.
+- Production environment variable checklist and common troubleshooting SOPs.
+
+---
+
 ## 📄 License
 
 This project is open-source software licensed under the [MIT license](LICENSE).
