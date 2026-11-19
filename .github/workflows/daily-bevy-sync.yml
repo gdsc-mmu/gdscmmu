@@ -35,7 +35,7 @@ jobs:
         run: |
           echo "Triggering Bevy Event Sync on $APP_URL..."
           
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X GET \
             -H "Accept: application/json" \
             -H "X-CRON-KEY: $CRON_SECRET" \
             "$APP_URL/api/cron/sync-bevy?key=$CRON_SECRET")
