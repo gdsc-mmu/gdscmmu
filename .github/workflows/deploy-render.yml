@@ -1,0 +1,81 @@
+name: Deploy to Render & Verify Health
+
+on:
+  push:
+    branches:
+      - production
+  workflow_dispatch:
+
+jobs:
+  deploy-to-render:
+    name: Trigger Render Deploy & Monitor
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Render Deployment
+        id: trigger_deploy
+        run: |
+          echo "🚀 Sending deploy trigger to Render..."
+          
+          if [ -z "${{ secrets.RENDER_DEPLOY_HOOK_URL }}" ]; then
+            echo "⚠️ Secret RENDER_DEPLOY_HOOK_URL is not set in GitHub repository secrets."
+            echo "::warning title=Missing Secret::Add RENDER_DEPLOY_HOOK_URL under Repository Settings -> Secrets and variables -> Actions"
+            exit 1
+          fi
+
+          # Trigger deploy via Deploy Hook
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}")
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "Response code: $HTTP_CODE"
+          echo "Payload: $BODY"
+
+          if [ "$HTTP_CODE" -ne 200 ] && [ "$HTTP_CODE" -ne 201 ]; then
+            echo "❌ Failed to trigger deployment on Render (HTTP $HTTP_CODE)."
+            echo "::error title=Render Deploy Trigger Failed::HTTP $HTTP_CODE - $BODY"
+            exit 1
+          fi
+
+          echo "✅ Render deployment initiated successfully!"
+
+      - name: Wait for Render Build & Healthcheck
+        run: |
+          echo "⏳ Waiting for Render to build Docker image and boot container (polling live status)..."
+          
+          TARGET_URL="https://gdscmmu-i1ve.onrender.com"
+          MAX_RETRIES=24      # 24 checks * 15 seconds = 6 minutes max wait
+          RETRY_COUNT=0
+          DEPLOY_SUCCESS=false
+
+          # Wait 30 seconds initially for Render to begin the Docker build
+          sleep 30
+
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+            RETRY_COUNT=$((RETRY_COUNT+1))
+            echo "Checking site health ($RETRY_COUNT/$MAX_RETRIES)..."
+            
+            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$TARGET_URL" || true)
+            echo "Current HTTP status: $HTTP_STATUS"
+
+            if [ "$HTTP_STATUS" = "200" ]; then
+              echo "✅ Application is LIVE and healthy on Render!"
+              DEPLOY_SUCCESS=true
+              break
+            fi
+
+            sleep 15
+          done
+
+          if [ "$DEPLOY_SUCCESS" = false ]; then
+            echo "❌ Deployment verification timed out or failed!"
+            echo "::error title=Render Deploy Verification Failed::Site did not respond with HTTP 200 within 6 minutes. Check Render deployment logs."
+            exit 1
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### 🚀 Render Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Target URL**: [https://gdscmmu-i1ve.onrender.com](https://gdscmmu-i1ve.onrender.com)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status**: ${{ job.status == 'success' && '✅ Deployed & Healthy' || '❌ Failed' }}" >> $GITHUB_STEP_SUMMARY

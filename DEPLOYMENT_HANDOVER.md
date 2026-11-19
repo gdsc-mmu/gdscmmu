@@ -89,6 +89,14 @@ Under the **Environment** tab of your Render Web Service, add the following envi
 > [!IMPORTANT]
 > **Render IPv6 vs IPv4 Warning**: Direct Supabase database hosts (`db.<ref>.supabase.co`) resolve exclusively to IPv6. Render containers operate on IPv4 and will fail with `Network unreachable` if connected directly. **Always use the Supabase Pooler host** (`aws-0-ap-south-1.pooler.supabase.com`).
 
+### Step 3: Automated Deploy & Health Check Workflow
+We provide an automated GitHub Actions deployment workflow at [`.github/workflows/deploy-render.yml`](.github/workflows/deploy-render.yml):
+1. In Render Dashboard: **Settings → Deploy Hook → Copy Deploy Hook URL**.
+2. In GitHub Repository: **Settings → Secrets and variables → Actions → New repository secret**:
+   - **Name**: `RENDER_DEPLOY_HOOK_URL`
+   - **Value**: *(Paste Render Deploy Hook URL)*
+3. Whenever code is merged or pushed to `production`, GitHub Actions triggers Render, polls container build health, and fails with alerts if the build/migration breaks.
+
 ---
 
 ## 🗄 Supabase Setup & Configuration
