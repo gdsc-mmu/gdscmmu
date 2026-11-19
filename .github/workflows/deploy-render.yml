@@ -5,6 +5,17 @@ on:
     branches:
       - production
   workflow_dispatch:
+    inputs:
+      verify_health:
+        description: 'Verify live site health (HTTP 200) after trigger'
+        required: false
+        default: true
+        type: boolean
+      custom_url:
+        description: 'Custom Health Check URL (optional - leave empty for default)'
+        required: false
+        default: ''
+        type: string
 
 jobs:
   deploy-to-render:
@@ -40,10 +51,11 @@ jobs:
           echo "✅ Render deployment initiated successfully!"
 
       - name: Wait for Render Build & Healthcheck
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.verify_health }}
         run: |
           echo "⏳ Waiting for Render to build Docker image and boot container (polling live status)..."
           
-          TARGET_URL="https://gdscmmu-prod.onrender.com"
+          TARGET_URL="${{ inputs.custom_url != '' && inputs.custom_url || 'https://gdscmmu-prod.onrender.com' }}"
           MAX_RETRIES=24      # 24 checks * 15 seconds = 6 minutes max wait
           RETRY_COUNT=0
           DEPLOY_SUCCESS=false
