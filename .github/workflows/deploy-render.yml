@@ -43,7 +43,7 @@ jobs:
         run: |
           echo "⏳ Waiting for Render to build Docker image and boot container (polling live status)..."
           
-          TARGET_URL="https://gdscmmu-i1ve.onrender.com"
+          TARGET_URL="https://gdscmmu-prod.onrender.com"
           MAX_RETRIES=24      # 24 checks * 15 seconds = 6 minutes max wait
           RETRY_COUNT=0
           DEPLOY_SUCCESS=false
@@ -77,5 +77,5 @@ jobs:
         if: always()
         run: |
           echo "### 🚀 Render Deployment Summary" >> $GITHUB_STEP_SUMMARY
-          echo "- **Target URL**: [https://gdscmmu-i1ve.onrender.com](https://gdscmmu-i1ve.onrender.com)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Target URL**: [https://gdscmmu-prod.onrender.com](https://gdscmmu-prod.onrender.com)" >> $GITHUB_STEP_SUMMARY
           echo "- **Status**: ${{ job.status == 'success' && '✅ Deployed & Healthy' || '❌ Failed' }}" >> $GITHUB_STEP_SUMMARY

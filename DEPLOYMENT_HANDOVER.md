@@ -46,7 +46,7 @@ This document is the official technical handover guide for incoming developers a
 
 The live production application runs as a Docker Web Service on **Render**.
 
-* **Live Production URL**: `https://gdscmmu-i1ve.onrender.com`
+* **Live Production URL**: `https://gdscmmu-prod.onrender.com`
 * **Connected Repository**: `https://github.com/ronylee11/gdscmmu`
 * **Production Deployment Branch**: `production`
 
@@ -55,7 +55,7 @@ The live production application runs as a Docker Web Service on **Render**.
 2. Click **New +** → **Web Service**.
 3. Connect your GitHub repository (`gdscmmu`).
 4. Set the following service parameters:
-   - **Name**: `gdscmmu` (or your choice)
+   - **Name**: `gdscmmu-prod` (or your choice)
    - **Region**: Singapore (`Southeast Asia (Singapore)`) or closest to Malaysia
    - **Branch**: `production`
    - **Runtime**: `Docker`
@@ -71,7 +71,7 @@ Under the **Environment** tab of your Render Web Service, add the following envi
 | `APP_ENV` | `production` | Laravel production environment mode |
 | `APP_KEY` | `base64:...` | Generate using `php artisan key:generate --show` |
 | `APP_DEBUG` | `false` | Disable debug backtraces for security |
-| `APP_URL` | `https://gdscmmu-i1ve.onrender.com` | Base URL of your deployed application |
+| `APP_URL` | `https://gdscmmu-prod.onrender.com` | Base URL of your deployed application |
 | `LOG_CHANNEL` | `stderr` | Pipe Laravel logs directly to Render's live log viewer |
 | `WEBROOT` | `/var/www/html/public` | Points Nginx to Laravel's public directory |
 | `DB_CONNECTION` | `pgsql` | PostgreSQL database connection |
@@ -129,7 +129,7 @@ The portal automatically synchronizes upcoming and past events from the official
 - The command `php artisan bevy:sync-events` calls Google's public Bevy API, downloads high-res Cloudinary banners, and inserts/updates events in PostgreSQL without duplicating records (`bevy_id` deduplication).
 - A secured webhook endpoint is available at:
   ```
-  POST https://gdscmmu-i1ve.onrender.com/api/cron/sync-bevy?key=<CRON_SECRET>
+  POST https://gdscmmu-prod.onrender.com/api/cron/sync-bevy?key=<CRON_SECRET>
   ```
 - Also accessible via fallback route `GET|POST /cron/sync-bevy`.
 
@@ -138,7 +138,7 @@ The portal automatically synchronizes upcoming and past events from the official
 - Automatically triggers daily at **00:00 UTC** (**8:00 AM MYT**).
 - Can be manually dispatched anytime from GitHub: **Actions → Daily Bevy Events Sync → Run workflow**.
 - To configure or update secrets: Go to GitHub repository **Settings → Secrets and variables → Actions**:
-  - `APP_URL`: `https://gdscmmu-i1ve.onrender.com`
+  - `APP_URL`: `https://gdscmmu-prod.onrender.com`
   - `CRON_SECRET`: Matching token from your `.env`
 
 ---

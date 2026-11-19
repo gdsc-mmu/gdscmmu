@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Trigger Laravel Bevy Sync Webhook
         env:
-          APP_URL: ${{ secrets.APP_URL || 'https://gdscmmu-i1ve.onrender.com' }}
+          APP_URL: ${{ secrets.APP_URL || 'https://gdscmmu-prod.onrender.com' }}
           CRON_SECRET: ${{ secrets.CRON_SECRET || 'mmu_gdg_cron_secret_2026' }}
         run: |
           echo "Triggering Bevy Event Sync on $APP_URL..."
