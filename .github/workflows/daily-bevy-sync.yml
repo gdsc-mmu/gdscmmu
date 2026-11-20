@@ -33,6 +33,17 @@ jobs:
           APP_URL: ${{ inputs.target_url != '' && inputs.target_url || secrets.APP_URL || 'https://gdscmmu-prod.onrender.com' }}
           CRON_SECRET: ${{ inputs.cron_secret != '' && inputs.cron_secret || secrets.CRON_SECRET || 'mmu_gdg_cron_secret_2026' }}
         run: |
+          # Sanitize URL and Secret to strip any accidental whitespace or newlines
+          APP_URL=$(echo "$APP_URL" | tr -d ' \r\n\t')
+          CRON_SECRET=$(echo "$CRON_SECRET" | tr -d ' \r\n\t')
+
+          if [ -z "$APP_URL" ]; then
+            APP_URL="https://gdscmmu-prod.onrender.com"
+          fi
+          if [ -z "$CRON_SECRET" ]; then
+            CRON_SECRET="mmu_gdg_cron_secret_2026"
+          fi
+
           echo "Triggering Bevy Event Sync on $APP_URL..."
           
           RESPONSE=$(curl -s -w "\n%{http_code}" -X GET \
