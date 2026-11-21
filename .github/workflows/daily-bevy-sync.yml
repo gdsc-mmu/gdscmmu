@@ -11,10 +11,16 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
     inputs:
-      force_sync:
-        description: 'Force immediate manual sync from Bevy'
+      target_url:
+        description: 'Target Application Base URL (optional - leave empty to use default)'
         required: false
-        default: 'true'
+        default: ''
+        type: string
+      cron_secret:
+        description: 'Custom Cron Secret (optional - leave empty to use default)'
+        required: false
+        default: ''
+        type: string
 
 jobs:
   sync-bevy-events:
@@ -24,12 +30,23 @@ jobs:
     steps:
       - name: Trigger Laravel Bevy Sync Webhook
         env:
-          APP_URL: ${{ secrets.APP_URL || 'https://dev.gdgmmu.com' }}
-          CRON_SECRET: ${{ secrets.CRON_SECRET || 'mmu_gdg_cron_secret_2026' }}
+          APP_URL: ${{ inputs.target_url != '' && inputs.target_url || secrets.APP_URL || 'https://gdscmmu-prod.onrender.com' }}
+          CRON_SECRET: ${{ inputs.cron_secret != '' && inputs.cron_secret || secrets.CRON_SECRET || 'mmu_gdg_cron_secret_2026' }}
         run: |
+          # Sanitize URL and Secret to strip any accidental whitespace or newlines
+          APP_URL=$(echo "$APP_URL" | tr -d ' \r\n\t')
+          CRON_SECRET=$(echo "$CRON_SECRET" | tr -d ' \r\n\t')
+
+          if [ -z "$APP_URL" ]; then
+            APP_URL="https://gdscmmu-prod.onrender.com"
+          fi
+          if [ -z "$CRON_SECRET" ]; then
+            CRON_SECRET="mmu_gdg_cron_secret_2026"
+          fi
+
           echo "Triggering Bevy Event Sync on $APP_URL..."
           
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X GET \
             -H "Accept: application/json" \
             -H "X-CRON-KEY: $CRON_SECRET" \
             "$APP_URL/api/cron/sync-bevy?key=$CRON_SECRET")
@@ -53,4 +70,3 @@ jobs:
           echo "- **Status**: ✅ Success (HTTP $HTTP_STATUS)" >> $GITHUB_STEP_SUMMARY
           echo "- **Target URL**: \`$APP_URL\`" >> $GITHUB_STEP_SUMMARY
           echo "- **Response**: \`$BODY\`" >> $GITHUB_STEP_SUMMARY
-
